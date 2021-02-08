@@ -1,5 +1,7 @@
 spool 'C:\Users\serha\OneDrive\Masaüstü\export2.csv';
-select ros.production_line_name, ccm.sequence_id, slab.piece_id, slab.material_id, slab.mold_width, slab.casting_speed, slab.exit_temp,mat.steel_grade_id_int, mat.heat_id, mat.slab_transition, mat.width, mat.length, mat.weight, mat.thickness, mat2.thickness as thickness_hsm, slab.cut_time 
+select ros.production_line_name, ccm.sequence_id, slab.piece_id, slab.material_id, slab.mold_width, slab.casting_speed, 
+slab.exit_temp,mat.steel_grade_id_int, mat.heat_id, mat.slab_transition, mat.width, mat.length, mat.weight, mat.thickness, 
+mat2.thickness as thickness_hsm, slab.cut_time 
 from L3MAIN.r_os ros, L3MAIN.r_ccm_slab slab, L3MAIN.r_ccm ccm, L3MAIN.r_mat mat, L3MAIN.r_mat mat2, L3MAIN.r_os ros2;
 spool off;
 
