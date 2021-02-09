@@ -5,6 +5,8 @@ BeginPackage["SingleNetworks`"];
 snetworkdatasingle::usage = "description.";
 snetworkdatabinnedintimewindows::usage = "description.";
 snetworkgraph::usage = "description.";
+correlationfunction::usage = "description.";
+randomnessfunction::usage = "description.";
 
 
 Begin["`Private`"];
@@ -52,6 +54,32 @@ EdgeShapeFunction->"Line",VertexSize->vertexsize,VertexStyle->vertexcolor,
 VertexLabelStyle->Directive[Black,Italic,vertexlabelsize],VertexLabels->Flatten[MapThread[
 {#1->Placed[#2,Center]}&,{Range[1,Dimensions[binarymatrix][[1]]],Table[StringRiffle[i,"\n"],
 {i,binningmembers}]}]]},ImageSize->imagesize];{graph,Length@binningmembers}]
+
+
+Clear[correlationfunction]
+correlationfunction[network_,choice_]:=Module[{De,CC,BC,DeBC,CCBC,out},
+De=VertexDegree[network];
+CC=LocalClusteringCoefficient[network];
+BC=BetweennessCentrality[network];
+DeBC=Which[choice==1,SpearmanRho[De,BC],choice==2,Correlation[De,BC],choice==3,KendallTau[[De,BC]]];
+CCBC=Which[choice==1,SpearmanRho[CC,BC],choice==2,Correlation[CC,BC],choice==3,KendallTau[[CC,BC]]];
+out={DeBC,CCBC}]
+
+
+Clear[randomnessfunction]
+randomnessfunction[network_,choice_]:=
+Module[{randomgraphs,MuDeBC,MuCCBC,XDeBC,XCCBC,SigmaDeBC,SigmaCCBC,ZDeBC,ZCCBC,final},
+SeedRandom[17];
+randomgraphs=RandomGraph[{VertexCount[network],EdgeCount[network]},1000];
+MuDeBC = Mean[Table[correlationfunction[randomgraphs[[i]],choice][[1]],{i,1000}]];
+MuCCBC = Mean[Table[correlationfunction[randomgraphs[[i]],choice][[2]],{i,1000}]];
+XDeBC= correlationfunction[network,choice][[1]];
+XCCBC= correlationfunction[network,choice][[2]];
+SigmaDeBC =StandardDeviation[Table[correlationfunction[randomgraphs[[i]],choice][[1]],{i,1000}]];
+SigmaCCBC =StandardDeviation[Table[correlationfunction[randomgraphs[[i]],choice][[2]],{i,1000}]];
+ZDeBC=(XDeBC-MuDeBC)/SigmaDeBC;
+ZCCBC=(XCCBC-MuCCBC)/SigmaCCBC;
+final={ZDeBC,ZCCBC}];
 
 
 End[];
