@@ -2,7 +2,8 @@
 
 BeginPackage["SingleNetworks`"];
 
-snetworkdatasingle::usage = "description.";
+snetworkdatasingleintimewindows::usage = "description.";
+snetworkgraphsinglenodes::usage = "description.";
 snetworkdatabinnedintimewindows::usage = "description.";
 snetworkgraph::usage = "description.";
 correlationfunction::usage = "description.";
@@ -10,6 +11,41 @@ randomnessfunction::usage = "description.";
 
 
 Begin["`Private`"];
+
+
+Clear[snetworkdatasingleintimewindows]
+snetworkdatasingleintimewindows[feature_,datadimension_]:=Module[{rawaim,aim,campaign,seri},
+rawaim=Table[Symbol["data"][[i]][[All,feature]],{i,Range@datadimension}];
+aim=Table[DeleteCases[i,"NA"],{i,rawaim}];
+campaign=Table[Delete[Symbol["data"][[i[[1]]]][[All,2]],Position[i[[2]],"NA"]],
+{i,MapThread[{#1,#2}&,{Range@datadimension,rawaim}]}];
+seri=Table[Delete[Symbol["data"][[i[[1]]]][[All,1]],Position[i[[2]],"NA"]],
+{i,MapThread[{#1,#2}&,{Range@datadimension,rawaim}]}];
+{aim,campaign,seri}]
+
+
+Clear[snetworkgraphsinglenodes]
+snetworkgraphsinglenodes[aim_,campaign_,vertexsize_,vertexlabelsize_,imagesize_,vertexcolor_]:=
+Module[{binningmembers,aimbaskets,singlesupportvalues,pairs,pairsupportvalues,liftvalues,
+allmatrixelements,likelypairs,binarymatrix,graph},
+binningmembers=Sort[DeleteDuplicates[aim]];
+aimbaskets=Table[DeleteDuplicates[i],{i,Values@GroupBy[Thread[{aim,campaign}],Last->First]}];
+singlesupportvalues=Table[N[Count[Table[MemberQ[i,j],{i,aimbaskets}],
+True]/Length[aimbaskets]],{j,binningmembers}];
+pairs=Subsets[binningmembers,{2}];
+pairsupportvalues=Table[N[Count[Table[SubsetQ[i,j],{i,aimbaskets}],True]/
+Length[aimbaskets]],{j,pairs}];
+liftvalues=pairsupportvalues/(DeleteCases[Flatten@UpperTriangularize[Table[singlesupportvalues
+[[j]]*singlesupportvalues[[k]],{j,Length[binningmembers]},{k,Length[binningmembers]}],1],0.]);
+allmatrixelements=Sort[Join[pairs,Reverse[pairs,2],Table[{i,i},{i,binningmembers}]]];
+likelypairs=Extract[pairs,Position[liftvalues,x_/;x>1]];
+binarymatrix=ArrayReshape[Table[If[j==True,1,0],{j,Table[MemberQ[likelypairs,i],
+{i,allmatrixelements}]}],{Length@binningmembers,Length@binningmembers}];
+graph=AdjacencyGraph[binarymatrix,{GraphLayout->Automatic,DirectedEdges->False,
+EdgeShapeFunction->"Line",VertexSize->vertexsize,VertexStyle->vertexcolor,
+VertexLabelStyle->Directive[Black,Italic,vertexlabelsize],VertexLabels->Flatten[MapThread[
+{#1->Placed[#2,Center]}&,{Range[1,Dimensions[binarymatrix][[1]]],binningmembers}]]},
+ImageSize->imagesize];{graph,Length@binningmembers}]
 
 
 Clear[snetworkdatabinnedintimewindows]
