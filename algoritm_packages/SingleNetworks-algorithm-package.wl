@@ -5,6 +5,7 @@ BeginPackage["SingleNetworks`"];
 snetworkdatasingleintimewindows::usage = "description.";
 snetworkgraphsinglenodes::usage = "description.";
 snetworkdatabinnedintimewindows::usage = "description.";
+snetworkdatafxdbucketintimewindows::usage = "description.";
 snetworkgraph::usage = "description.";
 correlationfunction::usage = "description.";
 randomnessfunction::usage = "description.";
@@ -14,13 +15,14 @@ Begin["`Private`"];
 
 
 Clear[snetworkdatasingleintimewindows]
-snetworkdatasingleintimewindows[feature_,datadimension_]:=Module[{rawaim,aim,campaign,seri},
+snetworkdatasingleintimewindows[feature_,datadimension_]:=Module[{rawaim,pos,aim,campaign,seri},
 rawaim=Table[Symbol["data"][[i]][[All,feature]],{i,Range@datadimension}];
-aim=Table[DeleteCases[i,"NA"],{i,rawaim}];
-campaign=Table[Delete[Symbol["data"][[i[[1]]]][[All,2]],Position[i[[2]],"NA"]],
-{i,MapThread[{#1,#2}&,{Range@datadimension,rawaim}]}];
-seri=Table[Delete[Symbol["data"][[i[[1]]]][[All,1]],Position[i[[2]],"NA"]],
-{i,MapThread[{#1,#2}&,{Range@datadimension,rawaim}]}];
+pos=Table[Partition[Flatten@Table[Position[k,i],{i,{"NA",0}}],1],{k,rawaim}];
+aim=Table[Delete[i[[1]],i[[2]]],{i,MapThread[{#1,#2}&,{rawaim,pos}]}];
+campaign=Table[Delete[Symbol["data"][[i[[1]]]][[All,2]],i[[2]]],
+{i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
+seri=Table[Delete[Symbol["data"][[i[[1]]]][[All,1]],i[[2]]],
+{i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
 {aim,campaign,seri}]
 
 
@@ -49,14 +51,15 @@ ImageSize->imagesize];{graph,Length@binningmembers}]
 
 
 Clear[snetworkdatabinnedintimewindows]
-snetworkdatabinnedintimewindows[feature_,step_,datadimension_]:=Module[{rawaim,aim,campaign,seri,
-min,max,binningamount,binning},
+snetworkdatabinnedintimewindows[feature_,step_,datadimension_]:=Module[{rawaim,pos,aim,campaign,
+seri,min,max,binningamount,binning},
 rawaim=Table[Symbol["data"][[i]][[All,feature]],{i,Range@datadimension}];
-aim=Table[DeleteCases[i,"NA"],{i,rawaim}];
-campaign=Table[Delete[Symbol["data"][[i[[1]]]][[All,2]],Position[i[[2]],"NA"]],
-{i,MapThread[{#1,#2}&,{Range@datadimension,rawaim}]}];
-seri=Table[Delete[Symbol["data"][[i[[1]]]][[All,1]],Position[i[[2]],"NA"]],
-{i,MapThread[{#1,#2}&,{Range@datadimension,rawaim}]}];
+pos=Table[Partition[Flatten@Table[Position[k,i],{i,{"NA",0}}],1],{k,rawaim}];
+aim=Table[Delete[i[[1]],i[[2]]],{i,MapThread[{#1,#2}&,{rawaim,pos}]}];
+campaign=Table[Delete[Symbol["data"][[i[[1]]]][[All,2]],i[[2]]],
+{i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
+seri=Table[Delete[Symbol["data"][[i[[1]]]][[All,1]],i[[2]]],
+{i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
 min=Table[Floor[Min[Sort[DeleteDuplicates[i]]],0.1],{i,aim}];
 max=Table[Ceiling[Max[Sort[DeleteDuplicates[i]]]]+step,{i,aim}];
 binningamount=Table[Length[DeleteCases[BinLists[i[[1]],{i[[2]],i[[3]],step}],{}]],
@@ -66,6 +69,40 @@ binning=Table[Table[Catch[Do[If[IntervalMemberQ[Interval[i],(k[[1]])[[j]]]==True
 {aim,min,max}]}];
 aim=Table[DeleteCases[i,Null],{i,binning}];
 {aim,campaign,seri}]
+
+
+Clear[snetworkdatafxdbucketintimewindows]
+snetworkdatafxdbucketintimewindows[feature_,nodenumber_,datadimension_]:=Module[{rawaim,pos,aim,
+campaign,seri,bucketsize,aimlabeled,aimpartitioned,bins,repetitivesreport,repetitives,
+labelgeneration,binsrearranged,aimbinned},
+rawaim=Table[Symbol["data"][[i]][[All,feature]],{i,Range@datadimension}];
+pos=Table[Partition[Flatten@Table[Position[k,i],{i,{"NA",0}}],1],{k,rawaim}];
+aim=Table[Delete[i[[1]],i[[2]]],{i,MapThread[{#1,#2}&,{rawaim,pos}]}];
+campaign=Table[Delete[Symbol["data"][[i[[1]]]][[All,2]],i[[2]]],
+{i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
+seri=Table[Delete[Symbol["data"][[i[[1]]]][[All,1]],i[[2]]],
+{i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
+bucketsize=Table[Ceiling@(N@(Dimensions@i)/nodenumber),{i,aim}];
+aimlabeled=Table[Thread[Range@Length@i->i],{i,aim}];
+aimpartitioned=Table[Partition[Normal@Sort@Association@i[[1]],UpTo@i[[2]]],
+{i,MapThread[{#1,#2}&,{aimlabeled,bucketsize}]}];
+bins=Table[Table[MinMax[i],{i,Values@k}],{k,aimpartitioned}];
+repetitivesreport=Table[DeleteCases[Tally@i,x_/;x[[2]]==1],{i,bins}];
+repetitives=Table[i[[All,1]],{i,repetitivesreport}];
+
+labelgeneration[x_,dim_]:=Table[{repetitives[[dim]][[x]][[1]]+i*repetitives[[dim]][[x]][[1]]
+/10^(RealDigits@repetitives[[dim]][[x]][[1]])[[2]],repetitives[[dim]][[x]][[2]]+
+i*repetitives[[dim]][[x]][[2]]/10^(RealDigits@repetitives[[dim]][[x]][[2]])[[2]]},
+{i,Range@repetitivesreport[[dim]][[x]][[2]]}];
+
+binsrearranged=Table[ReplacePart[bins[[o]],Flatten[Table[MapThread[#1->#2&,
+{Flatten@Position[bins[[o]],repetitives[[o]][[g]]],labelgeneration[g,o]}],
+{g,Range@Length@repetitives[[o]]}],1]],{o,Range@datadimension}];
+
+aimbinned=Table[Values@Normal@KeySort@Association@Flatten[Table[aimpartitioned[[k]][[i]]/.
+Table[Values@aimpartitioned[[k]][[i]][[j]]->binsrearranged[[k]][[i]],
+{j,Length@aimpartitioned[[k]][[i]]}],{i,Length@aimpartitioned[[k]]}],1],
+{k,Range@datadimension}];{aimbinned,campaign,seri}]
 
 
 Clear[snetworkgraph]
