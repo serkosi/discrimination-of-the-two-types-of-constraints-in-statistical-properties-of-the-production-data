@@ -1,0 +1,58 @@
+"Production Constraints" which is a critical subject to optimization researches
+arise from those technology-driven production types related to facility
+capabilities.
+Considering the roughly explained production steps above, each process has
+its own technical or physical constraints.
+Optimizing individual sequences in each process is a necessity for a successful
+local process. Local constraints on different processes are integral parts of a
+global optimization problem that is tackled by human expert planners for a
+solution.
+To what degree can above discussed local constraints be determinant
+on the features of production orders that are taken into account by human
+expert planners while they design a sequence that can be produced with a
+minimum cost?
+The technical and physical constraints mentioned in the introduction section
+are obviously unique to those specific production lines and they vary under
+differently customized production lines. Produced order properties such as
+thickness, width, temperature, and chemical composition are the characteristic
+features of order products that are possibly shaped under the effect of those
+constraints.
+production sequences contain production orders
+with specific characteristics for the sake of an optimized production process
+under several constraints effects.
+
+Alternative Binning Methods for Network Nodes
+Except for the Steel Grade feature network results, Width and Thickness feature
+networks are quite dense and look random. Since width and thickness
+characteristics for production orders might vary in large ranges, grouping orders
+with similar values for the relevant features domain values will be an
+efficient way to obtain meaningful network graph representations.
+
+Therefore, applying alternative binning methods to Width and Thickness network
+nodes might be handy to gather the production orders with tiny differences
+together in common nodes and to gain more meaningful graph representations
+to evaluate. Binning of the feature values can be performed in various
+ways. Throughout this section, two ways of binning given below were applied
+and investigated for the Width and Thickness features:
+1. Keeping the bucket size (orders amount) fixed for all the network nodes.
+2. Keeping the step size (value interval) fixed for all the network nodes regardless
+of number of order they contain.
+Defining a common bucket size for the networks results in arbitrary interval
+boundaries for each node but it makes it possible to control their population.
+
+Forcing production orders to take place in the nodes with constant interval
+boundaries allows us to see how the aggregations take place within orders.
+One should consider that the node populations might vary in large ranges.
+
+Two alternative binning methods were performed to dense
+feature networks. The first one, keeping the bucket size fixed is a model for the
+Load/Count Driven Production type where the capacity of a campaign event is
+a constraint for production. The second one, keeping the step size fixed is an
+approach to mimic the Technology-Driven Production Type. In this production
+type, sequences are derived based on some technological constraints which
+may result in different ways for each feature. While we had no significant network
+result for the former one, the Width feature network provided significant
+graph communities with similar width values for the latter one as presented in
+Fig. 3.5. That shows some orders within a specific width range in production
+might be the consequence of a technical operation performed in the relevant
+production unit.
