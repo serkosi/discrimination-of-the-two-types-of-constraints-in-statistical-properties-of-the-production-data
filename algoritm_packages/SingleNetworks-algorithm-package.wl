@@ -91,17 +91,17 @@ repetitivesreport=Table[DeleteCases[Tally@i,x_/;x[[2]]==1],{i,bins}];
 repetitives=Table[i[[All,1]],{i,repetitivesreport}];
 
 labelgeneration[x_,dim_]:=Table[{repetitives[[dim]][[x]][[1]]+i*repetitives[[dim]][[x]][[1]]
-/10^(RealDigits@repetitives[[dim]][[x]][[1]])[[2]],repetitives[[dim]][[x]][[2]]+
-i*repetitives[[dim]][[x]][[2]]/10^(RealDigits@repetitives[[dim]][[x]][[2]])[[2]]},
+/(2*10^(RealDigits@repetitives[[dim]][[x]][[1]]+1)[[2]]),repetitives[[dim]][[x]][[2]]+
+i*repetitives[[dim]][[x]][[2]]/(2*10^(RealDigits@repetitives[[dim]][[x]][[2]]+1)[[2]])},
 {i,Range@repetitivesreport[[dim]][[x]][[2]]}];
 
 binsrearranged=Table[ReplacePart[bins[[o]],Flatten[Table[MapThread[#1->#2&,
 {Flatten@Position[bins[[o]],repetitives[[o]][[g]]],labelgeneration[g,o]}],
 {g,Range@Length@repetitives[[o]]}],1]],{o,Range@datadimension}];
 
-aimbinned=Table[Values@Normal@KeySort@Association@Flatten[Table[aimpartitioned[[k]][[i]]/.
+aimbinned=Table[Values@Sort[Flatten[Table[aimpartitioned[[k]][[i]]/.
 Table[Values@aimpartitioned[[k]][[i]][[j]]->binsrearranged[[k]][[i]],
-{j,Length@aimpartitioned[[k]][[i]]}],{i,Length@aimpartitioned[[k]]}],1],
+{j,Length@aimpartitioned[[k]][[i]]}],{i,Length@aimpartitioned[[k]]}],1],#1[[1]]<#2[[1]]&],
 {k,Range@datadimension}];{aimbinned,campaign,seri}]
 
 
