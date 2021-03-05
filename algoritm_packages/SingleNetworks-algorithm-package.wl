@@ -9,6 +9,8 @@ snetworkdatafxdbucketintimewindows::usage = "description.";
 snetworkgraph::usage = "description.";
 correlationfunction::usage = "description.";
 randomnessfunction::usage = "description.";
+GirwanNewmanmodularity::usage = "description.";
+randomnessfunctionformodularity::usage = "description.";
 
 
 Begin["`Private`"];
@@ -134,8 +136,10 @@ correlationfunction[network_,choice_]:=Module[{De,CC,BC,DeBC,CCBC,out},
 De=VertexDegree[network];
 CC=LocalClusteringCoefficient[network];
 BC=BetweennessCentrality[network];
-DeBC=Which[choice==1,SpearmanRho[De,BC],choice==2,Correlation[De,BC],choice==3,KendallTau[[De,BC]]];
-CCBC=Which[choice==1,SpearmanRho[CC,BC],choice==2,Correlation[CC,BC],choice==3,KendallTau[[CC,BC]]];
+DeBC=Which[choice==1,SpearmanRho[De,BC],choice==2,Correlation[De,BC],choice==3,
+KendallTau[[De,BC]]];
+CCBC=Which[choice==1,SpearmanRho[CC,BC],choice==2,Correlation[CC,BC],choice==3,
+KendallTau[[CC,BC]]];
 out={DeBC,CCBC}]
 
 
@@ -144,15 +148,67 @@ randomnessfunction[network_,choice_]:=
 Module[{randomgraphs,MuDeBC,MuCCBC,XDeBC,XCCBC,SigmaDeBC,SigmaCCBC,ZDeBC,ZCCBC,final},
 SeedRandom[17];
 randomgraphs=RandomGraph[{VertexCount[network],EdgeCount[network]},1000];
-MuDeBC = Mean[Table[correlationfunction[randomgraphs[[i]],choice][[1]],{i,1000}]];
-MuCCBC = Mean[Table[correlationfunction[randomgraphs[[i]],choice][[2]],{i,1000}]];
-XDeBC= correlationfunction[network,choice][[1]];
-XCCBC= correlationfunction[network,choice][[2]];
-SigmaDeBC =StandardDeviation[Table[correlationfunction[randomgraphs[[i]],choice][[1]],{i,1000}]];
-SigmaCCBC =StandardDeviation[Table[correlationfunction[randomgraphs[[i]],choice][[2]],{i,1000}]];
+MuDeBC=Mean[Table[correlationfunction[randomgraphs[[i]],choice][[1]],{i,1000}]];
+MuCCBC=Mean[Table[correlationfunction[randomgraphs[[i]],choice][[2]],{i,1000}]];
+XDeBC=correlationfunction[network,choice][[1]];
+XCCBC=correlationfunction[network,choice][[2]];
+SigmaDeBC=StandardDeviation[Table[correlationfunction[randomgraphs[[i]],choice][[1]],{i,1000}]];
+SigmaCCBC=StandardDeviation[Table[correlationfunction[randomgraphs[[i]],choice][[2]],{i,1000}]];
 ZDeBC=(XDeBC-MuDeBC)/SigmaDeBC;
 ZCCBC=(XCCBC-MuCCBC)/SigmaCCBC;
 final={ZDeBC,ZCCBC}];
+
+
+Clear[GirwanNewmanmodularity]
+GirwanNewmanmodularity[xx_]:=Module[{network,m,Aij,B,u,\[Beta],s,Q,div1,div2,moditer,r1,r11,r12,r2,
+r21,r22,subfinal1Q,subfinal2Q,finalQ},
+network=xx;
+m=EdgeCount@network;
+Aij=AdjacencyMatrix@network;
+B=N@(Aij-Outer[Times,VertexDegree@network,VertexDegree@network]/(2*m));
+u=Eigenvectors@B;
+\[Beta]=Eigenvalues@B;
+s=(u/.x_/;x<0->-1)/.x_/;x>=0->1;
+Q=(Total@(Table[(u[[i]] . Flatten@s[[Flatten@Position[\[Beta],Max@\[Beta]][[1]]]])^2,
+{i,VertexList@network}]*\[Beta]))/(4*m);
+div1=Flatten@Position[Flatten@s[[Flatten@Position[\[Beta],Max@\[Beta]][[1]]]],_?Negative];
+div2=Flatten@Position[Flatten@s[[Flatten@Position[\[Beta],Max@\[Beta]][[1]]]],_?Positive];
+moditer[pos_,B1_]:=Module[{Bg,ug,\[Beta]g,sg,deltaQ,divv1,divv2,Bg1,Bg2},
+Bg=(Table[B1[[i,j]]-KroneckerDelta[i,j]*Total@B1[[i,pos]],{i,Length@B1},{j,Length@B1}])
+[[pos,pos]];
+ug=Eigenvectors@Bg;
+\[Beta]g=Eigenvalues@Bg;
+sg=(ug/.x_/;x<0->-1)/.x_/;x>=0->1;
+deltaQ=(Total@(Table[(ug[[i]] . Flatten@sg[[Flatten@Position[\[Beta]g,Max@\[Beta]g][[1]]]])^2,
+{i,Range@Length@pos}]*\[Beta]g))/(4*m);
+divv1=Flatten@Position[Flatten@sg[[Flatten@Position[\[Beta]g,Max@\[Beta]g][[1]]]],_?Negative];
+divv2=Flatten@Position[Flatten@sg[[Flatten@Position[\[Beta]g,Max@\[Beta]g][[1]]]],_?Positive];
+{deltaQ,divv1,divv2,Bg}];
+r1=moditer[div1,B];
+r11=If[r1[[1]]>0.001,moditer[r1[[2]],r1[[4]]],{0,0,0,0}];
+r12=If[r1[[1]]>0.001,moditer[r1[[3]],r1[[4]]],{0,0,0,0}];
+r2=moditer[div2,B];
+r21=If[r2[[1]]>0.001,moditer[r2[[2]],r2[[4]]],{0,0,0,0}];
+r22=If[r2[[1]]>0.001,moditer[r2[[3]],r2[[4]]],{0,0,0,0}];
+subfinal1Q=If[r1[[1]]>0.001,If[r11[[1]]>0.001,If[r12[[1]]>0.001,r12[[1]]+r11[[1]]+r1[[1]],
+r11[[1]]+r1[[1]]],If[r12[[1]]>0.001,r12[[1]]+r1[[1]],r1[[1]]]],0];
+subfinal2Q=If[r2[[1]]>0.001,If[r21[[1]]>0.001,If[r22[[1]]>0.001,r22[[1]]+r21[[1]]+r2[[1]],
+r21[[1]]+r2[[1]]],If[r22[[1]]>0.001,r22[[1]]+r2[[1]],r2[[1]]]],0];
+finalQ=Q+subfinal1Q+subfinal2Q]
+
+
+Clear[randomnessfunctionformodularity]
+randomnessfunctionformodularity[network_]:=
+Module[{randomgraphs,RndmMumodularity,Xmodularityvalues,XWolfmodularityvalues,
+RndSigmamodularity,ZScore},
+randomgraphs=RandomGraph[{VertexCount[network],EdgeCount[network]},1000];
+RndmMumodularity=Mean[Table[GirwanNewmanmodularity[randomgraphs[[i]]],{i,1000}]];
+Xmodularityvalues=GirwanNewmanmodularity[network];
+XWolfmodularityvalues=N@GraphAssortativity[network,FindGraphCommunities[network],
+"Normalized"->False];
+RndSigmamodularity=StandardDeviation[Table[GirwanNewmanmodularity[randomgraphs[[i]]],{i,1000}]];
+ZScore=Table[(i-RndmMumodularity)/RndSigmamodularity,{i,{Xmodularityvalues,
+XWolfmodularityvalues}}]];
 
 
 End[];
