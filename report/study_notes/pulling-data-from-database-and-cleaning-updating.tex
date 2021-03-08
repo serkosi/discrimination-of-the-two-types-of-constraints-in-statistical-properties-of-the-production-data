@@ -7,12 +7,13 @@ I and Daniel started to discuss about the relevant features to be considered in 
 
 \begin{lstlisting}
 SELECT  ros.r_os_id, ros.production_line_name, ccm.sequence_id,        
-        ros.reference_date, NVL( TO_CHAR(slab.piece_id),'NA') piece_id, 
-        NVL( TO_CHAR(slab.material_id),'NA') material_id, 
+        ros.reference_date, NVL( TO_CHAR(slab.piece_id),'NA') 
+        piece_id, NVL( TO_CHAR(slab.material_id),'NA') material_id, 
         NVL(TO_CHAR(slab.mold_width),'NA') mold_width, 
         NVL( TO_CHAR(mat.width),'NA') width, 
         NVL( TO_CHAR(mat.thickness),'NA') thickness, 
-        NVL( TO_CHAR(mat.weight),'NA') weight, NVL( TO_CHAR(mat.length),'NA')
+        NVL( TO_CHAR(mat.weight),'NA') weight, 
+        NVL( TO_CHAR(mat.length),'NA')
         length, NVL( TO_CHAR(mat.heat_id),'NA') heat_id, 
         NVL( TO_CHAR(mat.steel_grade_id_int),'NA') steel_grade_id_int, 
         NVL( TO_CHAR(slab.exit_temp),'NA') exit_temp, 
@@ -25,9 +26,10 @@ FROM   	L3MAIN.r_os ros
 
 WHERE  	sequence_id IS NOT NULL;
 \end{lstlisting}
+$7.85 g/cm^{3}$ = $7850 kg/m^{3}$ = $0.284 lb/in^{3}$ = $490 lb/ft^{3}$
 
 Converting strings to numbers and correction for punctuation marks between digits were performed, null values (NA) were converted into $0$ values in the beginnning of data cleaning process. After completing minor stages, some preconditions were generated as below to be able to manipulate data columns.
-Steel density is considered between 7.00 x 10^(-6) kg/mm^(3) and 8.50x10^(-6) kg/mm^(3).
+Steel density is considered between $7.00 x 10^{-6}$ $kg/mm^{3}$ and $8.50x10^{-6}$ $kg/mm^{3}$.
 Width varies between 800 - 2000 mm. 
 Thickness varies between 40 - 90 mm. 
 Weight varies between 2669 - 26690 kg.
@@ -37,8 +39,10 @@ Starting to modify width, thickness, and weight values corresponding to thicknes
 
 The data set has below given shape just before starting to analysis.
 Weight Zero Rows: 10484
-Thickness + Width Zero Rows: 61320
-Usable Rows: 397883
+Thickness + Width + Weight Zero Rows: 61320
+The rows with densities that do not match within above mentioned interval: 1787
+Usable Rows: 396096
 
-Time Windows Generation by Data Partitioning
+Time Windows Generation by Data Partitioning:
+the dataset with length 396096 was partitioned in 10 time windows starting from the beginning of the data. In each step, it's increased by 39610 rows more or less. The exact increase step dimension was specified by the last order of corresponding sequence. For my dataset, exact time window lengths are 39871, 79567, 118358, 158421, 198041, 237352, 277147, 316411, 356385, 396096.
 \end{document}

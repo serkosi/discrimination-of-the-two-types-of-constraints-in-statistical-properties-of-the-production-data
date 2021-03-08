@@ -1,0 +1,21 @@
+Investigation of constraints impact in time windows was performed by analyze in two different type of association networks; the networks with fixed step size nodes and the networks with fixed bucket size nodes.
+
+those two different type of networks were applied in all 10 time windows and some relevant network metric plots were generated. 
+Average degree vs time windows
+Average betweenness centrality vs time windows
+Average modularity vs time windows
+
+modularity equations\\
+$Q = \frac {1} {4 m}\sum_ {ij} (A_{ij} - \frac {k_{i} k_{j}}{2 m}) \
+s_{i} s_{j}$\\
+$B_{ij} = A_{ij} - \frac {k_ {i} k_ {j}} {2 m}$\\
+$Q = \frac {1} {4 m} s^{T} Bs = \frac {1} {4 m}\sum_ {i = 
+	1}^{n} (u_ {i}^{T} . s)^{2}\beta_ {i}$\\
+$\Delta Q = \frac {1} {4 m} s^{T} B^{(g)} s$\\
+$B_{ij}^{(g)} = B_{ij} - \delta_{ij}\sum_ {k\in g} B_{ik}$
+
+It is important to discuss how randomization has been done since the plot results can vary based on the generated null models via that specific randomization method. 
+Random graphs were generated and below instruments were plotted.
+
+Average modularity for single random graph vs time windows
+Z-scores for GN-modularity vs time windows

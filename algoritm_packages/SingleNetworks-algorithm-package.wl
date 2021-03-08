@@ -9,7 +9,7 @@ snetworkdatafxdbucketintimewindows::usage = "description.";
 snetworkgraph::usage = "description.";
 correlationfunction::usage = "description.";
 randomnessfunction::usage = "description.";
-GirwanNewmanmodularity::usage = "description.";
+GirvanNewmanmodularity::usage = "description.";
 randomnessfunctionformodularity::usage = "description.";
 
 
@@ -159,8 +159,8 @@ ZCCBC=(XCCBC-MuCCBC)/SigmaCCBC;
 final={ZDeBC,ZCCBC}];
 
 
-Clear[GirwanNewmanmodularity]
-GirwanNewmanmodularity[xx_]:=Module[{network,m,Aij,B,u,\[Beta],s,Q,div1,div2,moditer,r1,r11,r12,r2,
+Clear[GirvanNewmanmodularity]
+GirvanNewmanmodularity[xx_]:=Module[{network,m,Aij,B,u,\[Beta],s,Q,div1,div2,moditer,r1,r11,r12,r2,
 r21,r22,subfinal1Q,subfinal2Q,finalQ},
 network=xx;
 m=EdgeCount@network;
@@ -198,15 +198,17 @@ finalQ=Q+subfinal1Q+subfinal2Q]
 
 
 Clear[randomnessfunctionformodularity]
-randomnessfunctionformodularity[network_]:=
+randomnessfunctionformodularity[network_,randomisation_]:=
 Module[{randomgraphs,RndmMumodularity,Xmodularityvalues,XWolfmodularityvalues,
 RndSigmamodularity,ZScore},
-randomgraphs=RandomGraph[{VertexCount[network],EdgeCount[network]},1000];
-RndmMumodularity=Mean[Table[GirwanNewmanmodularity[randomgraphs[[i]]],{i,1000}]];
-Xmodularityvalues=GirwanNewmanmodularity[network];
+randomgraphs=Which[randomisation==1,RandomGraph[{VertexCount[network],EdgeCount[network]},1000],
+randomisation==2,Table[Symbol["IGDegreeSequenceGame"][Total[AdjacencyMatrix@network],
+Method->"VigerLatapy"],{i,1000}]];
+RndmMumodularity=Mean[Table[GirvanNewmanmodularity[randomgraphs[[i]]],{i,1000}]];
+Xmodularityvalues=GirvanNewmanmodularity[network];
 XWolfmodularityvalues=N@GraphAssortativity[network,FindGraphCommunities[network],
 "Normalized"->False];
-RndSigmamodularity=StandardDeviation[Table[GirwanNewmanmodularity[randomgraphs[[i]]],{i,1000}]];
+RndSigmamodularity=StandardDeviation[Table[GirvanNewmanmodularity[randomgraphs[[i]]],{i,1000}]];
 ZScore=Table[(i-RndmMumodularity)/RndSigmamodularity,{i,{Xmodularityvalues,
 XWolfmodularityvalues}}]];
 
