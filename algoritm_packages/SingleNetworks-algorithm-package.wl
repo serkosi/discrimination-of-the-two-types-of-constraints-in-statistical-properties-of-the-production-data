@@ -4,6 +4,8 @@ BeginPackage["SingleNetworks`"];
 
 snetworkdatasingleintimewindows::usage = "description.";
 snetworkgraphsinglenodes::usage = "description.";
+snetworkdatabinned::usage = "description.";
+snetworkdatafxdbucket::usage = "description.";
 snetworkdatabinnedintimewindows::usage = "description.";
 snetworkdatafxdbucketintimewindows::usage = "description.";
 snetworkgraph::usage = "description.";
@@ -50,6 +52,54 @@ EdgeShapeFunction->"Line",VertexSize->vertexsize,VertexStyle->vertexcolor,
 VertexLabelStyle->Directive[Black,Italic,vertexlabelsize],VertexLabels->Flatten[MapThread[
 {#1->Placed[#2,Center]}&,{Range[1,Dimensions[binarymatrix][[1]]],binningmembers}]]},
 ImageSize->imagesize];{graph,Length@binningmembers}]
+
+
+Clear[snetworkdatabinned]
+snetworkdatabinned[feature_,step_,data_]:=Module[{rawaim,pos,aim,campaign,seri,min,max,
+binningamount,binning},
+rawaim=Symbol[data][[All,feature]];
+pos=Partition[Flatten@Table[Position[rawaim,i],{i,{"NA",0}}],1];
+aim=Delete[rawaim,pos];
+campaign=Delete[Symbol[data][[All,2]],pos];
+seri=Delete[Symbol[data][[All,1]],pos];
+min=Floor[Min[Sort[DeleteDuplicates[aim]]],0.1];
+max=Ceiling[Max[Sort[DeleteDuplicates[aim]]]]+step;
+binningamount=Length[DeleteCases[BinLists[aim,{min,max,step}],{}]];
+binning=Table[Catch[Do[If[IntervalMemberQ[Interval[i],aim[[j]]]==True,Throw[i]],
+{i,Partition[Range[min,max,step],2,1]}]],{j,Length[aim]}];
+aim=DeleteCases[binning,Null];
+{aim,campaign,seri}]
+
+
+Clear[snetworkdatafxdbucket]
+snetworkdatafxdbucket[feature_,nodenumber_,data_]:=Module[{rawaim,pos,aim,
+campaign,seri,bucketsize,aimlabeled,aimpartitioned,bins,repetitivesreport,repetitives,
+labelgeneration,binsrearranged,aimbinned},
+rawaim=Symbol[data][[All,feature]];
+pos=Partition[Flatten@Table[Position[rawaim,i],{i,{"NA",0}}],1];
+aim=Delete[rawaim,pos];
+campaign=Delete[Symbol[data][[All,2]],pos];
+seri=Delete[Symbol[data][[All,1]],pos];
+bucketsize=Ceiling@(N@(Dimensions@aim)/nodenumber);
+aimlabeled=Thread[Range@Length@aim->aim];
+aimpartitioned=Partition[Normal@Sort@Association@aimlabeled,UpTo@bucketsize];
+bins=Table[MinMax[i],{i,Values@aimpartitioned}];
+repetitivesreport=DeleteCases[Tally@bins,x_/;x[[2]]==1];
+repetitives=repetitivesreport[[All,1]];
+
+labelgeneration[x_]:=Table[{repetitives[[x]][[1]]+i*repetitives[[x]][[1]]
+/(2*10^(RealDigits@repetitives[[x]][[1]]+1)[[2]]),repetitives[[x]][[2]]+
+i*repetitives[[x]][[2]]/(2*10^(RealDigits@repetitives[[x]][[2]]+1)[[2]])},
+{i,Range@repetitivesreport[[x]][[2]]}];
+
+binsrearranged=ReplacePart[bins,Flatten[Table[MapThread[#1->#2&,
+{Flatten@Position[bins,repetitives[[g]]],labelgeneration[g]}],
+{g,Range@Length@repetitives}],1]];
+
+aimbinned=Values@Sort[Flatten[Table[aimpartitioned[[i]]/.
+Dispatch@Table[Values@aimpartitioned[[i]][[j]]->binsrearranged[[i]],
+{j,Length@aimpartitioned[[i]]}],{i,Length@aimpartitioned}],1],#1[[1]]<#2[[1]]&];
+{aimbinned,campaign,seri}]
 
 
 Clear[snetworkdatabinnedintimewindows]
@@ -102,7 +152,7 @@ binsrearranged=Table[ReplacePart[bins[[o]],Flatten[Table[MapThread[#1->#2&,
 {g,Range@Length@repetitives[[o]]}],1]],{o,Range@datadimension}];
 
 aimbinned=Table[Values@Sort[Flatten[Table[aimpartitioned[[k]][[i]]/.
-Table[Values@aimpartitioned[[k]][[i]][[j]]->binsrearranged[[k]][[i]],
+Dispatch@Table[Values@aimpartitioned[[k]][[i]][[j]]->binsrearranged[[k]][[i]],
 {j,Length@aimpartitioned[[k]][[i]]}],{i,Length@aimpartitioned[[k]]}],1],#1[[1]]<#2[[1]]&],
 {k,Range@datadimension}];{aimbinned,campaign,seri}]
 

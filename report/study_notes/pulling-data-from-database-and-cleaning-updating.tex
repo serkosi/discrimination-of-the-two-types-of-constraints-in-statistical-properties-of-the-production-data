@@ -44,5 +44,14 @@ The rows with densities that do not match within above mentioned interval: 1787
 Usable Rows: 396096
 
 Time Windows Generation by Data Partitioning:
-the dataset with length 396096 was partitioned in 10 time windows starting from the beginning of the data. In each step, it's increased by 39610 rows more or less. The exact increase step dimension was specified by the last order of corresponding sequence. For my dataset, exact time window lengths are 39871, 79567, 118358, 158421, 198041, 237352, 277147, 316411, 356385, 396096.
+
+the dataset with length 396096 was partitioned in 10 time windows starting from the beginning of the data. In each step, it's increased by 39610 rows more or less (increasing windows). The exact increase step dimension was specified by the last order of corresponding sequence. For my dataset, exact time window lengths are 39871, 79567, 118358, 158421, 198041, 237352, 277147, 316411, 356385, 396096. Almost always same statistics for every window. Strange increase modularity increase towards the end due to increasing window size. If there is a shift in the way the data behave, I will almost not see it because it is mast by the other data that still be present in my analysis. The modularity curves seem drift upwards little bit. There is a trend of going up now matter how it behaves in the middle. My reason was to do this to check the load effect.
+
+Partitioning was repeated with discrete time windows (sliding windows). Shifting window within equal windows size. To see the results of same analysis in each discrete time window. Whether the rules I discovered from the first dataset (1st time window) and the second dataset (2nd time window) are really fundamentally different or rather the same.
+
+
+
+
+
+
 \end{document}
