@@ -12,6 +12,7 @@ snetworkgraph::usage = "description.";
 correlationfunction::usage = "description.";
 randomnessfunction::usage = "description.";
 GirvanNewmanmodularity::usage = "description.";
+randomizedgraphamongcommunities::usage = "description.";
 randomnessfunctionformodularity::usage = "description.";
 
 
@@ -206,7 +207,7 @@ SigmaDeBC=StandardDeviation[Table[correlationfunction[randomgraphs[[i]],choice][
 SigmaCCBC=StandardDeviation[Table[correlationfunction[randomgraphs[[i]],choice][[2]],{i,1000}]];
 ZDeBC=(XDeBC-MuDeBC)/SigmaDeBC;
 ZCCBC=(XCCBC-MuCCBC)/SigmaCCBC;
-final={ZDeBC,ZCCBC}];
+final={ZDeBC,ZCCBC}]
 
 
 Clear[GirvanNewmanmodularity]
@@ -247,20 +248,58 @@ r21[[1]]+r2[[1]]],If[r22[[1]]>0.001,r22[[1]]+r2[[1]],r2[[1]]]],0];
 finalQ=Q+subfinal1Q+subfinal2Q]
 
 
+Clear[randomizedgraphamongcommunities]
+randomizedgraphamongcommunities[network_]:=
+Module[{networknodes,communitylist,intralinks,interlinks,intralinkamount,rewiredintra,
+interlinknodes,interlinkamount,rewiredinter,rewiredgraph},
+networknodes=VertexList@network;
+communitylist=FindGraphCommunities[network];
+intralinks=EdgeList[Subgraph[network,#]]&/@communitylist;
+interlinks=Complement[EdgeList[network],Flatten@intralinks];
+intralinkamount=Table[Length@intralinks[[i]],{i,Length@communitylist}];
+rewiredintra=Table[#1\[UndirectedEdge]#2&@@@RandomSample[Subsets[communitylist[[i]],{2}],
+intralinkamount[[i]]],{i,Length@communitylist}];
+interlinknodes=DeleteDuplicates@Join[interlinks[[All,1]],interlinks[[All,2]]];
+interlinkamount=Length@interlinknodes;
+rewiredinter=#1\[UndirectedEdge]#2&@@@RandomSample[Subsets[interlinknodes,{2}],interlinkamount];
+rewiredgraph=Graph[networknodes,Flatten[{rewiredintra,rewiredinter}]]]
+
+
 Clear[randomnessfunctionformodularity]
-randomnessfunctionformodularity[network_,randomisation_]:=
-Module[{randomgraphs,RndmMumodularity,Xmodularityvalues,XWolfmodularityvalues,
-RndSigmamodularity,ZScore},
-randomgraphs=Which[randomisation==1,RandomGraph[{VertexCount[network],EdgeCount[network]},1000],
-randomisation==2,Table[Symbol["IGDegreeSequenceGame"][Total[AdjacencyMatrix@network],
-Method->"VigerLatapy"],{i,1000}]];
-RndmMumodularity=Mean[Table[GirvanNewmanmodularity[randomgraphs[[i]]],{i,1000}]];
-Xmodularityvalues=GirvanNewmanmodularity[network];
-XWolfmodularityvalues=N@GraphAssortativity[network,FindGraphCommunities[network],
-"Normalized"->False];
-RndSigmamodularity=StandardDeviation[Table[GirvanNewmanmodularity[randomgraphs[[i]]],{i,1000}]];
-ZScore=Table[(i-RndmMumodularity)/RndSigmamodularity,{i,{Xmodularityvalues,
-XWolfmodularityvalues}}]];
+randomnessfunctionformodularity[network_,modularitytype_]:=
+Module[{X,randomgraphserd\[ODoubleDot]srenyi,modularityerd\[ODoubleDot]srenyi,\[Mu]erd\[ODoubleDot]srenyi,\[Sigma]erd\[ODoubleDot]srenyi,
+randomgraphsdegreesfxd,modularitydegreesfxd,\[Mu]degreesfxd,\[Sigma]degreesfxd,randomgraphscomm,
+modularitycomm,\[Mu]comm,\[Sigma]comm,ZScores},
+
+X=Which[modularitytype=="GN",GirvanNewmanmodularity[network],modularitytype=="Wolf",
+N@GraphAssortativity[network,FindGraphCommunities[network],"Normalized"->False]];
+
+randomgraphserd\[ODoubleDot]srenyi=RandomGraph[{VertexCount[network],EdgeCount[network]},1000];
+modularityerd\[ODoubleDot]srenyi=Which[modularitytype=="GN",Table[GirvanNewmanmodularity[
+randomgraphserd\[ODoubleDot]srenyi[[i]]],{i,1000}],modularitytype=="Wolf",Table[N@GraphAssortativity[
+randomgraphserd\[ODoubleDot]srenyi[[i]],FindGraphCommunities[randomgraphserd\[ODoubleDot]srenyi[[i]]],
+"Normalized"->False],{i,1000}]];
+\[Mu]erd\[ODoubleDot]srenyi=Mean[Table[modularityerd\[ODoubleDot]srenyi[[i]],{i,1000}]];
+\[Sigma]erd\[ODoubleDot]srenyi=StandardDeviation[Table[modularityerd\[ODoubleDot]srenyi[[i]],{i,1000}]];
+
+randomgraphsdegreesfxd=Table[Symbol["IGDegreeSequenceGame"][Total[AdjacencyMatrix@network],
+Method->"VigerLatapy"],{i,1000}];
+modularitydegreesfxd=Which[modularitytype=="GN",Table[GirvanNewmanmodularity[
+randomgraphsdegreesfxd[[i]]],{i,1000}],modularitytype=="Wolf",Table[N@GraphAssortativity[
+randomgraphsdegreesfxd[[i]],FindGraphCommunities[randomgraphsdegreesfxd[[i]]],
+"Normalized"->False],{i,1000}]];
+\[Mu]degreesfxd=Mean[Table[modularitydegreesfxd[[i]],{i,1000}]];
+\[Sigma]degreesfxd=StandardDeviation[Table[modularitydegreesfxd[[i]],{i,1000}]];
+
+randomgraphscomm=Table[randomizedgraphamongcommunities[network],1000];
+modularitycomm=Which[modularitytype=="GN",Table[GirvanNewmanmodularity[
+randomgraphscomm[[i]]],{i,1000}],modularitytype=="Wolf",Table[N@GraphAssortativity[
+randomgraphscomm[[i]],FindGraphCommunities[randomgraphscomm[[i]]],"Normalized"->False],
+{i,1000}]];
+\[Mu]comm=Mean[Table[modularitycomm[[i]],{i,1000}]];
+\[Sigma]comm=StandardDeviation[Table[modularitycomm[[i]],{i,1000}]];
+
+ZScores={(X-\[Mu]erd\[ODoubleDot]srenyi)/\[Sigma]erd\[ODoubleDot]srenyi,(X-\[Mu]degreesfxd)/\[Sigma]degreesfxd,(X-\[Mu]comm)/\[Sigma]comm}]
 
 
 End[];
