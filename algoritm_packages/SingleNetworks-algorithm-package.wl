@@ -257,8 +257,8 @@ communitylist=FindGraphCommunities[network];
 intralinks=EdgeList[Subgraph[network,#]]&/@communitylist;
 interlinks=Complement[EdgeList[network],Flatten@intralinks];
 intralinkamount=Table[Length@intralinks[[i]],{i,Length@communitylist}];
-rewiredintra=Table[#1\[UndirectedEdge]#2&@@@RandomSample[Subsets[communitylist[[i]],{2}],
-intralinkamount[[i]]],{i,Length@communitylist}];
+rewiredintra=Table[#1\[UndirectedEdge]#2&@@@RandomSample[
+Subsets[Flatten@communitylist,{2}],intralinkamount[[i]]],{i,Length@communitylist}];
 interlinknodes=DeleteDuplicates@Join[interlinks[[All,1]],interlinks[[All,2]]];
 interlinkamount=Length@interlinknodes;
 rewiredinter=#1\[UndirectedEdge]#2&@@@RandomSample[Subsets[interlinknodes,{2}],interlinkamount];

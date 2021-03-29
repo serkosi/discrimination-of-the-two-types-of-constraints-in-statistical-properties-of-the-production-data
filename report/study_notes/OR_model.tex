@@ -8,3 +8,13 @@ Bounds (limit numerical ranges of variables) -> concentrations, fluxes, kinetic 
 constraints on the level of - diversity on production plans
 							- resources
 							intrinsic capabilities (how many links do we have in the network? Non-zero elements do we have in stochiometric matrix?)
+
+19.03.21
+An organism metabolic model of Homo Sapiens (738 metabolites, 1008 reactions) was downloaded from BIGG Models Database. Since its stoichiometric matrix density is quite small (0.00539), I have kept the size of the rows (738) but reduced the size of the columns from 1008 to 20 by randomly choosing non-zero elements from each row. My finalized stoic. matrix size is 738 x 20 (nodes/metabolites x features/flux exchanges).
+Randomly created 10 objective functions are considered. Their coefficients vary from -2 to 2 and I kept the zero elements: non-zero elements ratio as 2:1 in objective functions.
+I have assigned random boundaries for features.
+With above-mentioned items, my solution vectors result in zero vectors. I am doing some minor adjustments however still could not obtain vectors with values yet.
+
+20.03.21
+
+I have used the complete stoichiometric matrix of Homo Sapiens organism metabolic model. After I had the solution vector results, defined the zero columns of solution vectors and erased them from the stoic. matrix and restarted the linear programming. In two steps, I have obtained a narrower solution vector (with less flux exchanges/features).

@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{listings}
 \begin{document}
+
 Upon to two distinctive constraint definitions in my advance project 2 report, checking those hypothetical terms in real life data is decided. To be able to observe interesting patterns, a big data set with 2-3 years production orders is agreed to be investigated through time windows. 
 
 I and Daniel started to discuss about the relevant features to be considered in this data set. At final stage below given SQL query was generated to pull the data set from the SMS database. The resultant data set consists of 459203 rows and 15 columns. First two columns and $4^{th}$ column features: ROS.R\textunderscore OS\textunderscore ID, ROS.PRODUCTION\textunderscore LINE\textunderscore NAME, and ROS.REFERENCE\textunderscore DATE come from "Reporting data: Operation step" table. $3^{rd}$ column feature SEQUENCE\textunderscore ID is actual casting sequence ID from the table "Reporting data: additional data of CCM (explain this)". $5^{th}$., $6^{th}$., $7^{th}$. and $14^{th}$. SLAB.PIECE\textunderscore ID, SLAB.MATERIAL\textunderscore ID, SLAB.MOLD\textunderscore WIDTH, and SLAB.EXIT\textunderscore TEMP come from "Reporting data: additional data of CCM which are slab related". Rest of the columns: MAT.WIDTH, MAT.THICKNESS, MAT.WEIGHT, MAT.LENGTH, MAT.HEAR\textunderscore ID, MAT.STEEL\textunderscore GRADE\textunderscore ID\textunderscore INT, and MAT.SLAB\textunderscore TRANSITION come from "Material ;  For slabs, coils, plates and heats" table.
@@ -26,6 +27,9 @@ FROM   	L3MAIN.r_os ros
 
 WHERE  	sequence_id IS NOT NULL;
 \end{lstlisting}
+
+Parsed data belongs to CCM (Compact Cold Mill) production line.
+
 $7.85 g/cm^{3}$ = $7850 kg/m^{3}$ = $0.284 lb/in^{3}$ = $490 lb/ft^{3}$
 
 Converting strings to numbers and correction for punctuation marks between digits were performed, null values (NA) were converted into $0$ values in the beginnning of data cleaning process. After completing minor stages, some preconditions were generated as below to be able to manipulate data columns.

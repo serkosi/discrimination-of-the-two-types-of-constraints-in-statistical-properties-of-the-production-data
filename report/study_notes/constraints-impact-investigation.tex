@@ -29,3 +29,27 @@ Performing switch-randomization to a modular graph might fail even due to small 
 
 before treating time windows, having the modularity as function of bucket size and as function of step size. At this stage, choosing suitable step and bucket sizes and accordingly repeat all progress mentioned above. The aim is to obtain big amount of nodes as possible as we can and keeping that amount of nodes same in both graph structures (fixed step size and fixed bucket size). The difference between modularity values at highest graph nodes amount in fixed bucket and fixed step sized graphs shows which network structure is more effective on generating clear communities. In other words, modularity values is more meaningful when the node number is high.
 
+19.03.21
+•	The dataset was investigated by its behavior on changing fixed step size and fixed bucket size amounts networks.
+•	The dataset was investigated in both discrete-time windows and increasing-time windows.
+•	After Erdös-Renyi and Fixed Degree Sequence random graphs generation, a third one: Conserving Inter-edges and Intra-edges Among Modules random graphs were generated, accordingly, Z-scores were computed among those null models.
+•	All plots are given in the attached PNG file.
+•	Above mentioned steps will be repeated on the datasets for different production lines (like CGL, CSP) as soon as I have access to the data. Daniel has no access to the SMS server currently. I will ask Dr. Özgür when he will be back from his vacation on Monday.
+
+24.03.21
+* Regarding behavior on networks with changing fss and fbs amounts, first column plots show a calibration curve which have graph node numbers corresponding to changing fss and fbs. For Weight feature, fbs paradigm leads to higher modularity than the fss paradigm no matter which bucket/step size we pick. This result becomes opposite when it comes to length and width. For thickness, there is no clear result to say as the others have. They are actually sometimes on the same level. The fact that modularity tends to be higher in one paradigm and lower in the other which is an interesting thing.
+
+Investigation of constraints impact in the data with time-resolved fashion confirms my previous investigation on the data with increasing time windows. 
+Our hypothesis at the moment is that the physical constraints are rather about step sizes than about bucket sizes. Because step size graphs are less random.
+
+In my previous project, the fixed step size graphs had a high modularity. This means that the actual quantity I discretize creates the constraints while in the case of fixed bucket size it would be the volume of orders that creates my constraints. This summarizes our hypothesis. 
+
+What I would get = On the width level, we have a fairly constant behavior over time and it confirms what I see on the total dataset, strong difference in modularity between the two network approaches. For the fbs approach, there might be a transition, the fixed bucket size becomes very modular in the end.
+
+For thickness, its less clear because the modularity is in same level for both fss and fbs but the increase in modularity for fbs is fairly drammatic. It goes from 0.3 to 0.6 while the other remains at 0.3 and fluctuates. In the last two time windows in fbs, the process is dominated by something else. It is an evidence that something changed of the constraints involved really takes place.
+
+For length, both modularity changes in different network structures are between 0.1 and 0.2 is beyond the resolution of what you can do. These two curves are almost identical in the statistical point of view. Also they are close to what you would get for totally random graphs in fact. There is no modularity here we can talk about.
+
+For weight, it is same as length. The z-scores are fairly close to zero compare the ones for other feature z-scores. In the case of the fbs, you can see it might be slightly higher than the modularity of the random graphs but it is not a deservedly modularity.
+
+
