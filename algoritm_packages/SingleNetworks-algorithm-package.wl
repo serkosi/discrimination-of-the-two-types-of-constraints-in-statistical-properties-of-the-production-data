@@ -14,6 +14,7 @@ randomnessfunction::usage = "description.";
 GirvanNewmanmodularity::usage = "description.";
 randomizedgraphamongcommunities::usage = "description.";
 randomnessfunctionformodularity::usage = "description.";
+randomnessfunctionformodularityonenullmodel::usage = "description.";
 
 
 Begin["`Private`"];
@@ -58,11 +59,11 @@ ImageSize->imagesize];{graph,Length@binningmembers}]
 Clear[snetworkdatabinned]
 snetworkdatabinned[feature_,step_,data_]:=Module[{rawaim,pos,aim,campaign,seri,min,max,
 binningamount,binning},
-rawaim=Symbol[data][[All,feature]];
+rawaim=data[[All,feature]];
 pos=Partition[Flatten@Table[Position[rawaim,i],{i,{"NA",0}}],1];
 aim=Delete[rawaim,pos];
-campaign=Delete[Symbol[data][[All,2]],pos];
-seri=Delete[Symbol[data][[All,1]],pos];
+campaign=Delete[data[[All,2]],pos];
+seri=Delete[data[[All,1]],pos];
 min=Floor[Min[Sort[DeleteDuplicates[aim]]],0.1];
 max=Ceiling[Max[Sort[DeleteDuplicates[aim]]]]+step;
 binningamount=Length[DeleteCases[BinLists[aim,{min,max,step}],{}]];
@@ -76,11 +77,11 @@ Clear[snetworkdatafxdbucket]
 snetworkdatafxdbucket[feature_,nodenumber_,data_]:=Module[{rawaim,pos,aim,
 campaign,seri,bucketsize,aimlabeled,aimpartitioned,bins,repetitivesreport,repetitives,
 labelgeneration,binsrearranged,aimbinned},
-rawaim=Symbol[data][[All,feature]];
+rawaim=data[[All,feature]];
 pos=Partition[Flatten@Table[Position[rawaim,i],{i,{"NA",0}}],1];
 aim=Delete[rawaim,pos];
-campaign=Delete[Symbol[data][[All,2]],pos];
-seri=Delete[Symbol[data][[All,1]],pos];
+campaign=Delete[data[[All,2]],pos];
+seri=Delete[data[[All,1]],pos];
 bucketsize=Ceiling@(N@(Dimensions@aim)/nodenumber);
 aimlabeled=Thread[Range@Length@aim->aim];
 aimpartitioned=Partition[Normal@Sort@Association@aimlabeled,UpTo@bucketsize];
@@ -104,14 +105,14 @@ Dispatch@Table[Values@aimpartitioned[[i]][[j]]->binsrearranged[[i]],
 
 
 Clear[snetworkdatabinnedintimewindows]
-snetworkdatabinnedintimewindows[feature_,step_,datadimension_]:=Module[{rawaim,pos,aim,campaign,
-seri,min,max,binningamount,binning},
-rawaim=Table[Symbol["data"][[i]][[All,feature]],{i,Range@datadimension}];
+snetworkdatabinnedintimewindows[data_,feature_,step_,datadimension_]:=Module[{rawaim,pos,aim,
+campaign,seri,min,max,binningamount,binning},
+rawaim=Table[data[[i]][[All,feature]],{i,Range@datadimension}];
 pos=Table[Partition[Flatten@Table[Position[k,i],{i,{"NA",0}}],1],{k,rawaim}];
 aim=Table[Delete[i[[1]],i[[2]]],{i,MapThread[{#1,#2}&,{rawaim,pos}]}];
-campaign=Table[Delete[Symbol["data"][[i[[1]]]][[All,2]],i[[2]]],
+campaign=Table[Delete[data[[i[[1]]]][[All,2]],i[[2]]],
 {i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
-seri=Table[Delete[Symbol["data"][[i[[1]]]][[All,1]],i[[2]]],
+seri=Table[Delete[data[[i[[1]]]][[All,1]],i[[2]]],
 {i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
 min=Table[Floor[Min[Sort[DeleteDuplicates[i]]],0.1],{i,aim}];
 max=Table[Ceiling[Max[Sort[DeleteDuplicates[i]]]]+step,{i,aim}];
@@ -125,15 +126,15 @@ aim=Table[DeleteCases[i,Null],{i,binning}];
 
 
 Clear[snetworkdatafxdbucketintimewindows]
-snetworkdatafxdbucketintimewindows[feature_,nodenumber_,datadimension_]:=Module[{rawaim,pos,aim,
-campaign,seri,bucketsize,aimlabeled,aimpartitioned,bins,repetitivesreport,repetitives,
+snetworkdatafxdbucketintimewindows[data_,feature_,nodenumber_,datadimension_]:=Module[{rawaim,
+pos,aim,campaign,seri,bucketsize,aimlabeled,aimpartitioned,bins,repetitivesreport,repetitives,
 labelgeneration,binsrearranged,aimbinned},
-rawaim=Table[Symbol["data"][[i]][[All,feature]],{i,Range@datadimension}];
+rawaim=Table[data[[i]][[All,feature]],{i,Range@datadimension}];
 pos=Table[Partition[Flatten@Table[Position[k,i],{i,{"NA",0}}],1],{k,rawaim}];
 aim=Table[Delete[i[[1]],i[[2]]],{i,MapThread[{#1,#2}&,{rawaim,pos}]}];
-campaign=Table[Delete[Symbol["data"][[i[[1]]]][[All,2]],i[[2]]],
+campaign=Table[Delete[data[[i[[1]]]][[All,2]],i[[2]]],
 {i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
-seri=Table[Delete[Symbol["data"][[i[[1]]]][[All,1]],i[[2]]],
+seri=Table[Delete[data[[i[[1]]]][[All,1]],i[[2]]],
 {i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
 bucketsize=Table[Ceiling@(N@(Dimensions@i)/nodenumber),{i,aim}];
 aimlabeled=Table[Thread[Range@Length@i->i],{i,aim}];
@@ -300,6 +301,21 @@ randomgraphscomm[[i]],FindGraphCommunities[randomgraphscomm[[i]]],"Normalized"->
 \[Sigma]comm=StandardDeviation[Table[modularitycomm[[i]],{i,1000}]];
 
 ZScores={(X-\[Mu]erd\[ODoubleDot]srenyi)/\[Sigma]erd\[ODoubleDot]srenyi,(X-\[Mu]degreesfxd)/\[Sigma]degreesfxd,(X-\[Mu]comm)/\[Sigma]comm}]
+
+
+Clear[randomnessfunctionformodularityonenullmodel]
+randomnessfunctionformodularityonenullmodel[network_]:=
+Module[{X,randomgraphscomm,modularitycomm,\[Mu]comm,\[Sigma]comm,ZScore},
+
+X=N@GraphAssortativity[network,FindGraphCommunities[network],"Normalized"->False];
+
+randomgraphscomm=Table[randomizedgraphamongcommunities[network],1000];
+modularitycomm=Table[N@GraphAssortativity[randomgraphscomm[[i]],
+FindGraphCommunities[randomgraphscomm[[i]]],"Normalized"->False],{i,1000}];
+\[Mu]comm=Mean[Table[modularitycomm[[i]],{i,1000}]];
+\[Sigma]comm=StandardDeviation[Table[modularitycomm[[i]],{i,1000}]];
+
+ZScore=(X-\[Mu]comm)/\[Sigma]comm]
 
 
 End[];
