@@ -15,6 +15,8 @@ GirvanNewmanmodularity::usage = "description.";
 randomizedgraphamongcommunities::usage = "description.";
 randomnessfunctionformodularity::usage = "description.";
 randomnessfunctionformodularityonenullmodel::usage = "description.";
+randomnessfunctionformodularitytwonullmodel::usage = "description.";
+randomnessvaluesformodularitytwonullmodel::usage = "description.";
 
 
 Begin["`Private`"];
@@ -316,6 +318,47 @@ FindGraphCommunities[randomgraphscomm[[i]]],"Normalized"->False],{i,1000}];
 \[Sigma]comm=StandardDeviation[Table[modularitycomm[[i]],{i,1000}]];
 
 ZScore=(X-\[Mu]comm)/\[Sigma]comm]
+
+
+Clear[randomnessfunctionformodularitytwonullmodel]
+randomnessfunctionformodularitytwonullmodel[network_]:=
+Module[{X,randomgraphserd\[ODoubleDot]srenyi,modularityerd\[ODoubleDot]srenyi,\[Mu]erd\[ODoubleDot]srenyi,\[Sigma]erd\[ODoubleDot]srenyi,
+randomgraphscomm,modularitycomm,\[Mu]comm,\[Sigma]comm,ZScores},
+
+X=N@GraphAssortativity[network,FindGraphCommunities[network],"Normalized"->False];
+
+randomgraphserd\[ODoubleDot]srenyi=RandomGraph[{VertexCount[network],EdgeCount[network]},1000];
+modularityerd\[ODoubleDot]srenyi=Table[N@GraphAssortativity[
+randomgraphserd\[ODoubleDot]srenyi[[i]],FindGraphCommunities[randomgraphserd\[ODoubleDot]srenyi[[i]]],
+"Normalized"->False],{i,1000}];
+\[Mu]erd\[ODoubleDot]srenyi=Mean[Table[modularityerd\[ODoubleDot]srenyi[[i]],{i,1000}]];
+\[Sigma]erd\[ODoubleDot]srenyi=StandardDeviation[Table[modularityerd\[ODoubleDot]srenyi[[i]],{i,1000}]];
+
+randomgraphscomm=Table[randomizedgraphamongcommunities[network],1000];
+modularitycomm=Table[N@GraphAssortativity[randomgraphscomm[[i]],
+FindGraphCommunities[randomgraphscomm[[i]]],"Normalized"->False],{i,1000}];
+\[Mu]comm=Mean[Table[modularitycomm[[i]],{i,1000}]];
+\[Sigma]comm=StandardDeviation[Table[modularitycomm[[i]],{i,1000}]];
+
+ZScores={(X-\[Mu]erd\[ODoubleDot]srenyi)/\[Sigma]erd\[ODoubleDot]srenyi,(X-\[Mu]comm)/\[Sigma]comm}]
+
+
+Clear[randomnessvaluesformodularitytwonullmodel]
+randomnessvaluesformodularitytwonullmodel[network_]:=
+Module[{X,randomgraphserd\[ODoubleDot]srenyi,modularityerd\[ODoubleDot]srenyi,randomgraphscomm,modularitycomm},
+
+X=N@GraphAssortativity[network,FindGraphCommunities[network],"Normalized"->False];
+
+randomgraphserd\[ODoubleDot]srenyi=RandomGraph[{VertexCount[network],EdgeCount[network]},1000];
+modularityerd\[ODoubleDot]srenyi=Table[N@GraphAssortativity[
+randomgraphserd\[ODoubleDot]srenyi[[i]],FindGraphCommunities[randomgraphserd\[ODoubleDot]srenyi[[i]]],
+"Normalized"->False],{i,1000}];
+
+randomgraphscomm=Table[randomizedgraphamongcommunities[network],1000];
+modularitycomm=Table[N@GraphAssortativity[randomgraphscomm[[i]],
+FindGraphCommunities[randomgraphscomm[[i]]],"Normalized"->False],{i,1000}];
+
+{X,modularityerd\[ODoubleDot]srenyi,modularitycomm}]
 
 
 End[];
