@@ -53,7 +53,16 @@ the dataset with length 396096 was partitioned in 10 time windows starting from 
 
 Partitioning was repeated with discrete time windows (sliding windows). Shifting window within equal windows size. To see the results of same analysis in each discrete time window. Whether the rules I discovered from the first dataset (1st time window) and the second dataset (2nd time window) are really fundamentally different or rather the same.
 
+21.04.21
+Below steps were performed for the data sets belong to different production lines.
+•	Sequences with less than 50 events were removed from the data sets considering those short sequences might be generated for some test processes. 
+•	The events with the densities out of the interval (6.5x10-6, 8.5x10-6) were removed from the data sets.
 
+At the final stage, obtained data set lengths are given below.
+PLTCM data set -> 	64,026 events
+CGL data set -> 		31,230 events
+CSP data set -> 		205,496 events
+CCM data set -> 	347,418 events
 
 
 

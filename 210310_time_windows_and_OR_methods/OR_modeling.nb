@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     32293,        663]
+NotebookDataLength[     32269,        662]
 NotebookOptionsPosition[     31130,        635]
-NotebookOutlinePosition[     31571,        652]
-CellTagsIndexPosition[     31528,        649]
+NotebookOutlinePosition[     31547,        651]
+CellTagsIndexPosition[     31504,        648]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -633,9 +633,8 @@ Association[\\\"boxes\\\" -> FormBox[SubscriptBox[StyleBox[\\\"v\\\", \
   "Out[730]=",ExpressionUUID->"78fa125d-a4ac-4132-92fa-9d02a380bcb9"]
 }, Open  ]]
 },
-WindowSize->{1152., 615.6},
-WindowMargins->{{
-  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+WindowSize->{1141.2, 610.1999999999999},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"a8fb1ef4-6649-4d76-afa4-678be5a9bda3"
