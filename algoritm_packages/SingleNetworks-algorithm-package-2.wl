@@ -133,7 +133,8 @@ campaign=Table[Delete[data[[i[[1]]]][[All,2]],i[[2]]],
 {i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
 seri=Table[Delete[data[[i[[1]]]][[All,1]],i[[2]]],
 {i,MapThread[{#1,#2}&,{Range@datadimension,pos}]}];
-bucketsize=Table[Ceiling@(N@(Dimensions@i)/nodenumber),{i,aim}];
+bucketsize=Table[Ceiling@(N@(Dimensions@i[[1]])/(i[[2]])),
+{i,MapThread[{#1,#2}&,{aim,nodenumber}]}];
 aimlabeled=Table[Thread[Range@Length@i->i],{i,aim}];
 aimpartitioned=Table[Partition[Normal@Sort@Association@i[[1]],UpTo@i[[2]]],
 {i,MapThread[{#1,#2}&,{aimlabeled,bucketsize}]}];
@@ -153,7 +154,7 @@ binsrearranged=Table[ReplacePart[bins[[o]],Flatten[Table[MapThread[#1->#2&,
 aimbinned=Table[Values@Sort[Flatten[Table[aimpartitioned[[k]][[i]]/.
 Dispatch@Table[Values@aimpartitioned[[k]][[i]][[j]]->binsrearranged[[k]][[i]],
 {j,Length@aimpartitioned[[k]][[i]]}],{i,Length@aimpartitioned[[k]]}],1],#1[[1]]<#2[[1]]&],
-{k,Range@datadimension}];{aimbinned,campaign,seri}]
+{k,Range@datadimension}];{aimbinned,campaign,seri,bucketsize}]
 
 
 Clear[snetworkgraph]
