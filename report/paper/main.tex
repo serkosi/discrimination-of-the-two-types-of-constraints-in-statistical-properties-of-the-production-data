@@ -1,0 +1,29 @@
+\input{../common/use-packages-macros2}
+
+\begin{document}
+	
+%	\input{title-page}
+	\thispagestyle{empty}
+	
+	\pagenumbering{roman}
+%	\tableofcontents
+%	\clearpage
+	
+	\pagenumbering{arabic}
+%	\input{introduction}
+
+%	\input{main-topic}
+
+%	\input{methods}
+	\input{methodology-OR}
+
+%	\input{conclusion}
+%	\clearpage
+
+	%\input{references}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Bibliography}
+	\bibliographystyle{ieeetr}
+	\bibliography{../bibliography/bib}
+	
+\end{document}

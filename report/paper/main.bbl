@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+
+\bibitem{KIM}
+B.~Kim, W.~J. Kim, D.~I. Kim, and S.~Y. Lee, ``{Applications of genome-scale
+  metabolic network model in metabolic engineering},'' {\em Journal of
+  Industrial Microbiology and Biotechnology}, vol.~42, pp.~339--348, 03 2015.
+
+\bibitem{HAO}
+T.~Hao, D.~Wu, L.~Zhao, Q.~Wang, E.~Wang, and J.~Sun, ``The genome-scale
+  integrated networks in microorganisms,'' {\em Frontiers in Microbiology},
+  vol.~9, p.~296, 2018.
+
+\bibitem{KAUFFMAN2003491}
+K.~J. Kauffman, P.~Prakash, and J.~S. Edwards, ``Advances in flux balance
+  analysis,'' {\em Current Opinion in Biotechnology}, vol.~14, no.~5,
+  pp.~491--496, 2003.
+
+\bibitem{PRICE2004}
+N.~D. Price, J.~L. Reed, and B.~. Palsson, ``Genome-scale models of microbial
+  cells: evaluating the consequences of constraints,'' {\em Nature Reviews
+  Microbiology}, vol.~2, no.~11, pp.~886--897, 2004.
+
+\bibitem{VARMA1993}
+A.~Varma, B.~W. Boesch, and B.~O. Palsson, ``Biochemical production
+  capabilities of escherichia coli,'' {\em Biotechnology and Bioengineering},
+  vol.~42, no.~1, pp.~59--73, 1993.
+
+\end{thebibliography}
