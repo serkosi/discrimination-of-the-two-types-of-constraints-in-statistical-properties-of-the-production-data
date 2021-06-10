@@ -1,0 +1,54 @@
+\subsubsection*{Association Networks}
+\addcontentsline{toc}{subsubsection}{Association Networks}%
+Beyond a simple network graph representation of historical production data, the formation of association networks is an insightful graph-based framework combining the tool: association rules and complex networks as Merten et al. (2020) performed in their article~\cite{MERTEN2020}. The relevant pipeline considers sequentially revealed events of a data set. It outputs a graph that unfolds the non-random occurrence of specific events together among the complete set that took place consecutively in the production period.
+
+Assume we have a manufacturing data set with historical order, $D$, consists of $k$ sequences and $n$ events with mass values and sequence id's included as given in Table~\ref{Tab:D-dataset}.
+\renewcommand{\arraystretch}{1.1}
+\begin{table}[hb!]
+	\centering
+	\begin{tabular}{|cccccc|l}
+		\cline{1-6}
+		Event\_ID && Mass 	&& Sequence\_ID &  \\ \cline{1-6}
+		1 	      && 280  	&& 1 		   	&  \\
+		2 		  && 250	&& 1 		   	&  \\
+		3 	      && 890	&& 2 		    &  \\
+		4 		  && 850	&& 2 		    &  \\
+		5 	      && 650	&& 2   		    &  \\
+		6 	      && 745	&& 2 		    &  \\
+		7 		  && 795	&& 2 		    &  \\
+		8 		  && 150	&& 3 		    &  \\
+		\vdots	  && \vdots && \vdots 	    &  \\
+		n-4 	  && 940  	&& k-1	 	    &  \\
+		n-3 	  && 540  	&& k			&  \\
+		n-2 	  && 520	&& k 		    &  \\
+		n-1       && 630	&& k 		    &  \\
+		n 		  && 610	&& k 		    &  \\ \cline{1-6}
+	\end{tabular}
+	\caption{Arbitrarily Created Data Set $D$.}
+	\label{Tab:D-dataset}
+\end{table}
+
+Examining the data set, one can say that the events with mass values: $890$, $850$, $650$, $745$ or $540$, $520$, $630$, $610$ are close to each other; thus, they are produced together and likely occur in the identical sequences among the complete data. In a further step, one can label the events mentioned above with a value interval (the so-called binning size) typical for every mass value with a tiny difference to each other. Binning generation for the events allows us to investigate them in a mass-production manner. Alternative binning methods will be addressed in the following subsection. 
+
+One can hypothetically argue that the information mentioned above patterns are probably deliberate planning choices based on the related constraints acting on the manufacturing process performance. However, forming prevailing arguments is not a simple task for large and complicated data sets. Such a real-life data set may consist of more than $300,000$ events likely to have various events aggregated randomly in its large sequence groups.
+
+To distinguish random co-occurrences from meaningful ones in production sequences and assess the complexity of production patterns before creating the network graphs, we extract the association rule from the set of sequences. With a similar approach as Merten et al. (2020) applied~\cite{MERTEN2020}, an association rule measure known as "Lift" was picked and calculated for every possible pairwise subset of events that occurred in the same sequences. By having a natural threshold of Lift measure $1$. The lift can be computed by the ratio of pair items joint probability divided by the multiplication of each item's marginal probability as
+\begin{equation} \tag{6}
+	Lift(A\leftrightarrow B)=\frac{P(A,B)}{P(A)*P(B)},
+	\label{lift}
+\end{equation}
+thus, in the case of $Lift(A\leftrightarrow B)> 1$, B occurs likely if A occurs whereas $Lift(A\leftrightarrow B)< 1$, B unlikely occurs if A occurs. Indication of random and non-random co-occurrences as $0$ and $1$ in an adjacency matrix will provide the data structure to form a network as shown in Fig.~\ref{figure-adjacency_graph}.
+
+%\begin{table}[]
+%	\begin{tabular}{|c|cccccc|}
+%		\hline
+%		Events & 1   & 2   & 3   & \dots & n-1 & n   \\ \hline
+%		1      & 0   & 1   & 0   & \dots & 0   & 0   \\
+%		2      & 1   & 0   & 0   & \dots & 0   & 0   \\
+%		3      & 0   & 0   & 0   & \dots & 0   & 0   \\
+%		\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+%		n-1    & 0   & 0   & 0   & \dots & 0   & 1   \\
+%		n      & 0   & 0   & 0   & \dots & 1   & 0   \\ \hline
+%	\end{tabular}
+%\end{table}
+\input{../figures/figure-adjacency_graph}

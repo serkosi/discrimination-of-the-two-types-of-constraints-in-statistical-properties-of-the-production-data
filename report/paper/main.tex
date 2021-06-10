@@ -3,27 +3,42 @@
 \begin{document}
 	
 %	\input{title-page}
-	\thispagestyle{empty}
+%	\thispagestyle{empty}
 	
 	\pagenumbering{roman}
-%	\tableofcontents
-%	\clearpage
+	
+	\input{abstract}
+	\addcontentsline{toc}{chapter}{Abstract}
+	
+	\input{acknowledgements}
+	\addcontentsline{toc}{chapter}{Acknowledgements}
+	
+	\tableofcontents
+	\addcontentsline{toc}{chapter}{Table of Contents}
+	
+	%\printglossary[type=\acronymtype]
+	%\addcontentsline{toc}{chapter}{Table of Acronyms}
+	%\clearpage
+	
+	\listoffigures
+	\addcontentsline{toc}{chapter}{List of Figures}
+	
+	\listoftables
+	\addcontentsline{toc}{chapter}{List of Tables}
+	\clearpage
 	
 	\pagenumbering{arabic}
-%	\input{introduction}
+	\input{introduction}
+	
+	\input{methodology}
+	\clearpage
 
-%	\input{main-topic}
-
-%	\input{methods}
-	\input{methodology-OR}
-
-%	\input{conclusion}
-%	\clearpage
-
+	\input{conclusion-and-outlook}
 	%\input{references}
 	\phantomsection
-	\addcontentsline{toc}{chapter}{Bibliography}
+	%\addcontentsline{toc}{chapter}{Bibliography}
 	\bibliographystyle{ieeetr}
 	\bibliography{../bibliography/bib}
+	\input{supplements}
 	
 \end{document}

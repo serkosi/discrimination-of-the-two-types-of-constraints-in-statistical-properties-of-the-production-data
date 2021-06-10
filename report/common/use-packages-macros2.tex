@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,notitlepage,openany]{scrbook}
+\documentclass[12pt,a4paper,notitlepage,openany,bibliography=numbered]{scrbook}
 %\setparsizes{0em}{0.25\baselineskip plus .25\baselineskip}{1em plus 1fil}
 %The first value is parindent, the second parskip, the third parfilskip. "half" uses 0.5 in the second argument.
 \usepackage{bookman}
@@ -15,7 +15,7 @@
 %\usepackage[demo]{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{color}
+\usepackage{xcolor}
 %\usepackage[dvips]{graphicx}
 \usepackage[pdftex]{graphicx}
 \usepackage{blindtext}				%%% includes bibliography in the contents
@@ -27,11 +27,17 @@
 %\newcommand{\mathcolorbox}[2]
 %{\colorbox{#1}{$\displaystyle #2$}}		%%% hightiting math
 \usepackage{ragged2e}
+
+\usepackage{booktabs}
+%\usepackage[table,xcdraw]{xcolor}
+%\usepackage{multirow}
+
 \usepackage[bookmarks=true,%       %%% generate bookmarks ...
 bookmarksnumbered=true,%           %%% ... with numbers
 hypertexnames=false,%              %%% needed for correct links to figures !!!
 breaklinks=true,%                  %%% breaks lines, but links are very small,
-linkbordercolor={0 0 1}%          %%% blue frames around links, pdfborder={0 0 112.0}
+linkbordercolor={0 0 1},%          %%% blue frames around links, pdfborder={0 0 112.0}
+hidelinks 						%%% hide the linkbox borders
 ]{hyperref}%  %%% border-width of frames                                     will be multiplied with 0.009 by ps2pdf
 %\pdfadjustspacing=1                %%% force LaTeX-like character spacing
 \newcommand\abstractname{Abstract}
@@ -51,9 +57,17 @@ linkbordercolor={0 0 1}%          %%% blue frames around links, pdfborder={0 0 1
 %\refoot[Master Thesis]{A Network-based Analysis of Technology-driven and Load-driven Constraints in Production Data}
 \setfootsepline{.4pt}
 \setcounter{tocdepth}{3}	%including subsubsections in the content part
-%\setcounter{secnumdepth}{3} %numbering the subsubsections
+\setcounter{secnumdepth}{3} %numbering the subsubsections
+%\usepackage{titlesec}
+%\renewcommand{\contentsname}{Table of Contents}
 
+\usepackage{makecell}
 %\newcommand\mynotes[1]{\textcolor{red}{#1}}
+
+%\usepackage[acronym]{glossaries}
+%\makeglossaries
+%\newacronym{fba}{FBA}{Flux Balance Analysis}
+% \acrfull{fba}, \acrlong{fba}, \acrshort{fba} ---- using those in the text
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EXTRA CODE %%

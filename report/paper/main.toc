@@ -1,0 +1,28 @@
+\contentsline {chapter}{Abstract}{i}{chapter*.1}%
+\contentsline {chapter}{Acknowledgements}{ii}{chapter*.2}%
+\contentsline {chapter}{Table of Contents}{iii}{chapter*.3}%
+\contentsline {chapter}{List of Figures}{iv}{chapter*.4}%
+\contentsline {chapter}{List of Tables}{v}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.6}%
+\contentsline {section}{\numberline {1.1}Background and Motivation}{1}{section.7}%
+\contentsline {section}{\numberline {1.2}Research Objective}{2}{section.8}%
+\contentsline {section}{\numberline {1.3}Research Plan and Thesis Organization}{2}{section.9}%
+\contentsline {chapter}{\numberline {2}Methodology}{3}{chapter.10}%
+\contentsline {section}{\numberline {2.1}Operations Research Model}{3}{section.11}%
+\contentsline {subsection}{\numberline {2.1.1}Steel Manufacturing Data Analysis}{4}{subsection.12}%
+\contentsline {subsubsection}{Association Networks}{4}{section*.13}%
+\contentsline {subsubsection}{Binning Methods}{5}{section*.18}%
+\contentsline {subsubsection}{Network Metrics Analysis}{7}{section*.20}%
+\contentsline {subsection}{\numberline {2.1.2}Flux Balance Analysis}{8}{subsection.24}%
+\contentsline {subsubsection}{Fluxes for Uptake and Secrete Reactions}{10}{section*.37}%
+\contentsline {subsubsection}{Upper and Lower Bounds}{11}{section*.40}%
+\contentsline {subsubsection}{Objective Functions}{11}{section*.41}%
+\contentsline {section}{\numberline {2.2}Applications and Results of the Developed Framework}{12}{section.42}%
+\contentsline {subsection}{\numberline {2.2.1}Integration of Concepts}{12}{subsection.43}%
+\contentsline {subsection}{\numberline {2.2.2}Simulation Results}{12}{subsection.45}%
+\contentsline {chapter}{\numberline {3}Conclusion And Outlook}{13}{chapter.46}%
+\contentsline {section}{\numberline {3.1}Thesis Contribution}{13}{section.47}%
+\contentsline {section}{\numberline {3.2}Outlook}{13}{section.48}%
+\contentsline {chapter}{\numberline {4}Bibliography}{14}{chapter.50}%
+\contentsline {chapter}{\numberline {5}Supplements}{15}{chapter.51}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
