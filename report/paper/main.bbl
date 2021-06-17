@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{MERTEN2020}
+D.~Merten, M.-T. Hütt, and Y.~Uygun, ``A network analysis of decision
+  strategies of human experts in steel production,'' {\em submitted to IISE
+  Transactions}, 2020.
+
 \bibitem{KIM}
 B.~Kim, W.~J. Kim, D.~I. Kim, and S.~Y. Lee, ``{Applications of genome-scale
   metabolic network model in metabolic engineering},'' {\em Journal of
@@ -24,10 +29,5 @@ N.~D. Price, J.~L. Reed, and B.~. Palsson, ``Genome-scale models of microbial
 A.~Varma, B.~W. Boesch, and B.~O. Palsson, ``Biochemical production
   capabilities of escherichia coli,'' {\em Biotechnology and Bioengineering},
   vol.~42, no.~1, pp.~59--73, 1993.
-
-\bibitem{MERTEN2020}
-D.~Merten, M.-T. Hütt, and Y.~Uygun, ``A network analysis of decision
-  strategies of human experts in steel production,'' {\em submitted to IISE
-  Transactions}, 2020.
 
 \end{thebibliography}

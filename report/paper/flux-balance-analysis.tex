@@ -1,4 +1,4 @@
-\subsection{Flux Balance Analysis}
+\section{Flux Balance Analysis}
 The genome-scale integrated networks are necessary tools used by metabolic engineers on model generation, theoretical and computational analysis for microbial organisms. In addition, the network theory tools expand the feasible space for the following analysis techniques in the field. 
 
 \textcolor{red}{Introducing stoic. matrix. Explain how the two graphs are formally obtained by manipulated the stoichiometric matrix, explain the metabolite-centric network is $S*S^{T}$ and binarized. In contrast, the reaction-centric network is $S^{T}*S$ and binarized. Introduce the general idea of FBA as an optimization scheme in a steady-state solution space.}
@@ -69,15 +69,15 @@ Stoichiometry and mass-balance are the constraints introduced so far in Eq.\eqre
 
 The above-explained optimization process is a linear programming problem since the mass balance (Eq.\eqref{massbalanceconstraint}), the Objective Function (Eq.\eqref{biomassmaximisation}), and linear equations formulate the upper \& lower bounds for fluxes. The linear optimization result maximizes the structured Objective Function in the form of a flux distribution~\cite{KAUFFMAN2003491,PRICE2004}. Since each term in Eq.\eqref{biomassmaximisation} is a produced biomass expression for the fluxes, the summation of those terms will give the overall growth of the system for a single network state.
 
-\subsubsection*{Fluxes for Uptake and Secrete Reactions}
-\addcontentsline{toc}{subsubsection}{Fluxes for Uptake and Secrete Reactions}%
+\subsection*{Fluxes for Uptake and Secrete Reactions}
+\addcontentsline{toc}{subsection}{Fluxes for Uptake and Secrete Reactions}%
 Let
 \begin{equation} \tag{7}
 	V^{*}=(v^{*}_{1}, v^{*}_{2},\dots, v^{*}_{x})= (a_{i}\le v^{*}_{i}\le b_{i})\in V
 	\label{constrainedfluxlist}
 \end{equation}
 is a set of fluxes picked from $V$ to be limited with the bounds: $a_{i}$ and $b_{i}$ which are used in the reactions for uptake and secretion as previously introduced.
-\subsubsection*{Upper and Lower Bounds}
-\addcontentsline{toc}{subsubsection}{Upper and Lower Bounds}%
-\subsubsection*{Objective Functions}
-\addcontentsline{toc}{subsubsection}{Objective Functions}%
+\subsection*{Upper and Lower Bounds}
+\addcontentsline{toc}{subsection}{Upper and Lower Bounds}%
+\subsection*{Objective Functions}
+\addcontentsline{toc}{subsection}{Objective Functions}%
