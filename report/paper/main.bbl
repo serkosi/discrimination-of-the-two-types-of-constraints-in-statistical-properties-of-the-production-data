@@ -1,9 +1,29 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{MERTEN2020}
 D.~Merten, M.-T. Hütt, and Y.~Uygun, ``A network analysis of decision
   strategies of human experts in steel production,'' {\em submitted to IISE
   Transactions}, 2020.
+
+\bibitem{Barabasi2016}
+A.-L. Barabási, {\em Network Science}.
+\newblock Cambridge University Press, 2016.
+
+\bibitem{Newman8577}
+M.~E.~J. Newman, ``Modularity and community structure in networks,'' {\em
+  Proceedings of the National Academy of Sciences}, vol.~103, no.~23,
+  pp.~8577--8582, 2006.
+
+\bibitem{klipp2005systems}
+E.~Klipp, R.~Herwig, A.~Kowald, C.~Wierling, and H.~Lehrach, {\em Systems
+  biology in practice: concepts, implementation and application}.
+\newblock John Wiley \& Sons, 2005.
+
+\bibitem{biggmodels}
+Z.~A. King, J.~Lu, A.~Dräger, P.~Miller, S.~Federowicz, J.~A. Lerman,
+  A.~Ebrahim, B.~O. Palsson, and N.~E. Lewis, ``{BiGG Models: A platform for
+  integrating, standardizing and sharing genome-scale models},'' {\em Nucleic
+  Acids Research}, vol.~44, pp.~D515--D522, 10 2015.
 
 \bibitem{KIM}
 B.~Kim, W.~J. Kim, D.~I. Kim, and S.~Y. Lee, ``{Applications of genome-scale
@@ -29,5 +49,22 @@ N.~D. Price, J.~L. Reed, and B.~. Palsson, ``Genome-scale models of microbial
 A.~Varma, B.~W. Boesch, and B.~O. Palsson, ``Biochemical production
   capabilities of escherichia coli,'' {\em Biotechnology and Bioengineering},
   vol.~42, no.~1, pp.~59--73, 1993.
+
+\bibitem{MAHADEVAN2003}
+R.~Mahadevan and C.~Schilling, ``The effects of alternate optimal solutions in
+  constraint-based genome-scale metabolic models,'' {\em Metabolic
+  Engineering}, vol.~5, no.~4, pp.~264--276, 2003.
+
+\bibitem{Reed01092004}
+J.~L. Reed and B.~. Palsson, ``Genome-scale in silico models of e. coli have
+  multiple equivalent phenotypic states: Assessment of correlated reaction
+  subsets that comprise network states,'' {\em Genome Research}, vol.~14,
+  no.~9, pp.~1797--1805, 2004.
+
+\bibitem{BURGARD2001}
+A.~P. Burgard, S.~Vaidyaraman, and C.~D. Maranas, ``Minimal reaction sets for
+  escherichia coli metabolism under different growth requirements and uptake
+  environments,'' {\em Biotechnology Progress}, vol.~17, no.~5, pp.~791--797,
+  2001.
 
 \end{thebibliography}

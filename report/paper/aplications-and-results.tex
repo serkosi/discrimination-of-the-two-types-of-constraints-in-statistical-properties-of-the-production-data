@@ -1,9 +1,14 @@
 \chapter{Applications and Results}
+{\color{red} 
+Investigation of constraints impact in time windows was performed by analyze in two different type of association networks; the networks with fixed step size nodes and the networks with fixed bucket size nodes.
+
+Those two different type of networks were applied in all 10 time windows and average modularity metric plots were generated. 
+}
 \section{Data Cleaning}
 {\color{red}
 	Upon to two distinctive constraint definitions in my advance project 2 report, checking those hypothetical terms in real life data is decided. To be able to observe interesting patterns, a big data set with 2-3 years production orders is agreed to be investigated through time windows. 
 
-I and Daniel started to discuss about the relevant features to be considered in this data set. At final stage below given SQL query was generated to pull the data set from the SMS database. The resultant data set consists of 459203 rows and 15 columns. 
+After discussing the relevant features to be considered in this data set, below given SQL query was generated to pull the data set from the SMS database. The resultant data set consists of 459203 rows and 15 columns. 
 
 First two columns and $4^{th}$ column features: ROS.R\_OS\_ID, ROS.PRODUCTION\_LINE\_NAME, and ROS.REFERENCE\_DATE come from "Reporting data: Operation step" table. $3^{rd}$ column feature SEQUENCE\_ID is actual casting sequence ID from the table "Reporting data: additional data of CCM (explain this)". $5^{th}$., $6^{th}$., $7^{th}$. and $14^{th}$. SLAB.PIECE\_ID, SLAB.MATERIAL\_ID, SLAB.MOLD\_WIDTH, and SLAB.EXIT\_TEMP come from "Reporting data: additional data of CCM which are slab related". Rest of the columns: MAT.WIDTH, MAT.THICKNESS, MAT.WEIGHT, MAT.LENGTH, MAT.HEAR\_ID, MAT.STEEL\_GRADE\_ID\_INT, and MAT.SLAB\_TRANSITION come from "Material ;  For slabs, coils, plates and heats" table.
 
@@ -29,7 +34,7 @@ LEFT JOIN L3MAIN.r_mat mat ON ros.r_os_id = mat.r_os_id
 WHERE  	sequence_id IS NOT NULL;
 \end{lstlisting}
 
-Parsed data belongs to CCM (Compact Cold Mill) production line.
+Parsed data belongs to CCM (Continuous Casting Machine) production line.
 
 $7.85 g/cm^{3}$ = $7850 kg/m^{3}$ = $0.284 lb/in^{3}$ = $490 lb/ft^{3}$
 
@@ -69,28 +74,32 @@ At the final stage, obtained data set lengths are given below.
 }
 
 \section{Real-life Events Analysis}
+{\color{red} 
 The steel manufacturing data sets were analyzed in six different dimensions: Production Line, Production Constraints, Production Feature, Time, Network Resolution and Null Model.
 
 For the first dimension, distinguished data sets were considered among four different production line: Continuous Casting Machine (CCM), Compact Strip Production (CSP), Continuous Galvanizing Line (CGL), and Pickling Line \& Tandem Cold Mill (PLTCM). In principle, CCM and CSP production lines have similar functionalities; however, they were kept separated in the analysis pipeline since their labels are different in the database. Two fundamentally different constraints acting on the manufacturing process: technology-driven constraints and load-driven constraints, were shaped hypothetically and defined as two distinguished network approaches: fixed step-sized and fixed bucket-sized networks. Those attempts are in the second dimension of the analysis. As the third dimension, the width and thickness features of slabs were picked to investigate different production constraints that play a role in the machines for those features. Time is the fourth dimension and considered to check constraints impact on the historically ordered production events. The data set was treated in both discrete-time windows and increasing-time windows to study the behaviour of changing fixed step size and fixed bucket size. Generated networks were diversified in two different resolutions by changing the node amount in the fifth dimension. As a concept of characterizing, modularity was calculated for the networks. The aim is to keep the networks with a similar number of nodes in both network approaches (fixed step size and fixed bucket size) so that the modularity quantification would be meaningful to compare. As the last dimension, two types of null model: shuffling the links in degree conservation and shuffling them based on the communities, were considered to check the randomness of the networks. Obtained Z-scores can vary based on the generated null model via that specific randomization method.
 
 The data sets were partitioned into two halves, and analysis steps were applied for the first half, second half, and the complete data set. At the top of bar chart sets, modularity values were presented for the original network and a single randomized network. Z-scores belong to different null models for 1000 randomized networks were given in the bottom part of the bar chart set, indicated with a colorless line finish. For each of the z-scores, error bars were included by removing and putting back 10\% of the data several times. The colored bar border indicates the mean value, and the T-shaped symbol represents the standard deviation of the error bars.
+}
+
+\input{../figures/figure-real_life-events-analysis-results}
 
 {\color{red}
-	24.03.21
-	* Regarding behavior on networks with changing fss and fbs amounts, first column plots show a calibration curve which have graph node numbers corresponding to changing fss and fbs. For Weight feature, fbs paradigm leads to higher modularity than the fss paradigm no matter which bucket/step size we pick. This result becomes opposite when it comes to length and width. For thickness, there is no clear result to say as the others have. They are actually sometimes on the same level. The fact that modularity tends to be higher in one paradigm and lower in the other which is an interesting thing.
+%	24.03.21
+	Regarding behavior on networks with changing fss and fbs amounts, first column plots show a calibration curve which have graph node numbers corresponding to changing fss and fbs. For Weight feature, fbs paradigm leads to higher modularity than the fss paradigm no matter which bucket/step size we pick. This result becomes opposite when it comes to length and width. For thickness, there is no clear result to say as the others have. They are actually sometimes on the same level. The fact that modularity tends to be higher in one paradigm and lower in the other which is an interesting thing.
 	
 	Investigation of constraints impact in the data with time-resolved fashion confirms my previous investigation on the data with increasing time windows. 
 	Our hypothesis at the moment is that the physical constraints are rather about step sizes than about bucket sizes. Because step size graphs are less random.
 	
 	In my previous project, the fixed step size graphs had a high modularity. This means that the actual quantity I discretize creates the constraints while in the case of fixed bucket size it would be the volume of orders that creates my constraints. This summarizes our hypothesis. 
 	
-	What I would get = On the width level, we have a fairly constant behavior over time and it confirms what I see on the total dataset, strong difference in modularity between the two network approaches. For the fbs approach, there might be a transition, the fixed bucket size becomes very modular in the end.
+%	What I would get = On the width level, we have a fairly constant behavior over time and it confirms what I see on the total dataset, strong difference in modularity between the two network approaches. For the fbs approach, there might be a transition, the fixed bucket size becomes very modular in the end.
 	
 	For thickness, its less clear because the modularity is in same level for both fss and fbs but the increase in modularity for fbs is fairly drammatic. It goes from 0.3 to 0.6 while the other remains at 0.3 and fluctuates. In the last two time windows in fbs, the process is dominated by something else. It is an evidence that something changed of the constraints involved really takes place.
 	
-	For length, both modularity changes in different network structures are between 0.1 and 0.2 is beyond the resolution of what I can do. These two curves are almost identical in the statistical point of view. Also they are close to what you would get for totally random graphs in fact. There is no modularity here we can talk about.
+%	For length, both modularity changes in different network structures are between 0.1 and 0.2 is beyond the resolution of what I can do. These two curves are almost identical in the statistical point of view. Also they are close to what you would get for totally random graphs in fact. There is no modularity here we can talk about.
 	
-	For weight, it is same as length. The z-scores are fairly close to zero compare the ones for other feature z-scores. In the case of the fbs, you can see it might be slightly higher than the modularity of the random graphs but it is not a deservedly modularity.
+%	For weight, it is same as length. The z-scores are fairly close to zero compare the ones for other feature z-scores. In the case of the fbs, you can see it might be slightly higher than the modularity of the random graphs but it is not a deservedly modularity.
 	
 	
 	current situation
@@ -103,15 +112,11 @@ The data sets were partitioned into two halves, and analysis steps were applied 
 		\item CCM Thickness Networks with narrow and large node binning
 	\end{itemize}
 
-Results are not stable which is a bit expected with these complicated data structures. This is why we do the sensitivity analysis on top of that: varying the resolution, doing things with slightly different methods (different null models) over and over again. In some sense, we try to do the data as simpler as they are, by trying to pretend that they are more homogeneous than they are. We pretend that the data is statistically reliable and not distorted and most of all that this temple of the modular network really fits. All of these assumptions are slightly wrong, what we see here is the consequence of that. We need to try to make the statistical assumptions about the data that are not necessarily fulfilled and these assumptions can lead to things sometimes looking statistically significant even though they are not. And those statistical assumptions are most of the time that the data are not very distorted but somehow reliably distributed. And top of that, modularity as a fairly simple concept of characterizing networks, is a meaningful concept here. We should say that these are all assumptions.}
+before treating time windows, having the modularity as function of bucket size and as function of step size. At this stage, choosing suitable step and bucket sizes and accordingly repeat all progress mentioned above. The aim is to obtain big amount of nodes as possible as we can and keeping that amount of nodes same in both graph structures (fixed step size and fixed bucket size). The difference between modularity values at highest graph nodes amount in fixed bucket and fixed step sized graphs shows which network structure is more effective on generating clear communities. In other words, modularity values is more meaningful when the node number is high.
 
-\section{Integration of Concepts}
-\textcolor{red}{What happens here is to bring the simulated data into a format that is compatible with my analysis of the real-life events data.}
-\input{../figures/figure-complete_framework_cartoon}
-
-{\color{red} 
-	In an ideal scneario, we would find that association networks derived from the generated data, in the one case; produce high modularity for FBS and in the other case produce high modularity for FSS. Because then we have linked these two data processing schemes to different forms/to different categories of constraints.
-}
+Results are not stable which is a bit expected with these complicated data structures. This is why we do the sensitivity analysis on top of that: varying the resolution, doing things with slightly different methods (different null models) over and over again. 
+%In some sense, we try to do the data as simpler as they are, by trying to pretend that they are more homogeneous than they are. We pretend that the data is statistically reliable and not distorted and most of all that this temple of the modular network really fits. All of these assumptions are slightly wrong, what we see here is the consequence of that. We need to try to make the statistical assumptions about the data that are not necessarily fulfilled and these assumptions can lead to things sometimes looking statistically significant even though they are not. And those statistical assumptions are most of the time that the data are not very distorted but somehow reliably distributed. And top of that, 
+modularity as a fairly simple concept of characterizing networks, is a meaningful concept here. We should say that these are all assumptions.}
 
 \section{Simulation Results}
 {\color{red} 
@@ -123,11 +128,9 @@ Results are not stable which is a bit expected with these complicated data struc
 	Each data set has a length of 60,000 events shared equally in 200 sequences. Randomly picked subsets of fluxes were kept the same within the sequences but having varying coefficients of objective functions.
 	
 	The association network data sets were structured by the dot products of objective function vectors and optimized solution vectors. This product results maximize the output, if I am not wrong, as the maximization attempt of biomass in the FBA model.
-	
-	
 }
 
-
+\input{../figures/figure-FBA-results}
 
 %\begin{equation} %\tag{8}
 %	(O.V)_{1}= (o_{1,1}v_{1} + o_{1,2}v_{2} + \dots + o_{1,r}v_{r})

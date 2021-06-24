@@ -64,6 +64,15 @@ hidelinks 						%%% hide the linkbox borders
 \usepackage{makecell}
 %\newcommand\mynotes[1]{\textcolor{red}{#1}}
 
+\newcommand{\beginsupplement}{%
+	\setcounter{table}{0}
+	\renewcommand{\thetable}{S\arabic{table}}%
+	\setcounter{figure}{0}
+	\renewcommand{\thefigure}{S\arabic{figure}}%
+}
+
+\usepackage{pdflscape} % rotated landscape figures
+
 %\usepackage[acronym]{glossaries}
 %\makeglossaries
 %\newacronym{fba}{FBA}{Flux Balance Analysis}
