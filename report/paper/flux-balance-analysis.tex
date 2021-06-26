@@ -101,7 +101,7 @@ there are three primary purposes to generate objective functions~\cite{PRICE2004
 	\item[iii.] to design a genetic variant or sub-type to obtain a desired particular product.
 \end{itemize}
 
-The objective function can be thought as a production plan that gives an idea about the diversity of products that the relevant system can produce, and one can express its coefficients in a one-dimensional array as
+One can express objective function coefficients in a one-dimensional array as
 \begin{equation} \tag{4}
 	O =  \begin{bmatrix}
 		o_{1} & o_{2} & \dots  & o_{r}\\
@@ -122,23 +122,28 @@ As a summary of the above-explained processes, mass balance (Eq.\eqref{massbalan
 Different solution vectors of $V$ can be obtained from the linear optimization process by varying conditions on the constraints. The stoichiometric matrix, a compact set of rules, significantly influences the mass balance equation; consequently, the solution vector $V$. A stoichiometric matrix from scratch can be formulated, ensuring the mass balance constraints are incorporated in the reaction cycles of the investigated system. However, the homo sapiens metabolic model was taken as the set of rules in this thesis work. Varying upper \& lower flux bounds and the objective function are the two alternative approaches introduced in the following subsections to understand the model behaviour while the optimization is carried on.
 \subsection*{Limitation on Resources}
 \addcontentsline{toc}{subsection}{Limitation on Resources}%
-Environmental conditions such as resource availability affects the pattern of outputs in a metabolic network. In case of fewer resources (nutrients) availability, the active production network gets more interconnected through more flux exchanges to be able to manufacture the necessary input for the ongoing metabolic reactions.~\cite{PRICE2004,MAHADEVAN2003,Reed01092004,BURGARD2001}
+Environmental conditions such as resource availability affect the pattern of outputs in a metabolic network. In case of fewer resources (nutrients) availability, the active production network gets more interconnected through more flux exchanges to produce the necessary input for the ongoing metabolic reactions.~\cite{PRICE2004,MAHADEVAN2003,Reed01092004,BURGARD2001}
 
 \begin{equation} \tag{6}
 	V^{b}=(v^{b}_{1}, v^{b}_{2},\dots, v^{b}_{x})= (-a\le v^{b}_{i}\le a)\in V
 	\label{constrainedfluxlist}
 \end{equation}
-Let $V^{b}$ is a list of fluxes with $x$ elements randomly picked from $V$ (Eq.\eqref{solutionvector}) to be limited with the bounds: $(-a,a)$. The same amounts of bound tolerance on both negative and positive side allow the system treat the respective flux flow as uptake or secretion. The fluxes that are not included in $V^{b}$ are matched with extreme high boundary values so that they are not constrained while the linear optimization. Varying $x$ and $a$ to fulfil a fixed objective function, we obtain various biomass values by the linear programming algorithm.
+Let $V^{b}$ is a list of fluxes with $x$ elements randomly picked from $V$ (Eq.\eqref{solutionvector}) to be limited with the bounds: $(-a, a)$. The same tolerance in both negative and positive direction for the bounds allows the network to treat the respective flux flow as uptake or secretion based on the system need. The fluxes that are not included in $V^{b}$ are matched with extreme high boundary values so that they are not constrained while the linear optimization. Varying $x$ and $a$ to fulfil a fixed objective function, we obtain various biomass values by the linear programming algorithm.
 \begin{equation} \tag{7}
 	V^{e}=(v^{e}_{1}, v^{e}_{2},\dots, v^{e}_{y})= (0\le v^{e}_{i}\le 0)\in V
 	\label{deletedreactions}
 \end{equation}
-Assigning zero to a flux as its upper\&lower bounds suppresses the flux exchange in the active production network. Deleted fluxes can not be used for the uptake, secretion nor the intermediate reactions. $V^{e}$ is the list of fluxes randomly selected from $V$ to be deleted from the network.
+Assigning zero to the upper \& lower bounds suppresses the respective flux exchange in the active production network. Deleted fluxes can not be used for the uptake, secretion, nor intermediate reactions. $V^{e}$ (Eq.\eqref{deletedreactions}) is the list of fluxes randomly selected from $V$ (Eq.\eqref{solutionvector}) to be discarded from the network.
 
 \subsection*{Diversification on Product Portfolio}
 \addcontentsline{toc}{subsection}{Diversification on Product Portfolio}%
-Production plan rules the pattern of output.
+The objective function can be thought as a production plan that gives an idea about the diversity of products that the relevant system can produce. As previously mentioned, this is because the pattern of biomass (Eq.\eqref{biomassmaximisation}) is governed by the objective function coefficients (Eq.\eqref{objectivecoefficients}).
+
+Subset positions
+Directionality of coefficients
 
 Creating a set of objective functions will allow me to create a diverse group of products—a diversity of products that I am capable of producing.
 
 Create a pool of objective functions by randomly choosing coefficients, and this will result in a set of output vectors.
+
+

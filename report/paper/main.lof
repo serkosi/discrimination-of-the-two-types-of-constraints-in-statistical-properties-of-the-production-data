@@ -1,23 +1,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces An Arbitrary Representation for Adjacency Matrix and Its Graph.\relax }}{5}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Graph Results For Two Different Network Approaches.\relax }}{6}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Formation of Different Null Models.\relax }}{9}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Network Representations for Homo Sapiens Metabolic Model\relax }}{12}{figure.caption.34}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces A Simplified Reaction-centric Network Sketch Shows The Reactions for Exchange, Uptake and Secretion.\relax }}{14}{figure.caption.43}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Complete Framework Sketch.\relax }}{16}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces An Arbitrary Representation for Adjacency Matrix and Its Graph.\relax }}{6}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Graph Results For Two Different Network Approaches.\relax }}{7}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Formation of Different Null Models.\relax }}{10}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Network Representations for Homo Sapiens Metabolic Model\relax }}{13}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A Simplified Reaction-centric Network Sketch Shows The Reactions for Exchange, Uptake and Secretion.\relax }}{15}{figure.caption.41}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Complete Framework Sketch.\relax }}{17}{figure.caption.49}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Real-life Events Analysis Results.\relax }}{23}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces FBA Simulation Results.\relax }}{24}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Real-life Events Analysis Results.\relax }}{25}{figure.caption.73}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces FBA Simulation Results.\relax }}{26}{figure.caption.75}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {S1}{\ignorespaces CCM Production Line.\relax }}{29}{figure.caption.82}%
-\contentsline {figure}{\numberline {S2}{\ignorespaces CSP Production Line.\relax }}{30}{figure.caption.83}%
-\contentsline {figure}{\numberline {S3}{\ignorespaces CGL Production Line.\relax }}{31}{figure.caption.84}%
-\contentsline {figure}{\numberline {S4}{\ignorespaces PLTCM Production Line.\relax }}{32}{figure.caption.85}%
-\contentsline {figure}{\numberline {S5}{\ignorespaces FBA Simulation Results with Initial Terms of Objective Functions.\relax }}{33}{figure.caption.86}%
-\contentsline {figure}{\numberline {S6}{\ignorespaces FBA Simulation Results with 25\% Reduced Terms of Objective Functions.\relax }}{34}{figure.caption.87}%
-\contentsline {figure}{\numberline {S7}{\ignorespaces FBA Simulation Results with 50\% Reduced Terms of Objective Functions.\relax }}{35}{figure.caption.88}%
-\contentsline {figure}{\numberline {S8}{\ignorespaces FBA Simulation Results with 75\% Reduced Terms of Objective Functions.\relax }}{36}{figure.caption.89}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

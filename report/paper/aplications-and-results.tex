@@ -125,9 +125,17 @@ modularity as a fairly simple concept of characterizing networks, is a meaningfu
 	
 	Plots in Part-1 of the file belong to association networks of four different synthetically created sequence data sets, and each represented in various colors: green, blue, orange, and red. Part-1 data sets were derived with fixed reaction bounds but with varying coefficients of objective functions. Part-2 also presents plots for four different synthetically created sequence data sets with fixed objective function coefficients but with variable reaction bounds.
 	
-	Each data set has a length of 60,000 events shared equally in 200 sequences. Randomly picked subsets of fluxes were kept the same within the sequences but having varying coefficients of objective functions.
+	Each data set has a length of 10,000 events shared equally in 200 sequences. Randomly picked subsets of fluxes were kept the same within the sequences but having varying coefficients of objective functions.
 	
-	The association network data sets were structured by the dot products of objective function vectors and optimized solution vectors. This product results maximize the output, if I am not wrong, as the maximization attempt of biomass in the FBA model.
+	
+	
+	Limitation on resources were performed in two different ways; first, restriction on upper \& lower bounds and second, deletion of fluxes.
+	
+	The fluxes used in the intermediate reactions were given the range of bounds as $(-500, 500)$ since it is not possible to define infinity values in the optimization algorithm. Randomly chosen $105$ fluxes out of $1008$ were matched with $(-5, 5)$ as the first step. And $105$ was doubled ($212$) and then quadrupled ($425$). An important detail is all of the three set of choices were done randomly, they are not added on top of already selected $105$. In every further step, the same three set of fluxes were used in the computations as restricted bounds.
+	
+	Deletion goes in the line: $0, 50, 100, 150, 200, 250, 300, 350, 400, 450$. As explained previously, deletion was done by assigning $(0, 0)$ bounds to the fluxes. On the last step, almost half of the total fluxes ($1008$) were erased.
+	
+	In an ideal scenario, we would find that association networks derived from the generated data, in the one case; produce high modularity for FBS and in the other case produce high modularity for FSS. Because then we have linked these two data processing schemes to different forms/to different categories of constraints.
 }
 
 \input{../figures/figure-FBA-results}

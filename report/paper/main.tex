@@ -1,8 +1,14 @@
 \input{../common/use-packages-macros2}
 
 \begin{document}
-	
+
 	\pagenumbering{roman}
+	\newpage
+	\thispagestyle{plain} % empty
+	\mbox{}
+	\newpage
+	\thispagestyle{plain} % empty
+	\mbox{}
 	
 	\input{abstract}
 	\addcontentsline{toc}{chapter}{Abstract}
@@ -11,19 +17,12 @@
 	\addcontentsline{toc}{chapter}{Acknowledgements}
 	
 	\tableofcontents
-	\addcontentsline{toc}{chapter}{Table of Contents}
+	%\addcontentsline{toc}{chapter}{Table of Contents}
 	
 	%\printglossary[type=\acronymtype]
 	%\addcontentsline{toc}{chapter}{Table of Acronyms}
-	%\clearpage
-	
-	\listoffigures
-	\addcontentsline{toc}{chapter}{List of Figures}
-	
-	\listoftables
-	\addcontentsline{toc}{chapter}{List of Tables}
 	\clearpage
-	
+		
 	\pagenumbering{arabic}
 	\input{introduction}
 	
@@ -39,5 +38,12 @@
 	\bibliographystyle{ieeetr}
 	\bibliography{../bibliography/bib}
 	\input{supplements}
+	
+	\listoffigures
+	\addcontentsline{toc}{chapter}{List of Figures}
+	
+	\listoftables
+	\addcontentsline{toc}{chapter}{List of Tables}
+	\clearpage
 	
 \end{document}
