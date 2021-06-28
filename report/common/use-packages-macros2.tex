@@ -73,6 +73,13 @@ hidelinks 						%%% hide the linkbox borders
 
 \usepackage{pdflscape} % rotated landscape figures
 
+\usepackage{tocloft} % for an Equation List in the Contents 
+ \newcommand{\listequationsname}{List of Equations}
+ \newlistof{myequations}{equ}{\listequationsname}
+ \newcommand{\myequations}[1]{%
+ 	\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+ \setlength{\cftmyequationsnumwidth}{2.5em}% Width of equation number in List of Equations
+
 %\usepackage[acronym]{glossaries}
 %\makeglossaries
 %\newacronym{fba}{FBA}{Flux Balance Analysis}

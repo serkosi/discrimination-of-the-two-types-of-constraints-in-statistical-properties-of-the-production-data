@@ -1,7 +1,7 @@
 \input{../common/use-packages-macros2}
 
 \begin{document}
-
+	
 	\pagenumbering{roman}
 	\newpage
 	\thispagestyle{plain} % empty
@@ -15,19 +15,19 @@
 	
 	\input{acknowledgements}
 	\addcontentsline{toc}{chapter}{Acknowledgements}
+	\clearpage
 	
 	\tableofcontents
 	%\addcontentsline{toc}{chapter}{Table of Contents}
+	\clearpage
 	
 	%\printglossary[type=\acronymtype]
 	%\addcontentsline{toc}{chapter}{Table of Acronyms}
-	\clearpage
-		
+			
 	\pagenumbering{arabic}
 	\input{introduction}
 	
 	\input{methodology}
-	\clearpage
 	
 	\input{aplications-and-results}
 	
@@ -37,13 +37,22 @@
 	%\addcontentsline{toc}{chapter}{Bibliography}
 	\bibliographystyle{ieeetr}
 	\bibliography{../bibliography/bib}
+	
 	\input{supplements}
 	
 	\listoffigures
+	\phantomsection
 	\addcontentsline{toc}{chapter}{List of Figures}
+	\clearpage
 	
 	\listoftables
+	\phantomsection
 	\addcontentsline{toc}{chapter}{List of Tables}
+	\clearpage
+	
+	\listofmyequations
+	\phantomsection
+	\addcontentsline{toc}{chapter}{List of Equations}
 	\clearpage
 	
 \end{document}

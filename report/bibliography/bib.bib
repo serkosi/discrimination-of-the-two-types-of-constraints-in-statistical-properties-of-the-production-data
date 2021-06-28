@@ -43,7 +43,7 @@
 	issn = {1740-1534},
 	doi = {10.1038/nrmicro1023},
 	url = {https://doi.org/10.1038/nrmicro1023},
-	author = {Nathan D. Price and Jennifer L. Reed and Bernhard Ø. Palsson},
+	author = {Nathan D. Price and Jennifer L. Reed and Bernhard O. Palsson},
 	abstract = {The range of allowable biochemical network functions is constrained by natural law. These constraints have been classified as first, physico-chemical constraints; second, topobiological constraints; third, environmental constraints; and fourth, self-imposed regulatory constraints. These constraints can be represented mathematically, and a growing toolbox of computational analysis methods can be used to interrogate network properties.The most common set of computational tools uses linear programming to identify network states that are optimal relative to a defined objective. Flux balance analysis is an example. Optimal states have been successfully used for applications such as predicting the endpoint of adaptive evolutions of Escherichia coli.A more recently developed set of computational tools are used to quantify dependencies between fluxes in the network. For example, correlated reaction sets that form functional units, or unbiased modules, of a metabolic network can be determined.All allowable functional states of a biochemical network can be characterized in one of two ways: first, by enumerating network-based pathways that serve as a basis set from which all possible steady-state flux distributions can be generated or second, by using Monte-Carlo sampling of all possible functional states.The development of this field has matured to the point that phenotypes of altered strains can now be predicted. One such strategy, known as pOptKnock, uses gene deletions (or additions) to align the objective of an altered cell (optimal growth) with the necessary increase in the objective of the metabolic engineer (increased secretion of a particular compound). Adaptive evolution under selective pressure for growth rate is then used to select for strains that should produce the desired product at an increased rate.Future directions in this field include studying the achievable concentration states of biochemical networks, the range of in vivo kinetic constants consistent with high-throughput data and the incorporation of non-linear constraints.}
 }
 
@@ -165,7 +165,7 @@
 }
 
 @article{Reed01092004,
-	author = {Reed, Jennifer L. and Palsson, Bernhard Ø.}, 
+	author = {Reed, Jennifer L. and Palsson, Bernhard O.}, 
 	title = {Genome-Scale In Silico Models of E. coli Have Multiple Equivalent Phenotypic States: Assessment of Correlated Reaction Subsets That Comprise Network States},
 	volume = {14}, 
 	number = {9}, 
@@ -176,4 +176,84 @@
 	URL = {http://genome.cshlp.org/content/14/9/1797.abstract}, 
 	eprint = {http://genome.cshlp.org/content/14/9/1797.full.pdf+html}, 
 	journal = {Genome Research} 
+}
+
+@article{Edwards2001,
+	author = {Edwards, Jeremy S. and Ibarra, Rafael U. and Palsson, Bernhard O.}, 
+	title = {In silico predictions of Escherichia coli metabolic capabilities are consistent with experimental data},
+	volume = {19}, 
+	pages = {125-130}, 
+	year = {2001}, 
+	doi = {10.1038/84379}, 
+	abstract ={A significant goal in the post-genome era is to relate the annotated genome sequence to the physiological functions of a cell. Working from the annotated genome sequence, as well as biochemical and physiological information, it is possible to reconstruct complete metabolic networks. Furthermore, computational methods have been developed to interpret and predict the optimal performance of a metabolic network under a range of growth conditions. We have tested the hypothesis that Escherichia coli uses its metabolism to grow at a maximal rate using the E. coli MG1655 metabolic reconstruction. Based on this hypothesis, we formulated experiments that describe the quantitative relationship between a primary carbon source (acetate or succinate) uptake rate, oxygen uptake rate, and maximal cellular growth rate. We found that the experimental data were consistent with the stated hypothesis, namely that the E. coli metabolic network is optimized to maximize growth under the experimental conditions considered. This study thus demonstrates how the combination of in silico and experimental biology can be used to obtain a quantitative genotype–phenotype relationship for metabolism in bacterial cells.}, 
+	URL = {https://doi.org/10.1038/84379}, 
+	journal = {Nature Biotechnology} 
+}
+
+@article {Girvan7821,
+	author = {Girvan, M. and Newman, M. E. J.},
+	title = {Community structure in social and biological networks},
+	volume = {99},
+	number = {12},
+	pages = {7821--7826},
+	year = {2002},
+	doi = {10.1073/pnas.122653799},
+	publisher = {National Academy of Sciences},
+	abstract = {A number of recent studies have focused on the statistical properties of networked systems such as social networks and the Worldwide Web. Researchers have concentrated particularly on a few properties that seem to be common to many networks: the small-world property, power-law degree distributions, and network transitivity. In this article, we highlight another property that is found in many networks, the property of community structure, in which network nodes are joined together in tightly knit groups, between which there are only looser connections. We propose a method for detecting such communities, built around the idea of using centrality indices to find community boundaries. We test our method on computer-generated and real-world graphs whose community structure is already known and find that the method detects this known structure with high sensitivity and reliability. We also apply the method to two networks whose community structure is not well known{\textemdash}a collaboration network and a food web{\textemdash}and find that it detects significant and informative community divisions in both cases.},
+	issn = {0027-8424},
+	URL = {https://www.pnas.org/content/99/12/7821},
+	eprint = {https://www.pnas.org/content/99/12/7821.full.pdf},
+	journal = {Proceedings of the National Academy of Sciences}
+}
+
+@article{Hutt2008,
+	doi = {10.1371/journal.pcbi.1000190},
+	author = {Müller-Linow, Mark AND Hilgetag, Claus C. AND Hütt, Marc-Thorsten},
+	journal = {PLOS Computational Biology},
+	publisher = {Public Library of Science},
+	title = {Organization of Excitable Dynamics in Hierarchical Biological Networks},
+	year = {2008},
+	month = {09},
+	volume = {4},
+	url = {https://doi.org/10.1371/journal.pcbi.1000190},
+	pages = {1-15},
+	abstract = {This study investigates the contributions of network topology features to the dynamic behavior of hierarchically organized excitable networks. Representatives of different types of hierarchical networks as well as two biological neural networks are explored with a three-state model of node activation for systematically varying levels of random background network stimulation. The results demonstrate that two principal topological aspects of hierarchical networks, node centrality and network modularity, correlate with the network activity patterns at different levels of spontaneous network activation. The approach also shows that the dynamic behavior of the cerebral cortical systems network in the cat is dominated by the network's modular organization, while the activation behavior of the cellular neuronal network of Caenorhabditis elegans is strongly influenced by hub nodes. These findings indicate the interaction of multiple topological features and dynamic states in the function of complex biological networks.},
+	number = {9},
+	}
+
+@article{Barabasi2003,
+	title = {Hierarchical organization in complex networks},
+	author = {Ravasz, Erzs\'ebet and Barab\'asi, Albert-L\'aszl\'o},
+	journal = {Phys. Rev. E},
+	volume = {67},
+	issue = {2},
+	pages = {026112},
+	numpages = {7},
+	year = {2003},
+	month = {Feb},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevE.67.026112},
+	url = {https://link.aps.org/doi/10.1103/PhysRevE.67.026112}
+}
+
+@article{Enders2018,
+	author = {Enders, Martin and Hütt, Marc-Thorsten and Jeschke, Jonathan M.},
+	title = {Drawing a map of invasion biology based on a network of hypotheses},
+	journal = {Ecosphere},
+	volume = {9},
+	number = {3},
+	pages = {e02146},
+	keywords = {biological invasions, concepts, defining invasion hypotheses, hypothesis network, invasive alien species},
+	doi = {https://doi.org/10.1002/ecs2.2146},
+	url = {https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1002/ecs2.2146},
+	eprint = {https://esajournals.onlinelibrary.wiley.com/doi/pdf/10.1002/ecs2.2146},
+	abstract = {Abstract Invasion biology is a thriving ecological research field, and confusingly many hypotheses, concepts, and ideas about biological invasions populate today's literature. Moreover, some of these hypotheses are very similar, whereas others contradict each other. It is not clear whether in such a situation a plausible global relational structure—or map—of these hypotheses emerges in the minds of the involved researchers and, if so, how this map can be reliably reconstructed from the expertise of individuals. Here, we report results of an online survey with 357 experts on invasion biology and several reconstructions of such a map. Using the distance information between hypotheses provided in the survey, the resulting network is essentially random. This finding implies that invasion biologists currently do not have a joint vision how invasion hypotheses are related to each other. However, the pattern of pairwise familiarities between the hypotheses in the survey yields joint-mentions networks with highly non-random features. These networks allow us to assign conceptual roles to many of the hypotheses in the field on purely topological grounds. Such hypothesis networks can help everyone interested in research fields to understand their conceptual structure. They can serve as maps of research fields.},
+	year = {2018}
+}
+@misc{normaldistribution,
+	author = {{"Wikimedia Commons"}},
+	title = "The re-drawn chart comparing the various grading methods in a normal distribution. Includes: Standard deviations, cumulative percentages, percentile equivalents, Z-scores and T-scores. Inspired by Figure 4.3 on Page 74 of Ward, A. W., Murray-Ward, M. (1999). Assessment in the Classroom. Belmont, CA: Wadsworth. ISBN 0534527043",
+	year = "2007",
+	url = "https://commons.wikimedia.org/wiki/File:The_Normal_Distribution.svg#/media/File:The_Normal_Distribution.svg",
+	note = "[Online; accessed 27-June-2021]"
 }

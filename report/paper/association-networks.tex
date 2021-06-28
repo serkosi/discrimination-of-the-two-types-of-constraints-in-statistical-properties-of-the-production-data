@@ -31,10 +31,11 @@ Assume we have an arbitrarily created manufacturing data set with chronological 
 By looking at such a data set, one can say the events with Feature-A values: $890$, $850$, $650$, $745$, $795$ or $540$, $520$, $630$, $610$ are positioned in common sequences and close to each other; thus, they are produced together and likely occur in the identical sequences. As a further argument, the conclusion mentioned above is probably a deliberate planning choice based on the related constraints acting on the manufacturing process performance. However, extracting such implicit knowledge is not a simple task for large and complicated real-life manufacturing data. For example, such a data set may consist of more than $300,000$ events and is likely to have various events aggregated randomly in its large sequence groups.
 
 We extract the association rule from the set of production sequences to distinguish statistically unexpected occurrences from the non-random ones in production sequences and assess the complexity of production patterns. The association rule measure, known as " Lift ", was picked with a similar approach as Merten et al. (2020) applied in their article~\cite{MERTEN2020}. It was calculated for every possible pairwise subset of Feature-A values belonging to the events in identical production sequences. The Lift can be computed as the ratio of pair items joint probability divided by the multiplication of each item's marginal probability as
-\begin{equation} \tag{6}
+\begin{equation} %\tag{1}
 	Lift(A\leftrightarrow B)=\frac{P(A,B)}{P(A)*P(B)}.
 	\label{lift}
 \end{equation}
+\myequations{Lift Formula}
 In the case of $Lift(A\leftrightarrow B)> 1$, B occurs likely if A occurs while $Lift(A\leftrightarrow B)< 1$, B unlikely occurs if A occurs. Indication of random and non-random co-occurrences as $0$ and $1$ in an adjacency matrix will provide the data structure to form a network, as shown in Fig.~\ref{figure-adjacency_graph}.
 
 \input{../figures/figure-adjacency_graph}
