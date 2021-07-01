@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: ../bibliography/bib.bib
-You've used 20 entries,
+You've used 23 entries,
             1876 wiz_defined-function locations,
-            621 strings with 7528 characters,
-and the built_in function-call counts, 5921 in all, are:
-= -- 604
-> -- 216
+            642 strings with 8039 characters,
+and the built_in function-call counts, 6621 in all, are:
+= -- 681
+> -- 232
 < -- 0
-+ -- 80
-- -- 60
-* -- 412
-:= -- 818
-add.period$ -- 23
-call.type$ -- 20
-change.case$ -- 18
++ -- 87
+- -- 64
+* -- 452
+:= -- 911
+add.period$ -- 27
+call.type$ -- 23
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 307
-empty$ -- 531
-format.name$ -- 60
-if$ -- 1481
+cite$ -- 23
+duplicate$ -- 346
+empty$ -- 599
+format.name$ -- 64
+if$ -- 1663
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 21
-newline$ -- 66
-num.names$ -- 20
-pop$ -- 46
+int.to.str$ -- 23
+missing$ -- 23
+newline$ -- 76
+num.names$ -- 23
+pop$ -- 54
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 246
+skip$ -- 281
 stack$ -- 0
-substring$ -- 417
-swap$ -- 155
+substring$ -- 452
+swap$ -- 175
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 52
-width$ -- 22
-write$ -- 205
+while$ -- 58
+width$ -- 25
+write$ -- 237

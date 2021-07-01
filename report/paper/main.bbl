@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{sinha-spinks_2015}
+T.~Sinha-Spinks, ``An infographic of the iron and steel manufacturing
+  process.''
+  \urlstyle{same}\url{https://www.thermofisher.com/content/dam/tfs/ATG/CAD/CAD%20Documents/Product%20Manuals%20&%20Specifications/Elemental%20Analysis/Thermo-Scientific-Iron-Steel-process-A3.pdf},
+  2015.
+\newblock Accessed on 29-06-2021.
+
 \bibitem{cowling2001design}
 P.~Cowling, ``Design and implementation of an effective decision support
   system: A case study in steel hot rolling mill scheduling,'' {\em Human
@@ -19,10 +26,18 @@ M.~Girvan and M.~E.~J. Newman, ``Community structure in social and biological
   networks,'' {\em Proceedings of the National Academy of Sciences}, vol.~99,
   no.~12, pp.~7821--7826, 2002.
 
+\bibitem{FORTUNATO201075}
+S.~Fortunato, ``Community detection in graphs,'' {\em Physics Reports},
+  vol.~486, no.~3, pp.~75--174, 2010.
+
 \bibitem{Newman8577}
 M.~E.~J. Newman, ``Modularity and community structure in networks,'' {\em
   Proceedings of the National Academy of Sciences}, vol.~103, no.~23,
   pp.~8577--8582, 2006.
+
+\bibitem{GirvanNewman2004}
+M.~E.~J. Newman and M.~Girvan, ``Finding and evaluating community structure in
+  networks,'' {\em Phys. Rev. E}, vol.~69, p.~026113, Feb 2004.
 
 \bibitem{Enders2018}
 M.~Enders, M.-T. Hütt, and J.~M. Jeschke, ``Drawing a map of invasion biology
@@ -30,12 +45,12 @@ M.~Enders, M.-T. Hütt, and J.~M. Jeschke, ``Drawing a map of invasion biology
   p.~e02146, 2018.
 
 \bibitem{normaldistribution}
-{"Wikimedia Commons"}, ``The re-drawn chart comparing the various grading
-  methods in a normal distribution. includes: Standard deviations, cumulative
-  percentages, percentile equivalents, z-scores and t-scores. inspired by
-  figure 4.3 on page 74 of ward, a. w., murray-ward, m. (1999). assessment in
-  the classroom. belmont, ca: Wadsworth. isbn 0534527043,'' 2007.
-\newblock [Online; accessed 27-June-2021].
+{Wikimedia Commons}, ``The re-drawn chart comparing the various grading methods
+  in a normal distribution, includes standard deviations, cumulative
+  percentages, percentile equivalents, z-scores and t-scores.''
+  \urlstyle{same}\url{https://commons.wikimedia.org/wiki/File:The_Normal_Distribution.svg#/media/File:The_Normal_Distribution.svg},
+  2007.
+\newblock Accessed on 27-06-2021.
 
 \bibitem{Hutt2008}
 M.~Müller-Linow, C.~C. Hilgetag, and M.-T. Hütt, ``Organization of excitable
@@ -44,7 +59,7 @@ M.~Müller-Linow, C.~C. Hilgetag, and M.-T. Hütt, ``Organization of excitable
 
 \bibitem{Barabasi2003}
 E.~Ravasz and A.-L. Barab\'asi, ``Hierarchical organization in complex
-  networks,'' {\em Phys. Rev. E}, vol.~67, p.~026112, Feb 2003.
+  networks,'' {\em Phys. Rev. E}, vol.~67, p.~026112, 02 2003.
 
 \bibitem{klipp2005systems}
 E.~Klipp, R.~Herwig, A.~Kowald, C.~Wierling, and H.~Lehrach, {\em Systems

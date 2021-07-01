@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.6)  28 JUN 2021 05:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.6)  1 JUL 2021 14:59
 entering extended mode
 **./main.tex
 (main.tex
@@ -609,6 +609,10 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count313
 \@thisrulewidth=\dimen192
 )
+(C:\Program Files\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 (C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
@@ -680,11 +684,6 @@ Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
 \c@Hy@tempcnt=\count317
-
-(C:\Program Files\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen194
 
@@ -743,13 +742,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 
 Package scrlayer-scrpage Warning: replacing deprecated \clearscrheading by
-(scrlayer-scrpage)                \clearmainofpairofpagestyles on input line 48
+(scrlayer-scrpage)                \clearmainofpairofpagestyles on input line 49
 .
 
 
 Package scrlayer-scrpage Warning: replacing deprecated \clearscrplain by
-(scrlayer-scrpage)                \clearplainofpairofpagestyles on input line 4
-9.
+(scrlayer-scrpage)                \clearplainofpairofpagestyles on input line 5
+0.
 
 
 Package scrlayer-scrpage Warning: Command deprecated!
@@ -763,7 +762,7 @@ Package scrlayer-scrpage Warning: Command deprecated!
 (scrlayer-scrpage)                `<line thickness>:<line length>' to setup
 (scrlayer-scrpage)                the line length and thickness, and
 (scrlayer-scrpage)                `\setkomafont' or `\addtokomafont' to
-(scrlayer-scrpage)                setup the colour on input line 58.
+(scrlayer-scrpage)                setup the colour on input line 59.
 
 (C:\Program Files\MiKTeX\tex/latex/makecell\makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
@@ -798,7 +797,7 @@ Class scrbook Warning: Usage of package `tocloft' together
 (scrbook)              `part', `section', `subsection',
 (scrbook)              `subsubsection', `paragraph' and `subparagraph'.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `tocloft' on input line 77.
+(scrbook)              package `tocloft' on input line 78.
 
 (C:\Program Files\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1015,14 +1014,18 @@ Class scrbook Warning: \float@addtolists detected!
 
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <17.28> not available
 (Font)              Font shape `OT1/pag/db/n' tried instead on input line 3.
-[1
+(../figures/figure-steel_production_steps.tex
+<../images/steel-production-steps.png, id=78, 920.238pt x 520.344pt>
+File: ../images/steel-production-steps.png Graphic file (type png)
+<use ../images/steel-production-steps.png>
+Package pdftex.def Info: ../images/steel-production-steps.png  used on input li
+ne 5.
+(pdftex.def)             Requested size: 460.72124pt x 260.51276pt.
+) [1
 
 
-]
-Underfull \vbox (badness 1168) has occurred while \output is active []
-
- [2])
-Overfull \hbox (8.5104pt too wide) in paragraph at lines 34--29
+ <../images/steel-production-steps.png>] [2])
+Overfull \hbox (8.5104pt too wide) in paragraph at lines 38--29
 []\OT1/pbk/l/n/12 My Op-er-a-tions Re-search Model (OR model) com-bines Steel M
 an-u-fac-tur-ing Events
  []
@@ -1036,7 +1039,7 @@ LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14.4> not available
 
 ] [5]
 (../figures/figure-adjacency_graph.tex
-<../images/methodology-association-networks-adjacency_graph.png, id=111, 1120.1
+<../images/methodology-association-networks-adjacency_graph.png, id=118, 1120.1
 85pt x 383.031pt>
 File: ../images/methodology-association-networks-adjacency_graph.png Graphic fi
 le (type png)
@@ -1046,7 +1049,7 @@ raph.png  used on input line 5.
 (pdftex.def)             Requested size: 322.50345pt x 110.27544pt.
 )) (binning-methods.tex
 (../figures/figure-hyp_graphs.tex
-<../images/methodology-association-networks-hyp_networks.png, id=115, 1267.134p
+<../images/methodology-association-networks-hyp_networks.png, id=121, 1267.134p
 t x 749.199pt>
 File: ../images/methodology-association-networks-hyp_networks.png Graphic file 
 (type png)
@@ -1058,29 +1061,26 @@ s.png  used on input line 5.
 k-metrics-analysis.tex [7 <../images/methodology-association-networks-hyp_netwo
 rks.png>] [8]
 (../figures/figure-normal_distribution.tex
-<../images/methodology-network-metrics-analysis-normal_distribution.png, id=150
+<../images/methodology-network-metrics-analysis-normal_distribution.png, id=160
 , 550.4565pt x 338.4645pt>
 File: ../images/methodology-network-metrics-analysis-normal_distribution.png Gr
 aphic file (type png)
 <use ../images/methodology-network-metrics-analysis-normal_distribution.png>
 Package pdftex.def Info: ../images/methodology-network-metrics-analysis-normal_
 distribution.png  used on input line 5.
-(pdftex.def)             Requested size: 322.50345pt x 198.30305pt.
-) [9 <../images/methodology-network-metrics-analysis-normal_distribution.png>] 
+(pdftex.def)             Requested size: 391.61586pt x 240.80211pt.
+) [9] [10 <../images/methodology-network-metrics-analysis-normal_distribution.p
+ng>]
 (../figures/figure-null_models.tex
-<../images/cartoon-null-model-definitions.png, id=163, 562.5015pt x 354.72525pt
+<../images/cartoon-null-model-definitions.png, id=182, 562.5015pt x 354.72525pt
 >
 File: ../images/cartoon-null-model-definitions.png Graphic file (type png)
 <use ../images/cartoon-null-model-definitions.png>
 Package pdftex.def Info: ../images/cartoon-null-model-definitions.png  used on 
 input line 5.
 (pdftex.def)             Requested size: 276.43555pt x 174.32568pt.
-)
-[10] [11 <../images/cartoon-null-model-definitions.png>]))
-(flux-balance-analysis.tex
-Underfull \vbox (badness 1584) has occurred while \output is active []
-
- [12]
+) [11 <../images/cartoon-null-model-definitions.png>])) (flux-balance-analysis.
+tex [12]
 Overfull \hbox (28.17595pt too wide) in paragraph at lines 29--51
 $[]$ \OT1/pbk/l/n/12 and $[]$ 
  []
@@ -1090,7 +1090,7 @@ LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 56.
 (../figures/figure-reaction_centric-metabolic_centric-networks.tex
-<../images/methodology-ORmodel-metabolic_centric_network.png, id=189, 561.297pt
+<../images/methodology-ORmodel-metabolic_centric_network.png, id=198, 561.297pt
  x 569.7285pt>
 File: ../images/methodology-ORmodel-metabolic_centric_network.png Graphic file 
 (type png)
@@ -1100,7 +1100,7 @@ k.png  used on input line 4.
 (pdftex.def)             Requested size: 230.36061pt x 233.82492pt.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10.95> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 5.
-<../images/methodology-ORmodel-reaction_centric_network.png, id=190, 564.30824p
+<../images/methodology-ORmodel-reaction_centric_network.png, id=199, 564.30824p
 t x 582.37575pt>
 File: ../images/methodology-ORmodel-reaction_centric_network.png Graphic file (
 type png)
@@ -1110,9 +1110,9 @@ Package pdftex.def Info: ../images/methodology-ORmodel-reaction_centric_network
 (pdftex.def)             Requested size: 230.36061pt x 237.7359pt.
 ) [13]
 [14 <../images/methodology-ORmodel-metabolic_centric_network.png> <../images/me
-thodology-ORmodel-reaction_centric_network.png>]
+thodology-ORmodel-reaction_centric_network.png>] [15]
 (../figures/figure-uptake-secretion-cartoon.tex
-<../images/methodology-ORmodel-uptake_secretion_cartoon.png, id=230, 536.60475p
+<../images/methodology-ORmodel-uptake_secretion_cartoon.png, id=250, 536.60475p
 t x 466.1415pt>
 File: ../images/methodology-ORmodel-uptake_secretion_cartoon.png Graphic file (
 type png)
@@ -1126,9 +1126,9 @@ Overfull \hbox (21.3773pt too wide) in paragraph at lines 124--125
  mass-balance (Eq.[]),
  []
 
-[15] [16 <../images/methodology-ORmodel-uptake_secretion_cartoon.png>])
+[16 <../images/methodology-ORmodel-uptake_secretion_cartoon.png>] [17])
 (concepts-integration.tex (../figures/figure-complete_framework_cartoon.tex
-<../images/methodology-ORmodel-cartoon_complete_framework.png, id=269, 1387.584
+<../images/methodology-ORmodel-cartoon_complete_framework.png, id=287, 1387.584
 pt x 1017.8025pt>
 File: ../images/methodology-ORmodel-cartoon_complete_framework.png Graphic file
  (type png)
@@ -1136,9 +1136,9 @@ File: ../images/methodology-ORmodel-cartoon_complete_framework.png Graphic file
 Package pdftex.def Info: ../images/methodology-ORmodel-cartoon_complete_framewo
 rk.png  used on input line 5.
 (pdftex.def)             Requested size: 506.79616pt x 371.73555pt.
-)
-[17])) (aplications-and-results.tex [18 <../images/methodology-ORmodel-cartoon_
-complete_framework.png>]
+)))
+(aplications-and-results.tex [18] [19 <../images/methodology-ORmodel-cartoon_co
+mplete_framework.png>]
 chapter 3.
 
 Overfull \hbox (68.09341pt too wide) in paragraph at lines 13--14
@@ -1158,9 +1158,9 @@ Overfull \hbox (52.39468pt too wide) in paragraph at lines 13--14
 AB[]TRANSITION
  []
 
-[19
+[20
 
-] [20]
+] [21]
 LaTeX Font Info:    Trying to load font information for TS1+pbk on input line 6
 4.
  (C:\Program Files\MiKTeX\tex/latex/psnfss\ts1pbk.fd
@@ -1168,46 +1168,90 @@ File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
 )
 LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <12> not available
 (Font)              Font shape `TS1/pbk/l/n' tried instead on input line 64.
- [21]
+ [22]
 (../figures/figure-real_life-events-analysis-results.tex
-<../images/results-real_life_events_analysis-results.png, id=314, 2343.35475pt 
-x 3029.3175pt>
+<../images/results-real_life_events_analysis-results.png, id=331, 2351.184pt x 
+3030.522pt>
 File: ../images/results-real_life_events_analysis-results.png Graphic file (typ
 e png)
 <use ../images/results-real_life_events_analysis-results.png>
 Package pdftex.def Info: ../images/results-real_life_events_analysis-results.pn
 g  used on input line 5.
-(pdftex.def)             Requested size: 474.5423pt x 613.43346pt.
+(pdftex.def)             Requested size: 474.5423pt x 611.64272pt.
 
 
-LaTeX Warning: Float too large for page by 16.93344pt on input line 9.
+LaTeX Warning: Float too large for page by 15.1427pt on input line 9.
 
-) [22]
+) [23] [24] [25 <../images/results-real_life_events_analysis-results.png>]
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <12> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 135.
- [23] (../figures/figure-FBA-results.tex
-<../images/results-simulation-results.png, id=324, 852.786pt x 456.5055pt>
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 140.
+
+[26
+
+] (../figures/figure-FBA-results.tex
+<../images/results-simulation-results.png, id=352, 919.0335pt x 933.4875pt>
 File: ../images/results-simulation-results.png Graphic file (type png)
 <use ../images/results-simulation-results.png>
 Package pdftex.def Info: ../images/results-simulation-results.png  used on inpu
 t line 5.
-(pdftex.def)             Requested size: 474.5423pt x 254.02528pt.
-)) (conclusion-and-outlook.tex
-[24] [25 <../images/results-real_life_events_analysis-results.png>] [26 <../ima
-ges/results-simulation-results.png>]
+(pdftex.def)             Requested size: 474.5423pt x 481.99777pt.
+)) (conclusion-and-outlook.tex [27]
+[28 <../images/results-simulation-results.png>]
 chapter 4.
-) (main.bbl [27
+) (main.bbl [29
 
 ]
 chapter 5.
-[28
 
-]) (supplements.tex [29]
-chapter 6.
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+\OT1/pbk/l/n/12 ing pro-cess.'' []$https : / / www . thermosher . com / conten
+t / dam / tfs / ATG /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+\OT1/pbk/l/n/12 CAD / CAD % 20Documents / Product % 20Manuals % 20 & %20Specic
+ations /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+\OT1/pbk/l/n/12 Elemental % 20Analysis / Thermo-[]Scientic-[]Iron-[]Steel-[]pr
+ocess-[]A3 . pdf$[],
+ []
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 48--54
+[]\OT1/pbk/l/n/12 Wikimedia Com-mons, ``The re-drawn chart com-par-ing the var-
+i-
+ []
+
+
+Underfull \hbox (badness 5622) in paragraph at lines 48--54
+\OT1/pbk/l/n/12 ous grad-ing meth-ods in a nor-mal dis-tri-bu-tion, in-cludes s
+tan-
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 48--54
+\OT1/pbk/l/n/12 dard de-vi-a-tions, cu-mu-la-tive per-cent-ages, per-centile eq
+uiv-a-lents, z-
+ []
+
+
+Underfull \hbox (badness 5667) in paragraph at lines 48--54
+\OT1/pbk/l/n/12 scores and t-scores.'' []$https : / / commons . wikimedia . org
+ / wiki / File : The[]
+ []
+
 [30
 
+] [31]) (supplements.tex [32]
+chapter 6.
+[33
+
 ] (../figures/figure-supplements-CCM.tex
-<../images/supplements-CCM_real_life_events_analysis-results.png, id=375, 2413.
+<../images/supplements-CCM_real_life_events_analysis-results.png, id=408, 2413.
 818pt x 2228.325pt>
 File: ../images/supplements-CCM_real_life_events_analysis-results.png Graphic f
 ile (type png)
@@ -1219,9 +1263,9 @@ sults.png  used on input line 4.
 
 LaTeX Warning: Float too large for page by 31.60481pt on input line 7.
 
-[31 <../images/supplements-CCM_real_life_events_analysis-results.png>])
+[34 <../images/supplements-CCM_real_life_events_analysis-results.png>])
 (../figures/figure-supplements-CSP.tex
-<../images/supplements-CSP_real_life_events_analysis-results.png, id=380, 2419.
+<../images/supplements-CSP_real_life_events_analysis-results.png, id=413, 2419.
 8405pt x 2231.9385pt>
 File: ../images/supplements-CSP_real_life_events_analysis-results.png Graphic f
 ile (type png)
@@ -1233,9 +1277,9 @@ sults.png  used on input line 4.
 
 LaTeX Warning: Float too large for page by 31.20552pt on input line 7.
 
-[32 <../images/supplements-CSP_real_life_events_analysis-results.png>])
+[35 <../images/supplements-CSP_real_life_events_analysis-results.png>])
 (../figures/figure-supplements-CGL.tex
-<../images/supplements-CGL_real_life_events_analysis-results.png, id=386, 2443.
+<../images/supplements-CGL_real_life_events_analysis-results.png, id=418, 2443.
 32825pt x 2249.40375pt>
 File: ../images/supplements-CGL_real_life_events_analysis-results.png Graphic f
 ile (type png)
@@ -1247,9 +1291,9 @@ sults.png  used on input line 4.
 
 LaTeX Warning: Float too large for page by 30.33255pt on input line 7.
 
-[33 <../images/supplements-CGL_real_life_events_analysis-results.png>])
+[36 <../images/supplements-CGL_real_life_events_analysis-results.png>])
 (../figures/figure-supplements-PLTCM.tex
-<../images/supplements-PLTCM_real_life_events_analysis-results.png, id=391, 244
+<../images/supplements-PLTCM_real_life_events_analysis-results.png, id=423, 244
 6.94176pt x 2254.22176pt>
 File: ../images/supplements-PLTCM_real_life_events_analysis-results.png Graphic
  file (type png)
@@ -1261,9 +1305,9 @@ results.png  used on input line 4.
 
 LaTeX Warning: Float too large for page by 30.64394pt on input line 7.
 
-[34 <../images/supplements-PLTCM_real_life_events_analysis-results.png>])
+[37 <../images/supplements-PLTCM_real_life_events_analysis-results.png>])
 (../figures/figure-supplements-obj_func-terms-initial.tex
-<../images/results-obj_func_terms_initial-simulation-results.png, id=396, 1259.
+<../images/results-obj_func_terms_initial-simulation-results.png, id=428, 1259.
 907pt x 1072.005pt>
 File: ../images/results-obj_func_terms_initial-simulation-results.png Graphic f
 ile (type png)
@@ -1271,9 +1315,9 @@ ile (type png)
 Package pdftex.def Info: ../images/results-obj_func_terms_initial-simulation-re
 sults.png  used on input line 4.
 (pdftex.def)             Requested size: 506.79616pt x 431.21532pt.
- [35 <../images/results-obj_func_terms_initial-simulation-results.png>])
+ [38 <../images/results-obj_func_terms_initial-simulation-results.png>])
 (../figures/figure-supplements-obj_func-terms-reduced25.tex
-<../images/results-obj_func_terms_reduced25-simulation-results.png, id=402, 126
+<../images/results-obj_func_terms_reduced25-simulation-results.png, id=435, 126
 9.543pt x 489.027pt>
 File: ../images/results-obj_func_terms_reduced25-simulation-results.png Graphic
  file (type png)
@@ -1281,7 +1325,7 @@ File: ../images/results-obj_func_terms_reduced25-simulation-results.png Graphic
 Package pdftex.def Info: ../images/results-obj_func_terms_reduced25-simulation-
 results.png  used on input line 5.
 (pdftex.def)             Requested size: 621.0pt x 239.2149pt.
- [36
+ [39
 
 
 
@@ -1296,7 +1340,7 @@ results.png  used on input line 5.
 
  <../images/results-obj_func_terms_reduced25-simulation-results.png>])
 (../figures/figure-supplements-obj_func-terms-reduced50.tex
-<../images/results-obj_func_terms_reduced50-simulation-results.png, id=408, 126
+<../images/results-obj_func_terms_reduced50-simulation-results.png, id=441, 126
 9.543pt x 499.26524pt>
 File: ../images/results-obj_func_terms_reduced50-simulation-results.png Graphic
  file (type png)
@@ -1304,12 +1348,12 @@ File: ../images/results-obj_func_terms_reduced50-simulation-results.png Graphic
 Package pdftex.def Info: ../images/results-obj_func_terms_reduced50-simulation-
 results.png  used on input line 5.
 (pdftex.def)             Requested size: 621.0pt x 244.22311pt.
- [37
+ [40
 
 
  <../images/results-obj_func_terms_reduced50-simulation-results.png>])
 (../figures/figure-supplements-obj_func-terms-reduced75.tex
-<../images/results-obj_func_terms_reduced75-simulation-results.png, id=414, 127
+<../images/results-obj_func_terms_reduced75-simulation-results.png, id=447, 127
 2.55424pt x 499.26524pt>
 File: ../images/results-obj_func_terms_reduced75-simulation-results.png Graphic
  file (type png)
@@ -1317,7 +1361,7 @@ File: ../images/results-obj_func_terms_reduced75-simulation-results.png Graphic
 Package pdftex.def Info: ../images/results-obj_func_terms_reduced75-simulation-
 results.png  used on input line 5.
 (pdftex.def)             Requested size: 621.0pt x 243.64412pt.
- [38
+ [41
 
 
  <../images/results-obj_func_terms_reduced75-simulation-results.png>])) (main.l
@@ -1325,20 +1369,20 @@ of)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [39
+ [42
 
 ]
 (main.lot)
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [40
+ [43
 
 ] (main.equ)
 \tf@equ=\write7
 \openout7 = `main.equ'.
 
- [41
+ [44
 
 ]
 
@@ -1354,13 +1398,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19937 strings out of 479334
- 358006 string characters out of 2866961
+ 19958 strings out of 479334
+ 358645 string characters out of 2866961
  840592 words of memory out of 3000000
- 36827 multiletter control sequences out of 15000+200000
+ 36837 multiletter control sequences out of 15000+200000
  424676 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,21n,119p,10660b,1922s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 116i,21n,119p,10660b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
@@ -1374,9 +1418,9 @@ fonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/avantgar/uagd
 Files/MiKTeX/fonts/type1/urw/bookman/ubkl8a.pfb><C:/Program Files/MiKTeX/fonts/
 type1/urw/bookman/ubkl8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/bookman/u
 bkli8a.pfb>
-Output written on main.pdf (46 pages, 7274191 bytes).
+Output written on main.pdf (49 pages, 7931057 bytes).
 PDF statistics:
- 612 PDF objects out of 1000 (max. 8388607)
- 149 named destinations out of 1000 (max. 500000)
- 291 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 649 PDF objects out of 1000 (max. 8388607)
+ 156 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
