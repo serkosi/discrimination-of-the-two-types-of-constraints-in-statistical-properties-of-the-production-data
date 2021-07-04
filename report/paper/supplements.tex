@@ -1,7 +1,14 @@
-\chapter{Supplementary Material}
+\chapter*{Supplementary Materials}\label{Supp_first}
+\cftaddtitleline{toc}{chapter}{\nameref{Supp_first}}%
+{\thepage\ -- \pageref{LastPage}}
+
 \captionsetup{list=no}
 \begin{itemize}
-	{\color{red}
+	\item SQL Inquiries for Continuous Casting Machine and Compact Strip Production, Fig.~\ref{figure-supplements-CCM_CSP-SQL}.
+	\item SQL Inquiry for Continuous Galvanizing Line, Fig.~\ref{figure-supplements-CGL-SQL}.
+	\item SQL Inquiry for Pickling Line \& Tandem Cold Mill, Fig.~\ref{figure-supplements-PLTCM-SQL}.
+	
+{\color{red}
 	\item CCM Production Line for Discrete Time Windows, Fig.xx.
 	\item CCM Production Line for Increasing Time Windows, Fig.xx.
 	\item CCM Production Line for Sliding Time Windows, Fig.xx.}
@@ -18,6 +25,10 @@
 \clearpage
 
 \beginsupplement
+\input{../figures/figure-supplements-CCM_CSP_SQL}
+\input{../figures/figure-supplements-CGL_SQL}
+\input{../figures/figure-supplements-PLTCM_SQL}
+
 \input{../figures/figure-supplements-CCM}
 \input{../figures/figure-supplements-CSP}
 \input{../figures/figure-supplements-CGL}
@@ -27,4 +38,3 @@
 \input{../figures/figure-supplements-obj_func-terms-reduced25}
 \input{../figures/figure-supplements-obj_func-terms-reduced50}
 \input{../figures/figure-supplements-obj_func-terms-reduced75}
-

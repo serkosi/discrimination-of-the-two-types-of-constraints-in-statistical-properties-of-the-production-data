@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[paperwidth=841pt,paperheight=595pt,top=28pt,right=28pt,bottom=28pt,left=28pt, includefoot, includehead]{geometry}
+\usepackage{xcolor,listings}
+\usepackage{textcomp}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{HTML}{C42043}
+\definecolor{backcolour}{HTML}{F2F2F2}
+\definecolor{bookColor}{cmyk}{0,0,0,0.90}  
+\color{bookColor}
+
+\lstset{upquote=true}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{codepurple},
+	numberstyle=\numberstyle,
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize\ttfamily,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=10pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+}
+\lstset{style=mystyle}
+
+\newcommand\numberstyle[1]{%
+	\footnotesize
+	\color{codegray}%
+	\ttfamily
+	\ifnum#1<10 0\fi#1 |%
+}
+
+\begin{document}
+	
+\thispagestyle{empty}
+%\section*{Continuous Galvanizing Line (CGL)}
+\begin{lstlisting}[ language=SQL,
+	deletekeywords={IDENTITY},
+	deletekeywords={[2]INT},
+	morekeywords={clustered},
+	framesep=8pt,
+	xleftmargin=40pt,
+	framexleftmargin=40pt,
+	frame=tb,
+	framerule=0pt ]
+SELECT DISTINCT seq.program_id, seq.program_state, data.material_id, data.piece_id, data.material_sub_type, data.steel_grade_id_int, data.spm_elongation, data.temp_end_dff_aim, data.temp_end_rtf_aim, data.temp_end_soak_aim, data.temp_end_slow_cool, data.temp_end_rapid_cool, data.coat_wt_top_aim, data.coat_wt_bottom_aim, data.tlv_elongation, data.width, data.thickness, data.crosssection, data.weight, data.length, data.galv_top, data.galv_bot, data.elongation_spm, data.roll_set_id, data.elongation_tlv, data.oiling_ind, data.cut_date
+FROM pg seq 
+LEFT JOIN (
+	SELECT pgl.program_id, NVL(TO_CHAR(pgl.material_id),'null') material_id, NVL(TO_CHAR(mat.material_sub_type),'null') material_sub_type, NVL(TO_CHAR(mat.steel_grade_id_int),'null') steel_grade_id_int, NVL(TO_CHAR(mat.width),'null') width, NVL(TO_CHAR(mat.thickness),'null') thickness, NVL(TO_CHAR(mat.thickness*mat.width),'null') crosssection, NVL(TO_CHAR(mat.weight),'null') weight, NVL(TO_CHAR(mat.length),'null') length, NVL(TO_CHAR(mat.galv_top),'null') galv_top, NVL(TO_CHAR(mat.galv_bot),'null') galv_bot, NVL(TO_CHAR(cgl.piece_id),'null') piece_id, NVL(TO_CHAR(cgl.elongation_spm),'null') elongation_spm, NVL(TO_CHAR(cgl.roll_set_id),'null') roll_set_id, NVL(TO_CHAR(cgl.elongation_tlv),'null') elongation_tlv, NVL(TO_CHAR(cgl.oiling_ind),'null') oiling_ind, NVL(TO_CHAR(cgl.cut_date),'null') cut_date, NVL(TO_CHAR(pdi.spm_elongation),'null') spm_elongation, NVL(TO_CHAR(pdi.temp_end_dff_aim),'null') temp_end_dff_aim, NVL(TO_CHAR(pdi.temp_end_rtf_aim),'null') temp_end_rtf_aim, NVL(TO_CHAR(pdi.temp_end_soak_aim),'null') temp_end_soak_aim, NVL(TO_CHAR(pdi.temp_end_slow_cool),'null') temp_end_slow_cool, NVL(TO_CHAR(pdi.temp_end_rapid_cool),'null') temp_end_rapid_cool, NVL(TO_CHAR(pdi.coat_wt_top_aim),'null') coat_wt_top_aim, NVL(TO_CHAR(pdi.coat_wt_bottom_aim),'null') coat_wt_bottom_aim, NVL(TO_CHAR(pdi.tlv_elongation),'null') tlv_elongation 
+	FROM pdi_cgl pdi, pgl pgl, r_mat mat, r_cgl cgl 
+	WHERE mat.material_id=pdi.material_id AND mat.material_id=pgl.material_id AND mat.material_id=cgl.material_id AND mat.material_type LIKE 'CG' AND mat.modification_date=(
+		SELECT MAX(modification_date) 
+		FROM r_mat mat2 
+		WHERE mat2.material_id=mat.material_id
+		)
+	) data ON data.program_id=seq.program_id 
+WHERE seq.production_line_name LIKE 'CGL%' AND seq.start_actual>to_date('01.01.2018','DD.MM.YYYY');
+\end{lstlisting}
+% "ORDER BY data.cut_date" was removed from the above inquiry
+	
+\end{document}

@@ -8,6 +8,7 @@
 \usepackage[automark,headsepline,footsepline]{scrlayer-scrpage}
 \usepackage{a4wide,parskip}
 \usepackage{enumitem}
+\usepackage{lastpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
 %\usepackage{unicode-math}
@@ -30,7 +31,7 @@
 \usepackage{listings}
 \usepackage{booktabs}
 %\usepackage[table,xcdraw]{xcolor}
-%\usepackage{multirow}
+\usepackage{multirow}
 \usepackage{url}
 
 \usepackage[bookmarks=true,%       %%% generate bookmarks ...
@@ -80,6 +81,11 @@ hidelinks 						%%% hide the linkbox borders
  \newcommand{\myequations}[1]{%
  	\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
  \setlength{\cftmyequationsnumwidth}{2.5em}% Width of equation number in List of Equations
+ 
+\usepackage{nameref} %creating page number intervals in TOC including tocloft package
+\makeatletter\renewcommand{\@pnumwidth}{3em}\makeatother
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\notoc}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}}
 
 %\usepackage[acronym]{glossaries}
 %\makeglossaries

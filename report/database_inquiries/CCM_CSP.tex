@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[paperwidth=841pt,paperheight=595pt,top=28pt,right=28pt,bottom=28pt,left=28pt, includefoot, includehead]{geometry}
+\usepackage{xcolor,listings}
+\usepackage{textcomp}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{HTML}{C42043}
+\definecolor{backcolour}{HTML}{F2F2F2}
+\definecolor{bookColor}{cmyk}{0,0,0,0.90}  
+\color{bookColor}
+
+\lstset{upquote=true}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{codepurple},
+	numberstyle=\numberstyle,
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize\ttfamily,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=10pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+}
+\lstset{style=mystyle}
+
+\newcommand\numberstyle[1]{%
+	\footnotesize
+	\color{codegray}%
+	\ttfamily
+	\ifnum#1<10 0\fi#1 |%
+}
+
+\begin{document}
+	
+\thispagestyle{empty}
+%\section*{Continuous Casting Machine (CCM)}
+\begin{lstlisting}[ language=SQL,
+	deletekeywords={IDENTITY},
+	deletekeywords={[2]INT},
+	morekeywords={clustered},
+	framesep=8pt,
+	xleftmargin=40pt,
+	framexleftmargin=40pt,
+	frame=tb,
+	framerule=0pt ]
+SELECT ros.r_os_id, ros.production_line_name, ccm.sequence_id, ros.reference_date, NVL(TO_CHAR(slab.piece_id),'NA') piece_id, NVL(TO_CHAR(slab.material_id),'NA') material_id, NVL(TO_CHAR(slab.mold_width),'NA') mold_width, NVL(TO_CHAR(mat.width),'NA') width, NVL(TO_CHAR(mat.thickness),'NA') thickness, NVL(TO_CHAR(mat.weight),'NA') weight, NVL(TO_CHAR(mat.length),'NA') length, NVL(TO_CHAR(mat.heat_id),'NA') heat_id, NVL(TO_CHAR(mat.steel_grade_id_int),'NA') steel_grade_id_int, NVL(TO_CHAR(slab.exit_temp),'NA') exit_temp, NVL(TO_CHAR(mat.slab_transition),'NA') slab_transition
+FROM L3MAIN.r_os ros 
+LEFT JOIN L3MAIN.r_ccm ccm ON ros.r_os_id=ccm.r_os_id 
+LEFT JOIN L3MAIN.r_ccm_slab slab ON ros.r_os_id=slab.r_os_id 
+LEFT JOIN L3MAIN.r_mat mat ON ros.r_os_id=mat.r_os_id 
+WHERE sequence_id IS NOT NULL;
+\end{lstlisting}
+
+%\section*{Compact Strip Production (CSP)}
+\begin{lstlisting}[ language=SQL,
+	deletekeywords={IDENTITY},
+	deletekeywords={[2]INT},
+	morekeywords={clustered},
+	framesep=8pt,
+	xleftmargin=40pt,
+	framexleftmargin=40pt,
+	frame=tb,
+	framerule=0pt ]
+SELECT DISTINCT ccm2.sequence_id, sl.production_line_name, sl.piece_id, sl.material_id, sl.steel_grade_id_int, sl.heat_id, sl.slab_transition, sl.width, sl.length, sl.weight, sl.thickness, sl.thickness_hsm, sl.cut_time
+FROM r_ccm ccm2 
+LEFT JOIN (
+	SELECT ros.production_line_name, ccm.sequence_id, NVL(TO_CHAR(slab.piece_id),'null') piece_id, NVL(TO_CHAR(slab.material_id),'null') material_id, NVL(TO_CHAR(slab.mold_width),'null') mold_width, NVL(TO_CHAR(slab.casting_speed),'null') casting_speed, NVL(TO_CHAR(slab.exit_temp),'null') exit_temp, NVL(TO_CHAR(mat.steel_grade_id_int),'null') steel_grade_id_int, NVL(TO_CHAR(mat.heat_id),'null') heat_id, NVL(TO_CHAR(mat.slab_transition),'null') slab_transition, NVL(TO_CHAR(mat.width),'null') width, NVL(TO_CHAR(mat.length),'null') length, NVL(TO_CHAR(mat.weight),'null') weight, NVL(TO_CHAR(mat.thickness),'null') thickness, NVL(TO_CHAR(mat2.thickness),'null') as thickness_hsm, NVL(TO_CHAR(slab.cut_time),'null') cut_time 
+	FROM r_os ros, r_ccm_slab slab, r_ccm ccm, r_mat mat, r_mat mat2, r_os ros2 
+	WHERE mat2.material_id=mat.material_id AND mat2.r_os_id=ros2.r_os_id AND ros2.production_line_name LIKE 'HSM%' AND mat.material_id=slab.material_id AND slab.r_os_id=ccm.r_os_id AND mat.material_type='S' AND mat.modification_date=(
+		SELECT MAX(mat2.modification_date) 
+		FROM r_mat mat2 
+		WHERE mat2.material_type='S' AND mat2.material_id=slab.material_id
+	) AND ros.r_os_id=mat.r_os_id AND ros.production_line_name LIKE 'CCM1'
+) sl ON sl.sequence_id=ccm2.sequence_id
+WHERE ccm2.ladle_arrival_time>to_date('01.07.2017', 'DD.MM.YYYY');
+\end{lstlisting}
+% "ORDER BY ccm2.sequence_id, sl.cut_time" was removed from the above inquiry
+
+\end{document}

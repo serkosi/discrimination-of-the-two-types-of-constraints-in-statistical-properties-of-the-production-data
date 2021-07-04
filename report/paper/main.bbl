@@ -44,6 +44,10 @@ M.~Enders, M.-T. Hütt, and J.~M. Jeschke, ``Drawing a map of invasion biology
   based on a network of hypotheses,'' {\em Ecosphere}, vol.~9, no.~3,
   p.~e02146, 2018.
 
+\bibitem{Fretter2012}
+C.~Fretter, M.~M\"uller-Hannemann, and M.-T. H\"utt, ``Subgraph fluctuations in
+  random graphs,'' {\em Phys. Rev. E}, vol.~85, p.~056119, May 2012.
+
 \bibitem{normaldistribution}
 {Wikimedia Commons}, ``The re-drawn chart comparing the various grading methods
   in a normal distribution, includes standard deviations, cumulative
@@ -52,14 +56,26 @@ M.~Enders, M.-T. Hütt, and J.~M. Jeschke, ``Drawing a map of invasion biology
   2007.
 \newblock Accessed on 27-06-2021.
 
-\bibitem{Hutt2008}
-M.~Müller-Linow, C.~C. Hilgetag, and M.-T. Hütt, ``Organization of excitable
-  dynamics in hierarchical biological networks,'' {\em PLOS Computational
-  Biology}, vol.~4, pp.~1--15, 09 2008.
+\bibitem{BARABASI2001559}
+A.-L. Barabási, E.~Ravasz, and T.~Vicsek, ``Deterministic scale-free
+  networks,'' {\em Physica A: Statistical Mechanics and its Applications},
+  vol.~299, no.~3, pp.~559--564, 2001.
 
 \bibitem{Barabasi2003}
 E.~Ravasz and A.-L. Barab\'asi, ``Hierarchical organization in complex
   networks,'' {\em Phys. Rev. E}, vol.~67, p.~026112, 02 2003.
+
+\bibitem{Young2000}
+M.~P. Young, C.~Hilgetag, M.~A. O'Neill, and M.~P. Young, ``Hierarchical
+  organization of macaque and cat cortical sensory systems explored with a
+  novel network processor,'' {\em Philosophical Transactions of the Royal
+  Society of London. Series B: Biological Sciences}, vol.~355, no.~1393,
+  pp.~71--89, 2000.
+
+\bibitem{Ravasz1551}
+E.~Ravasz, A.~L. Somera, D.~A. Mongru, Z.~N. Oltvai, and A.-L. Barab{\'a}si,
+  ``Hierarchical organization of modularity in metabolic networks,'' {\em
+  Science}, vol.~297, no.~5586, pp.~1551--1555, 2002.
 
 \bibitem{klipp2005systems}
 E.~Klipp, R.~Herwig, A.~Kowald, C.~Wierling, and H.~Lehrach, {\em Systems
