@@ -1,23 +1,23 @@
 \subsection*{Binning Methods}
 \addcontentsline{toc}{subsection}{Binning Methods}%
 
-The data set $D$ events can be labelled with a typical value interval (the so-called binning size) for every Feature-A value with a slight difference to each other. Binning generation for the events allows us to investigate them in a sequential manufacturing system and can be performed in alternative ways.
+The data set $D$ events can be labelled with a typical value interval (the so-called binning size) for every Feature-A value with a slight difference to each other. Binning generation for the events allows us to investigate them in a {\color{red}sequential manufacturing system} and can be performed in alternative ways.
 
 Say that we do the Feature-A values labelling with a typical binning size, in our case, 99, so that all of the events in $D$ must match the corresponding step interval, Fixed Step Size (FSS), as shown in Table~\ref{Tab: D-dataset-FSS}. 
 \begin{table}[hb!]
 	\centering
-	%	\caption*{$D$ Labeled with FSS Bin Sizes}
-	\begin{tabular}{|ccccccc|l}
-		\cline{1-7}
-		\makecell{Event\\ID} 	&& Feature-A    	&& \makecell{FSS\\Bin Size}&& \makecell{Sequence\\ID} &  \\ \cline{1-7}
-		1 	      && 280	    && 200-299	&& 1 		   &  \\
-		2 		  && 250	    && 200-299	&& 1 		   &  \\
-		3 	      && 890	    && 800-899	&& 2 		   &  \\
-		4 		  && 850	    && 800-899	&& 2 		   &  \\
-		\vdots	  && \vdots  	&& \vdots	&& \vdots 	   &  \\
-		n-2 	  && 520	    && 500-599	&& k 		   &  \\
-		n-1       && 630	    && 600-699	&& k 		   &  \\
-		n 		  && 610	    && 600-699	&& k 		   &  \\ \cline{1-7}
+	\setlength{\arrayrulewidth}{0.75pt}% 
+	\begin{tabular}{|cc|c|ccc|c|}
+		\hline \rowcolor[HTML]{FFFFC7}
+		\makecell{Event\\ID} 	&& Feature-A    	&& \makecell{FSS\\Bin Size}&& \makecell{Sequence\\ID}  \\ \hline
+		1 	      && 280	    && 200-299	&& 1 		     \\
+		2 		  && 250	    && 200-299	&& 1 		     \\
+		3 	      && 890	    && 800-899	&& 2 		     \\
+		4 		  && 850	    && 800-899	&& 2 		     \\
+		\vdots	  && \vdots  	&& \vdots	&& \vdots 	     \\
+		n-2 	  && 520	    && 500-599	&& k 		     \\
+		n-1       && 630	    && 600-699	&& k 		     \\
+		n 		  && 610	    && 600-699	&& k 		     \\ \hline
 	\end{tabular}
 	\caption{Data Set D with FSS Bin Size Labels.}
 	\label{Tab: D-dataset-FSS}
@@ -26,23 +26,23 @@ Say that we do the Feature-A values labelling with a typical binning size, in ou
 An alternative way of label generation is to create bins with equal event counts per bin among the complete data set, Fixed Bucket Size (FBS) given in Table~\ref{Tab: D-dataset-FBS}.
 \begin{table}[ht!]
 	\centering
-	%	\caption*{$D$ Labeled with FBS Bin Sizes}
-	\begin{tabular}{|ccccccc|l}
-		\cline{1-7}
-		\makecell{Event\\ID} 	&& Feature-A    	&& \makecell{FBS\\Bin Size}&& \makecell{Sequence\\ID} &  \\ \cline{1-7}
-		1 	      && 280	    && 200-599	&& 1 		   &  \\
-		2 		  && 250	    && 200-599	&& 1 		   &  \\
-		3 	      && 890	    && 630-899	&& 2 		   &  \\
-		4 		  && 850	    && 630-899	&& 2 		   &  \\
-		\vdots	  && \vdots  	&& \vdots	&& \vdots 	   &  \\
-		n-2 	  && 520	    && 200-599	&& k 		   &  \\
-		n-1       && 630	    && 630-899	&& k 		   &  \\
-		n 		  && 610	    && 600-629	&& k 		   &  \\ \cline{1-7}
+	\setlength{\arrayrulewidth}{0.75pt}% 
+	\begin{tabular}{|cc|c|ccc|c|}
+		\hline \rowcolor[HTML]{FFFFC7}
+		\makecell{Event\\ID} 	&& Feature-A    	&& \makecell{FBS\\Bin Size}&& \makecell{Sequence\\ID} \\ \hline
+		1 	      && 280	    && 200-599	&& 1 		     \\
+		2 		  && 250	    && 200-599	&& 1 		     \\
+		3 	      && 890	    && 630-899	&& 2 		     \\
+		4 		  && 850	    && 630-899	&& 2 		     \\
+		\vdots	  && \vdots  	&& \vdots	&& \vdots 	     \\
+		n-2 	  && 520	    && 200-599	&& k 		     \\
+		n-1       && 630	    && 630-899	&& k 		     \\
+		n 		  && 610	    && 600-629	&& k 		     \\ \hline
 	\end{tabular}
 	\caption{Data Set D with FBS Bin Size Labels.}
 	\label{Tab: D-dataset-FBS}
 \end{table}
-The alternative binning generation methods mentioned above let us derive two distinguished network approaches. The first one is the FSS Network; it has graph nodes as binning groups with equal bin sizes. Manipulation of binning size allows us to aggregate events in different network nodes. The second one is the FBS Network; its nodes are binning groups with an equal number of events per bin. Defining a typical bucket size for the network nodes results in arbitrary interval boundaries for each node, and it allows to control their population.
+The alternative binning generation methods mentioned above let us derive two distinguished approaches for the association networks. The first one is the FSS Network; it has graph nodes as binning groups with equal bin sizes. Manipulation of binning size allows us to aggregate events in different network nodes. The second one is the FBS Network; its nodes are binning groups with an equal number of events per bin. Defining a typical bucket size for the network nodes results in arbitrary interval boundaries for each node, and it allows to control their population.
 \input{../figures/figure-hyp_graphs}
 
 {\color{red}FSS and FBS networks generation for the production events underlie the developed hypothesis of this thesis work: Non-random features of the association networks derived from these two methods.}

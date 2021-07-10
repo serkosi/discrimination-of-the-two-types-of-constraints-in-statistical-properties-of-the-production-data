@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.6)  5 JUL 2021 04:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.6)  10 JUL 2021 14:17
 entering extended mode
 **./main.tex
 (main.tex
@@ -458,27 +458,6 @@ Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 \c@subfigure=\count281
 \c@subtable=\count282
 )
-(C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-
-(C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
 (C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -492,7 +471,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
-)
+
+(C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
 \Gin@req@height=\dimen167
 \Gin@req@width=\dimen168
 )
@@ -612,16 +594,63 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count313
 \@thisrulewidth=\dimen192
 )
+(C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(C:\Program Files\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks27
+\minrowclearance=\skip92
+)
+\rownum=\count314
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
 (C:\Program Files\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/01/29 v2.7 Span multiple rows of a table
-\multirow@colwidth=\skip92
-\multirow@cntb=\count314
-\multirow@dima=\skip93
+\multirow@colwidth=\skip93
+\multirow@cntb=\count315
+\multirow@dima=\skip94
 \bigstrutjot=\dimen193
 )
 (C:\Program Files\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(C:\Program Files\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2021/03/06 v0.5t Insert pages of external PDF documents (AM)
+
+(C:\Program Files\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen194
+\ESO@tempdimb=\dimen195
+)
+\AM@pagewidth=\dimen196
+\AM@pageheight=\dimen197
+\AM@fboxrule=\dimen198
+
+(C:\Program Files\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2021/03/06 v0.5t Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count316
+\AM@pagebox=\box63
+\AM@global@opts=\toks28
+\AM@pagecnt=\count317
+\AM@toc@title=\toks29
+\c@AM@survey=\count318
+\AM@templatesizebox=\box64
 )
 (C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
@@ -655,9 +684,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen194
-\Hy@linkcounter=\count315
-\Hy@pagecounter=\count316
+\@linkdim=\dimen199
+\Hy@linkcounter=\count319
+\Hy@pagecounter=\count320
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
@@ -674,7 +703,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Program Files\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count317
+\Hy@SavedSpaceFactor=\count321
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
@@ -693,9 +722,9 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count318
+\c@Hy@tempcnt=\count322
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen195
+\XeTeXLinkMargin=\dimen256
 
 (C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -704,9 +733,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count319
-\Field@Width=\dimen196
-\Fld@charsize=\dimen197
+\Fld@menulength=\count323
+\Field@Width=\dimen257
+\Fld@charsize=\dimen258
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -722,9 +751,9 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count320
-\c@Item=\count321
-\c@Hfootnote=\count322
+\Hy@abspage=\count324
+\c@Item=\count325
+\c@Hfootnote=\count326
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -736,8 +765,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count323
-\c@bookmark@seq@number=\count324
+\Fld@listcount=\count327
+\c@bookmark@seq@number=\count328
 
 (C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -748,17 +777,17 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip94
+\Hy@SectionHShift=\skip95
 )
 
 Package scrlayer-scrpage Warning: replacing deprecated \clearscrheading by
-(scrlayer-scrpage)                \clearmainofpairofpagestyles on input line 51
+(scrlayer-scrpage)                \clearmainofpairofpagestyles on input line 52
 .
 
 
 Package scrlayer-scrpage Warning: replacing deprecated \clearscrplain by
 (scrlayer-scrpage)                \clearplainofpairofpagestyles on input line 5
-2.
+3.
 
 
 Package scrlayer-scrpage Warning: Command deprecated!
@@ -772,13 +801,13 @@ Package scrlayer-scrpage Warning: Command deprecated!
 (scrlayer-scrpage)                `<line thickness>:<line length>' to setup
 (scrlayer-scrpage)                the line length and thickness, and
 (scrlayer-scrpage)                `\setkomafont' or `\addtokomafont' to
-(scrlayer-scrpage)                setup the colour on input line 61.
+(scrlayer-scrpage)                setup the colour on input line 62.
 
 (C:\Program Files\MiKTeX\tex/latex/makecell\makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen198
-\c@nlinenum=\count325
-\TeXr@lab=\toks27
+\rotheadsize=\dimen259
+\c@nlinenum=\count329
+\TeXr@lab=\toks30
 )
 (C:\Program Files\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -807,60 +836,60 @@ Class scrbook Warning: Usage of package `tocloft' together
 (scrbook)              `part', `section', `subsection',
 (scrbook)              `subsubsection', `paragraph' and `subparagraph'.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `tocloft' on input line 80.
+(scrbook)              package `tocloft' on input line 81.
 
 (C:\Program Files\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip95
-\cftbeforetoctitleskip=\skip96
-\cftaftertoctitleskip=\skip97
-\cftbeforepartskip=\skip98
-\cftpartnumwidth=\skip99
-\cftpartindent=\skip100
-\cftbeforechapskip=\skip101
-\cftchapindent=\skip102
-\cftchapnumwidth=\skip103
-\cftbeforesecskip=\skip104
-\cftsecindent=\skip105
-\cftsecnumwidth=\skip106
-\cftbeforesubsecskip=\skip107
-\cftsubsecindent=\skip108
-\cftsubsecnumwidth=\skip109
-\cftbeforesubsubsecskip=\skip110
-\cftsubsubsecindent=\skip111
-\cftsubsubsecnumwidth=\skip112
-\cftbeforeparaskip=\skip113
-\cftparaindent=\skip114
-\cftparanumwidth=\skip115
-\cftbeforesubparaskip=\skip116
-\cftsubparaindent=\skip117
-\cftsubparanumwidth=\skip118
-\cftbeforeloftitleskip=\skip119
-\cftafterloftitleskip=\skip120
-\cftbeforefigskip=\skip121
-\cftfigindent=\skip122
-\cftfignumwidth=\skip123
-\c@lofdepth=\count326
-\c@lotdepth=\count327
-\cftbeforelottitleskip=\skip124
-\cftafterlottitleskip=\skip125
-\cftbeforetabskip=\skip126
-\cfttabindent=\skip127
-\cfttabnumwidth=\skip128
+\cftparskip=\skip96
+\cftbeforetoctitleskip=\skip97
+\cftaftertoctitleskip=\skip98
+\cftbeforepartskip=\skip99
+\cftpartnumwidth=\skip100
+\cftpartindent=\skip101
+\cftbeforechapskip=\skip102
+\cftchapindent=\skip103
+\cftchapnumwidth=\skip104
+\cftbeforesecskip=\skip105
+\cftsecindent=\skip106
+\cftsecnumwidth=\skip107
+\cftbeforesubsecskip=\skip108
+\cftsubsecindent=\skip109
+\cftsubsecnumwidth=\skip110
+\cftbeforesubsubsecskip=\skip111
+\cftsubsubsecindent=\skip112
+\cftsubsubsecnumwidth=\skip113
+\cftbeforeparaskip=\skip114
+\cftparaindent=\skip115
+\cftparanumwidth=\skip116
+\cftbeforesubparaskip=\skip117
+\cftsubparaindent=\skip118
+\cftsubparanumwidth=\skip119
+\cftbeforeloftitleskip=\skip120
+\cftafterloftitleskip=\skip121
+\cftbeforefigskip=\skip122
+\cftfigindent=\skip123
+\cftfignumwidth=\skip124
+\c@lofdepth=\count330
+\c@lotdepth=\count331
+\cftbeforelottitleskip=\skip125
+\cftafterlottitleskip=\skip126
+\cftbeforetabskip=\skip127
+\cfttabindent=\skip128
+\cfttabnumwidth=\skip129
 
 
 Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing
  out. on input line 1156.
 
 )
-\c@myequations=\count328
-\cftbeforemyequationsskip=\skip129
-\cftmyequationsindent=\skip130
-\cftmyequationsnumwidth=\skip131
-\c@equdepth=\count329
-\cftbeforeequtitleskip=\skip132
-\cftafterequtitleskip=\skip133
+\c@myequations=\count332
+\cftbeforemyequationsskip=\skip130
+\cftmyequationsindent=\skip131
+\cftmyequationsnumwidth=\skip132
+\c@equdepth=\count333
+\cftbeforeequtitleskip=\skip133
+\cftafterequtitleskip=\skip134
  (C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -870,7 +899,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count330
+\c@section@level=\count334
 ))
 LaTeX Font Info:    Trying to load font information for OT1+pbk on input line 3
 .
@@ -883,8 +912,8 @@ LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <12> not available
 
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count331
-\l__pdf_internal_box=\box63
+\l__color_backend_stack_int=\count335
+\l__pdf_internal_box=\box65
 ) (main.aux)
 \openout1 = `main.aux'.
 
@@ -919,17 +948,17 @@ Package caption Info: End \AtBeginDocument code.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count332
-\scratchdimen=\dimen199
-\scratchbox=\box64
-\nofMPsegments=\count333
-\nofMParguments=\count334
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count335
-\MPscratchDim=\dimen256
-\MPnumerator=\count336
-\makeMPintoPDFobject=\count337
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count336
+\scratchdimen=\dimen260
+\scratchbox=\box66
+\nofMPsegments=\count337
+\nofMParguments=\count338
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count339
+\MPscratchDim=\dimen261
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
+\everyMPtoPDFconversion=\toks32
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -937,7 +966,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 )
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 3.
-\c@lstlisting=\count338
+\c@lstlisting=\count342
 Package hyperref Info: Link coloring OFF on input line 3.
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
@@ -960,23 +989,82 @@ Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (C:\Program Files\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count339
+\BKM@id=\count343
 ))
-LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <12> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 9.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
+(first-two-pages.tex
 
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
+pdfTeX warning: pdflatex.exe (file ../images/first_two_pages.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<../images/first_two_pages.pdf, id=3, 614.295pt x 794.97pt>
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf>
+Package pdftex.def Info: ../images/first_two_pages.pdf  used on input line 1.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
 
-{C:/Users/serha/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (abstract.tex [
-2]
+pdfTeX warning: pdflatex.exe (file ../images/first_two_pages.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf>
+Package pdftex.def Info: ../images/first_two_pages.pdf  used on input line 1.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ../images/first_two_pages.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ../images/first_two_pages.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<../images/first_two_pages.pdf, id=6, page=1, 614.295pt x 794.97pt>
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf, page 1>
+Package pdftex.def Info: ../images/first_two_pages.pdf , page1 used on input li
+ne 1.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf, page 1>
+Package pdftex.def Info: ../images/first_two_pages.pdf , page1 used on input li
+ne 1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf, page 1>
+Package pdftex.def Info: ../images/first_two_pages.pdf , page1 used on input li
+ne 1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf, page 1>
+Package pdftex.def Info: ../images/first_two_pages.pdf , page1 used on input li
+ne 1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf, page 1>
+Package pdftex.def Info: ../images/first_two_pages.pdf , page1 used on input li
+ne 1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[1
+
+ <../images/first_two_pages.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ../images/first_two_pages.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<../images/first_two_pages.pdf, id=30, page=2, 614.295pt x 794.97pt>
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf, page 2>
+Package pdftex.def Info: ../images/first_two_pages.pdf , page2 used on input li
+ne 1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf, page 2>
+Package pdftex.def Info: ../images/first_two_pages.pdf , page2 used on input li
+ne 1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../images/first_two_pages.pdf Graphic file (type pdf)
+<use ../images/first_two_pages.pdf, page 2>
+Package pdftex.def Info: ../images/first_two_pages.pdf , page2 used on input li
+ne 1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[2 <../images/first_two_pages.pdf>]) (abstract.tex
 LaTeX Font Info:    Trying to load font information for OT1+pag on input line 1
 .
 
@@ -988,16 +1076,27 @@ LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <24.88> not available
 (Font)              Font shape `OT1/pag/db/n' tried instead on input line 1.
 ) (acknowledgements.tex
+LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <12> not available
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 1.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10.95> not available
 (Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 1.
-
-[3
+ [3{C:/Users/serha/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
 ]) [4
 
 ]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <24.88> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 20.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 16.
  (main.toc
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <12> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 1.
@@ -1027,7 +1126,7 @@ Class scrbook Warning: \float@addtolists detected!
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <17.28> not available
 (Font)              Font shape `OT1/pag/db/n' tried instead on input line 3.
 (../figures/figure-steel_production_steps.tex
-<../images/steel-production-steps.png, id=83, 920.238pt x 520.344pt>
+<../images/steel-production-steps.png, id=133, 920.238pt x 520.344pt>
 File: ../images/steel-production-steps.png Graphic file (type png)
 <use ../images/steel-production-steps.png>
 Package pdftex.def Info: ../images/steel-production-steps.png  used on input li
@@ -1036,22 +1135,22 @@ ne 5.
 ) [1
 
 
- <../images/steel-production-steps.png>] [2])
-Overfull \hbox (8.5104pt too wide) in paragraph at lines 38--29
+ <../images/steel-production-steps.png>] [2] [3] [4])
+Overfull \hbox (8.5104pt too wide) in paragraph at lines 83--22
 []\OT1/pbk/l/n/12 My Op-er-a-tions Re-search Model (OR model) com-bines Steel M
 an-u-fac-tur-ing Events
  []
 
-(methodology.tex [3]
+(methodology.tex [5]
 chapter 2.
 (steel-manufacturing-data-analysis.tex (association-networks.tex
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14.4> not available
 (Font)              Font shape `OT1/pag/db/n' tried instead on input line 1.
- [4
+ [6
 
-] [5]
+] [7]
 (../figures/figure-adjacency_graph.tex
-<../images/methodology-association-networks-adjacency_graph.png, id=123, 1120.1
+<../images/methodology-association-networks-adjacency_graph.png, id=189, 1120.1
 85pt x 383.031pt>
 File: ../images/methodology-association-networks-adjacency_graph.png Graphic fi
 le (type png)
@@ -1061,7 +1160,7 @@ raph.png  used on input line 5.
 (pdftex.def)             Requested size: 322.50345pt x 110.27544pt.
 )) (binning-methods.tex
 (../figures/figure-hyp_graphs.tex
-<../images/methodology-association-networks-hyp_networks.png, id=126, 1267.134p
+<../images/methodology-association-networks-hyp_networks.png, id=192, 1267.134p
 t x 749.199pt>
 File: ../images/methodology-association-networks-hyp_networks.png Graphic file 
 (type png)
@@ -1069,11 +1168,11 @@ File: ../images/methodology-association-networks-hyp_networks.png Graphic file
 Package pdftex.def Info: ../images/methodology-association-networks-hyp_network
 s.png  used on input line 5.
 (pdftex.def)             Requested size: 368.57838pt x 217.91376pt.
-) [6 <../images/methodology-association-networks-adjacency_graph.png>]) (networ
-k-metrics-analysis.tex [7 <../images/methodology-association-networks-hyp_netwo
-rks.png>] [8]
+) [8 <../images/methodology-association-networks-adjacency_graph.png>]) (networ
+k-metrics-analysis.tex [9 <../images/methodology-association-networks-hyp_netwo
+rks.png>] [10]
 (../figures/figure-null_models.tex
-<../images/cartoon-null-model-definitions.png, id=167, 710.655pt x 320.99925pt>
+<../images/cartoon-null-model-definitions.png, id=233, 710.655pt x 320.99925pt>
 
 File: ../images/cartoon-null-model-definitions.png Graphic file (type png)
 <use ../images/cartoon-null-model-definitions.png>
@@ -1081,7 +1180,7 @@ Package pdftex.def Info: ../images/cartoon-null-model-definitions.png  used on
 input line 5.
 (pdftex.def)             Requested size: 414.6463pt x 187.29645pt.
 ) (../figures/figure-normal_distribution.tex
-<../images/methodology-network-metrics-analysis-normal_distribution.png, id=172
+<../images/methodology-network-metrics-analysis-normal_distribution.png, id=238
 , 550.4565pt x 338.4645pt>
 File: ../images/methodology-network-metrics-analysis-normal_distribution.png Gr
 aphic file (type png)
@@ -1089,22 +1188,23 @@ aphic file (type png)
 Package pdftex.def Info: ../images/methodology-network-metrics-analysis-normal_
 distribution.png  used on input line 5.
 (pdftex.def)             Requested size: 391.61586pt x 240.80211pt.
-) [9 <../images/cartoon-null-model-definitions.png>] [10 <../images/methodology
--network-metrics-analysis-normal_distribution.png>]
-Overfull \vbox (10.14977pt too high) detected at line 55
+) [11 <../images/cartoon-null-model-definitions.png>] [12 <../images/methodolog
+y-network-metrics-analysis-normal_distribution.png>]
+Overfull \vbox (10.14977pt too high) detected at line 59
  []
 
-)) (flux-balance-analysis.tex [11]
+)) (flux-balance-analysis.tex [13]
 Overfull \hbox (28.17595pt too wide) in paragraph at lines 29--51
 $[]$ \OT1/pbk/l/n/12 and $[]$ 
  []
 
+[14]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 56.
-(../figures/figure-reaction_centric-metabolic_centric-networks.tex
-<../images/methodology-ORmodel-metabolic_centric_network.png, id=215, 561.297pt
+ (../figures/figure-reaction_centric-metabolic_centric-networks.tex
+<../images/methodology-ORmodel-metabolic_centric_network.png, id=291, 561.297pt
  x 569.7285pt>
 File: ../images/methodology-ORmodel-metabolic_centric_network.png Graphic file 
 (type png)
@@ -1114,7 +1214,7 @@ k.png  used on input line 4.
 (pdftex.def)             Requested size: 230.36061pt x 233.82492pt.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10.95> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 5.
-<../images/methodology-ORmodel-reaction_centric_network.png, id=216, 564.30824p
+<../images/methodology-ORmodel-reaction_centric_network.png, id=292, 564.30824p
 t x 582.37575pt>
 File: ../images/methodology-ORmodel-reaction_centric_network.png Graphic file (
 type png)
@@ -1122,11 +1222,11 @@ type png)
 Package pdftex.def Info: ../images/methodology-ORmodel-reaction_centric_network
 .png  used on input line 9.
 (pdftex.def)             Requested size: 230.36061pt x 237.7359pt.
-) [12]
-[13 <../images/methodology-ORmodel-metabolic_centric_network.png> <../images/me
-thodology-ORmodel-reaction_centric_network.png>] [14]
+)
+[15 <../images/methodology-ORmodel-metabolic_centric_network.png> <../images/me
+thodology-ORmodel-reaction_centric_network.png>] [16]
 (../figures/figure-uptake-secretion-cartoon.tex
-<../images/methodology-ORmodel-uptake_secretion_cartoon.png, id=267, 536.60475p
+<../images/methodology-ORmodel-uptake_secretion_cartoon.png, id=330, 536.60475p
 t x 466.1415pt>
 File: ../images/methodology-ORmodel-uptake_secretion_cartoon.png Graphic file (
 type png)
@@ -1140,9 +1240,9 @@ Overfull \hbox (21.3773pt too wide) in paragraph at lines 124--125
  mass-balance (Eq.[]),
  []
 
-[15 <../images/methodology-ORmodel-uptake_secretion_cartoon.png>] [16])
+[17] [18 <../images/methodology-ORmodel-uptake_secretion_cartoon.png>])
 (concepts-integration.tex (../figures/figure-complete_framework_cartoon.tex
-<../images/methodology-ORmodel-cartoon_complete_framework.png, id=304, 1387.584
+<../images/methodology-ORmodel-cartoon_complete_framework.png, id=369, 1387.584
 pt x 1017.8025pt>
 File: ../images/methodology-ORmodel-cartoon_complete_framework.png Graphic file
  (type png)
@@ -1151,104 +1251,108 @@ Package pdftex.def Info: ../images/methodology-ORmodel-cartoon_complete_framewo
 rk.png  used on input line 5.
 (pdftex.def)             Requested size: 506.79616pt x 371.73555pt.
 )))
-(implementation-and-results.tex [17] [18 <../images/methodology-ORmodel-cartoon
+(implementation-and-results.tex [19] [20 <../images/methodology-ORmodel-cartoon
 _complete_framework.png>]
 chapter 3.
-
-Overfull \hbox (1.56288pt too wide) in paragraph at lines 3--4
-\OT1/pbk/l/n/12 Investigation of con-straints im-pact in time win-dows was per-
-formed by analysing
- []
-
-[19
-
-]
-LaTeX Font Info:    Trying to load font information for TS1+pbk on input line 3
-9.
- (C:\Program Files\MiKTeX\tex/latex/psnfss\ts1pbk.fd
+LaTeX Font Info:    Trying to load font information for TS1+pbk on input line 1
+8.
+(C:\Program Files\MiKTeX\tex/latex/psnfss\ts1pbk.fd
 File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
 )
 LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <12> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 39.
- [20] [21]
-(../figures/figure-real_life-events-analysis-results.tex
-<../images/results-real_life_events_analysis-results.png, id=334, 2351.184pt x 
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 18.
+ [21
+
+]
+Overfull \hbox (0.94165pt too wide) in paragraph at lines 44--45
+\OT1/pbk/l/n/12 For the first di-men-sion, dis-tin-guished data sets be-long-in
+g to CCM, CSP, PLTCM,
+ []
+
+[22] (../figures/figure-real_life-events-analysis-results.tex
+<../images/results-real_life_events_analysis-results.png, id=412, 2346.366pt x 
 3030.522pt>
 File: ../images/results-real_life_events_analysis-results.png Graphic file (typ
 e png)
 <use ../images/results-real_life_events_analysis-results.png>
 Package pdftex.def Info: ../images/results-real_life_events_analysis-results.pn
 g  used on input line 5.
-(pdftex.def)             Requested size: 474.5423pt x 611.64272pt.
+(pdftex.def)             Requested size: 483.7587pt x 624.77544pt.
 
 
-LaTeX Warning: Float too large for page by 15.1427pt on input line 9.
+LaTeX Warning: Float too large for page by 28.27542pt on input line 9.
 
-) [22] [23] [24 <../images/results-real_life_events_analysis-results.png>]
+) [23] [24] [25 <../images/results-real_life_events_analysis-results.png>]
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <12> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 107.
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 78.
 
-[25
+[26
 
 ] (../figures/figure-FBA-results.tex
-<../images/results-simulation-results.png, id=354, 919.0335pt x 933.4875pt>
+<../images/results-simulation-results.png, id=444, 919.0335pt x 933.4875pt>
 File: ../images/results-simulation-results.png Graphic file (type png)
 <use ../images/results-simulation-results.png>
 Package pdftex.def Info: ../images/results-simulation-results.png  used on inpu
 t line 5.
 (pdftex.def)             Requested size: 474.5423pt x 481.99777pt.
-)) (conclusion-and-outlook.tex [26]
-[27 <../images/results-simulation-results.png>]
+)) (conclusion-and-outlook.tex [27]
+[28 <../images/results-simulation-results.png>]
 chapter 4.
-) (main.bbl [28
+) (main.bbl [29
 
 ]
 chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
+Underfull \hbox (badness 10000) in paragraph at lines 14--19
 \OT1/pbk/l/n/12 ing pro-cess.'' []$https : / / www . thermosher . com / conten
 t / dam / tfs / ATG /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
+Underfull \hbox (badness 10000) in paragraph at lines 14--19
 \OT1/pbk/l/n/12 CAD / CAD % 20Documents / Product % 20Manuals % 20 & %20Specic
 ations /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
+Underfull \hbox (badness 10000) in paragraph at lines 14--19
 \OT1/pbk/l/n/12 Elemental % 20Analysis / Thermo-[]Scientic-[]Iron-[]Steel-[]pr
 ocess-[]A3 . pdf$[],
  []
 
 
-Underfull \hbox (badness 5446) in paragraph at lines 52--58
+Underfull \hbox (badness 10000) in paragraph at lines 21--24
+\OT1/pbk/l/n/12 sms-[]group . com / press-[]media / media / downloads / downloa
+d-[]detail /
+ []
+
+[30
+
+]
+Underfull \hbox (badness 5446) in paragraph at lines 67--73
 []\OT1/pbk/l/n/12 Wikimedia Com-mons, ``The re-drawn chart com-par-ing the var-
 i-
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 52--58
+Underfull \hbox (badness 5622) in paragraph at lines 67--73
 \OT1/pbk/l/n/12 ous grad-ing meth-ods in a nor-mal dis-tri-bu-tion, in-cludes s
 tan-
  []
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 52--58
+Underfull \hbox (badness 1939) in paragraph at lines 67--73
 \OT1/pbk/l/n/12 dard de-vi-a-tions, cu-mu-la-tive per-cent-ages, per-centile eq
 uiv-a-lents, z-
  []
 
 
-Underfull \hbox (badness 5667) in paragraph at lines 52--58
+Underfull \hbox (badness 5667) in paragraph at lines 67--73
 \OT1/pbk/l/n/12 scores and t-scores.'' []$https : / / commons . wikimedia . org
  / wiki / File : The[]
  []
 
-[29
-
-] [30]) [31] (main.lof)
+[31]) [32] (main.lof)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
@@ -1256,20 +1360,31 @@ Underfull \hbox (badness 5667) in paragraph at lines 52--58
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [32
+ [33
 
 ] (main.equ)
 \tf@equ=\write7
 \openout7 = `main.equ'.
 
- [33
+ [34
 
 ] (supplements.tex
-[34
+Overfull \hbox (8.7131pt too wide) in paragraph at lines 13--14
+[]\OT1/pbk/l/n/12 CSP Anal-y-sis Curve Plot Re-sults: Mod-u-lar-ity Val-ues and
+ Z-scores in Sliding-
+ []
+
+
+Overfull \hbox (10.15318pt too wide) in paragraph at lines 15--16
+[]\OT1/pbk/l/n/12 CGL Anal-y-sis Curve Plot Re-sults: Mod-u-lar-ity Val-ues and
+ Z-scores in Sliding-
+ []
+
+[35
 
 
 ] (../figures/figure-supplements-CCM_CSP_SQL.tex
-<../database_inquiries/CCM_CSP.pdf, id=448, 840.99994pt x 594.9999pt>
+<../database_inquiries/CCM_CSP.pdf, id=545, 840.99994pt x 594.9999pt>
 File: ../database_inquiries/CCM_CSP.pdf Graphic file (type pdf)
 <use ../database_inquiries/CCM_CSP.pdf>
 Package pdftex.def Info: ../database_inquiries/CCM_CSP.pdf  used on input line 
@@ -1283,24 +1398,9 @@ Overfull \hbox (24.00691pt too wide) in paragraph at lines 4--5
 
 LaTeX Warning: Float too large for page by 20.14153pt on input line 7.
 
-[35 <../database_inquiries/CCM_CSP.pdf>])
-(../figures/figure-supplements-CGL_SQL.tex
-<../database_inquiries/CGL.pdf, id=464, 840.99994pt x 594.9999pt>
-File: ../database_inquiries/CGL.pdf Graphic file (type pdf)
-<use ../database_inquiries/CGL.pdf>
-Package pdftex.def Info: ../database_inquiries/CGL.pdf  used on input line 4.
-(pdftex.def)             Requested size: 645.00691pt x 456.36278pt.
-
-Overfull \hbox (24.00691pt too wide) in paragraph at lines 4--5
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 20.14153pt on input line 7.
-
-[36 <../database_inquiries/CGL.pdf>])
+[36 <../database_inquiries/CCM_CSP.pdf>])
 (../figures/figure-supplements-PLTCM_SQL.tex
-<../database_inquiries/PLTCM.pdf, id=478, 840.99994pt x 594.9999pt>
+<../database_inquiries/PLTCM.pdf, id=561, 840.99994pt x 594.9999pt>
 File: ../database_inquiries/PLTCM.pdf Graphic file (type pdf)
 <use ../database_inquiries/PLTCM.pdf>
 Package pdftex.def Info: ../database_inquiries/PLTCM.pdf  used on input line 4.
@@ -1314,8 +1414,124 @@ Overfull \hbox (24.00691pt too wide) in paragraph at lines 4--5
 
 LaTeX Warning: Float too large for page by 20.14153pt on input line 7.
 
-[37 <../database_inquiries/PLTCM.pdf>]) (../figures/figure-supplements-CCM.tex
-<../images/supplements-CCM_real_life_events_analysis-results.png, id=492, 2413.
+[37 <../database_inquiries/PLTCM.pdf>])
+(../figures/figure-supplements-CGL_SQL.tex
+<../database_inquiries/CGL.pdf, id=575, 840.99994pt x 594.9999pt>
+File: ../database_inquiries/CGL.pdf Graphic file (type pdf)
+<use ../database_inquiries/CGL.pdf>
+Package pdftex.def Info: ../database_inquiries/CGL.pdf  used on input line 4.
+(pdftex.def)             Requested size: 645.00691pt x 456.36278pt.
+
+Overfull \hbox (24.00691pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 20.14153pt on input line 7.
+
+[38 <../database_inquiries/CGL.pdf>])
+(../figures/figure-supplements-CCM_CSP-curveplots_discrete.tex
+<../images/supplements-CCM_CSP_real_life_events_analysis-results-curves_and_dis
+crete_time.png, id=590, 2339.139pt x 1267.134pt>
+File: ../images/supplements-CCM_CSP_real_life_events_analysis-results-curves_an
+d_discrete_time.png Graphic file (type png)
+<use ../images/supplements-CCM_CSP_real_life_events_analysis-results-curves_and
+_discrete_time.png>
+Package pdftex.def Info: ../images/supplements-CCM_CSP_real_life_events_analysi
+s-results-curves_and_discrete_time.png  used on input line 4.
+(pdftex.def)             Requested size: 621.97647pt x 336.92967pt.
+
+Overfull \hbox (0.97647pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+[39 <../images/supplements-CCM_CSP_real_life_events_analysis-results-curves_and
+_discrete_time.png>])
+(../figures/figure-supplements-PLTCM_CGL-curveplots_discrete.tex
+<../images/supplements-PLTCM_CGL_real_life_events_analysis-results-curves_and_d
+iscrete_time.png, id=595, 2339.139pt x 1264.725pt>
+File: ../images/supplements-PLTCM_CGL_real_life_events_analysis-results-curves_
+and_discrete_time.png Graphic file (type png)
+<use ../images/supplements-PLTCM_CGL_real_life_events_analysis-results-curves_a
+nd_discrete_time.png>
+Package pdftex.def Info: ../images/supplements-PLTCM_CGL_real_life_events_analy
+sis-results-curves_and_discrete_time.png  used on input line 4.
+(pdftex.def)             Requested size: 621.97647pt x 336.28912pt.
+
+Overfull \hbox (0.97647pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+[40 <../images/supplements-PLTCM_CGL_real_life_events_analysis-results-curves_a
+nd_discrete_time.png>])
+(../figures/figure-supplements-CCM-curveplots_sliding.tex
+<../images/supplements-CCM_real_life_events_analysis-results-curves_and_time_re
+solutions.png, id=600, 2339.139pt x 1262.316pt>
+File: ../images/supplements-CCM_real_life_events_analysis-results-curves_and_ti
+me_resolutions.png Graphic file (type png)
+<use ../images/supplements-CCM_real_life_events_analysis-results-curves_and_tim
+e_resolutions.png>
+Package pdftex.def Info: ../images/supplements-CCM_real_life_events_analysis-re
+sults-curves_and_time_resolutions.png  used on input line 4.
+(pdftex.def)             Requested size: 621.97647pt x 335.64857pt.
+
+Overfull \hbox (0.97647pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+[41 <../images/supplements-CCM_real_life_events_analysis-results-curves_and_tim
+e_resolutions.png>]) (../figures/figure-supplements-CSP-curveplots_sliding.tex
+<../images/supplements-CSP_real_life_events_analysis-results-curves_and_time_re
+solutions.png, id=606, 2346.96825pt x 1272.55424pt>
+File: ../images/supplements-CSP_real_life_events_analysis-results-curves_and_ti
+me_resolutions.png Graphic file (type png)
+<use ../images/supplements-CSP_real_life_events_analysis-results-curves_and_tim
+e_resolutions.png>
+Package pdftex.def Info: ../images/supplements-CSP_real_life_events_analysis-re
+sults-curves_and_time_resolutions.png  used on input line 4.
+(pdftex.def)             Requested size: 621.97647pt x 337.24469pt.
+
+Overfull \hbox (0.97647pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+[42 <../images/supplements-CSP_real_life_events_analysis-results-curves_and_tim
+e_resolutions.png>])
+(../figures/figure-supplements-PLTCM-curveplots_sliding.tex
+<../images/supplements-PLTCM_real_life_events_analysis-results-curves_and_time_
+resolutions.png, id=612, 2346.366pt x 1271.952pt>
+File: ../images/supplements-PLTCM_real_life_events_analysis-results-curves_and_
+time_resolutions.png Graphic file (type png)
+<use ../images/supplements-PLTCM_real_life_events_analysis-results-curves_and_t
+ime_resolutions.png>
+Package pdftex.def Info: ../images/supplements-PLTCM_real_life_events_analysis-
+results-curves_and_time_resolutions.png  used on input line 4.
+(pdftex.def)             Requested size: 621.97647pt x 337.16272pt.
+
+Overfull \hbox (0.97647pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+[43 <../images/supplements-PLTCM_real_life_events_analysis-results-curves_and_t
+ime_resolutions.png>])
+(../figures/figure-supplements-CGL-curveplots_sliding.tex
+<../images/supplements-CGL_real_life_events_analysis-results-curves_and_time_re
+solutions.png, id=618, 2346.366pt x 1264.725pt>
+File: ../images/supplements-CGL_real_life_events_analysis-results-curves_and_ti
+me_resolutions.png Graphic file (type png)
+<use ../images/supplements-CGL_real_life_events_analysis-results-curves_and_tim
+e_resolutions.png>
+Package pdftex.def Info: ../images/supplements-CGL_real_life_events_analysis-re
+sults-curves_and_time_resolutions.png  used on input line 4.
+(pdftex.def)             Requested size: 621.97647pt x 335.24702pt.
+
+Overfull \hbox (0.97647pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+[44 <../images/supplements-CGL_real_life_events_analysis-results-curves_and_tim
+e_resolutions.png>]) (../figures/figure-supplements-CCM.tex
+<../images/supplements-CCM_real_life_events_analysis-results.png, id=625, 2413.
 818pt x 2227.72275pt>
 File: ../images/supplements-CCM_real_life_events_analysis-results.png Graphic f
 ile (type png)
@@ -1325,11 +1541,11 @@ sults.png  used on input line 4.
 (pdftex.def)             Requested size: 506.79616pt x 467.69962pt.
 
 
-LaTeX Warning: Float too large for page by 31.47836pt on input line 7.
+LaTeX Warning: Float too large for page by 45.97836pt on input line 7.
 
-[38 <../images/supplements-CCM_real_life_events_analysis-results.png>])
+[45 <../images/supplements-CCM_real_life_events_analysis-results.png>])
 (../figures/figure-supplements-CSP.tex
-<../images/supplements-CSP_real_life_events_analysis-results.png, id=499, 2414.
+<../images/supplements-CSP_real_life_events_analysis-results.png, id=631, 2414.
 42026pt x 2228.325pt>
 File: ../images/supplements-CSP_real_life_events_analysis-results.png Graphic f
 ile (type png)
@@ -1339,25 +1555,11 @@ sults.png  used on input line 4.
 (pdftex.def)             Requested size: 506.79616pt x 467.72406pt.
 
 
-LaTeX Warning: Float too large for page by 31.5028pt on input line 7.
+LaTeX Warning: Float too large for page by 46.0028pt on input line 7.
 
-[39 <../images/supplements-CSP_real_life_events_analysis-results.png>])
-(../figures/figure-supplements-CGL.tex
-<../images/supplements-CGL_real_life_events_analysis-results.png, id=505, 2416.
-82925pt x 2228.325pt>
-File: ../images/supplements-CGL_real_life_events_analysis-results.png Graphic f
-ile (type png)
-<use ../images/supplements-CGL_real_life_events_analysis-results.png>
-Package pdftex.def Info: ../images/supplements-CGL_real_life_events_analysis-re
-sults.png  used on input line 4.
-(pdftex.def)             Requested size: 506.79616pt x 467.24803pt.
-
-
-LaTeX Warning: Float too large for page by 31.02678pt on input line 7.
-
-[40 <../images/supplements-CGL_real_life_events_analysis-results.png>])
+[46 <../images/supplements-CSP_real_life_events_analysis-results.png>])
 (../figures/figure-supplements-PLTCM.tex
-<../images/supplements-PLTCM_real_life_events_analysis-results.png, id=511, 241
+<../images/supplements-PLTCM_real_life_events_analysis-results.png, id=637, 241
 4.42026pt x 2227.1205pt>
 File: ../images/supplements-PLTCM_real_life_events_analysis-results.png Graphic
  file (type png)
@@ -1367,11 +1569,25 @@ results.png  used on input line 4.
 (pdftex.def)             Requested size: 506.79616pt x 467.47124pt.
 
 
-LaTeX Warning: Float too large for page by 31.24998pt on input line 7.
+LaTeX Warning: Float too large for page by 45.74998pt on input line 7.
 
-[41 <../images/supplements-PLTCM_real_life_events_analysis-results.png>])
+[47 <../images/supplements-PLTCM_real_life_events_analysis-results.png>])
+(../figures/figure-supplements-CGL.tex
+<../images/supplements-CGL_real_life_events_analysis-results.png, id=643, 2416.
+82925pt x 2228.325pt>
+File: ../images/supplements-CGL_real_life_events_analysis-results.png Graphic f
+ile (type png)
+<use ../images/supplements-CGL_real_life_events_analysis-results.png>
+Package pdftex.def Info: ../images/supplements-CGL_real_life_events_analysis-re
+sults.png  used on input line 4.
+(pdftex.def)             Requested size: 506.79616pt x 467.24803pt.
+
+
+LaTeX Warning: Float too large for page by 45.52678pt on input line 7.
+
+[48 <../images/supplements-CGL_real_life_events_analysis-results.png>])
 (../figures/figure-supplements-obj_func-terms-initial.tex
-<../images/results-obj_func_terms_initial-simulation-results.png, id=517, 1259.
+<../images/results-obj_func_terms_initial-simulation-results.png, id=649, 1259.
 907pt x 1072.005pt>
 File: ../images/results-obj_func_terms_initial-simulation-results.png Graphic f
 ile (type png)
@@ -1379,9 +1595,9 @@ ile (type png)
 Package pdftex.def Info: ../images/results-obj_func_terms_initial-simulation-re
 sults.png  used on input line 4.
 (pdftex.def)             Requested size: 506.79616pt x 431.21532pt.
- [42 <../images/results-obj_func_terms_initial-simulation-results.png>])
+ [49 <../images/results-obj_func_terms_initial-simulation-results.png>])
 (../figures/figure-supplements-obj_func-terms-reduced25.tex
-<../images/results-obj_func_terms_reduced25-simulation-results.png, id=523, 126
+<../images/results-obj_func_terms_reduced25-simulation-results.png, id=655, 126
 9.543pt x 489.027pt>
 File: ../images/results-obj_func_terms_reduced25-simulation-results.png Graphic
  file (type png)
@@ -1389,7 +1605,19 @@ File: ../images/results-obj_func_terms_reduced25-simulation-results.png Graphic
 Package pdftex.def Info: ../images/results-obj_func_terms_reduced25-simulation-
 results.png  used on input line 5.
 (pdftex.def)             Requested size: 621.0pt x 239.2149pt.
- [43
+ [50
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1410,7 +1638,7 @@ results.png  used on input line 5.
 
  <../images/results-obj_func_terms_reduced25-simulation-results.png>])
 (../figures/figure-supplements-obj_func-terms-reduced50.tex
-<../images/results-obj_func_terms_reduced50-simulation-results.png, id=529, 126
+<../images/results-obj_func_terms_reduced50-simulation-results.png, id=662, 126
 9.543pt x 499.26524pt>
 File: ../images/results-obj_func_terms_reduced50-simulation-results.png Graphic
  file (type png)
@@ -1418,12 +1646,12 @@ File: ../images/results-obj_func_terms_reduced50-simulation-results.png Graphic
 Package pdftex.def Info: ../images/results-obj_func_terms_reduced50-simulation-
 results.png  used on input line 5.
 (pdftex.def)             Requested size: 621.0pt x 244.22311pt.
- [44
+ [51
 
 
  <../images/results-obj_func_terms_reduced50-simulation-results.png>])
 (../figures/figure-supplements-obj_func-terms-reduced75.tex
-<../images/results-obj_func_terms_reduced75-simulation-results.png, id=536, 127
+<../images/results-obj_func_terms_reduced75-simulation-results.png, id=668, 127
 2.55424pt x 499.26524pt>
 File: ../images/results-obj_func_terms_reduced75-simulation-results.png Graphic
  file (type png)
@@ -1431,7 +1659,7 @@ File: ../images/results-obj_func_terms_reduced75-simulation-results.png Graphic
 Package pdftex.def Info: ../images/results-obj_func_terms_reduced75-simulation-
 results.png  used on input line 5.
 (pdftex.def)             Requested size: 621.0pt x 243.64412pt.
- [45
+ [52
 
 
  <../images/results-obj_func_terms_reduced75-simulation-results.png>]))
@@ -1439,24 +1667,24 @@ results.png  used on input line 5.
 AED: lastpage setting LastPage
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     55.
+(LaTeX3)     50.
 
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     55.
+(LaTeX3)     50.
 
 (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19815 strings out of 479334
- 359592 string characters out of 2866961
- 842912 words of memory out of 3000000
- 36684 multiletter control sequences out of 15000+200000
+ 20600 strings out of 479334
+ 376725 string characters out of 2866961
+ 861709 words of memory out of 3000000
+ 37407 multiletter control sequences out of 15000+200000
  424676 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,21n,119p,10660b,618s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 116i,20n,119p,10660b,587s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
@@ -1470,9 +1698,9 @@ fonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols
 ogram Files/MiKTeX/fonts/type1/urw/bookman/ubkd8a.pfb><C:/Program Files/MiKTeX/
 fonts/type1/urw/bookman/ubkl8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/boo
 kman/ubkl8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/bookman/ubkli8a.pfb>
-Output written on main.pdf (50 pages, 7933358 bytes).
+Output written on main.pdf (57 pages, 11643573 bytes).
 PDF statistics:
- 697 PDF objects out of 1000 (max. 8388607)
- 145 named destinations out of 1000 (max. 500000)
- 311 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 831 PDF objects out of 1000 (max. 8388607)
+ 162 named destinations out of 1000 (max. 500000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 

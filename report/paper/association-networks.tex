@@ -6,23 +6,24 @@ Assume we have an arbitrarily created manufacturing data set with chronological 
 \renewcommand{\arraystretch}{1.1}
 \begin{table}[ht!]
 	\centering
-	\begin{tabular}{|cccccc|l}
-		\cline{1-6}
-		Event\_ID && Feature-A && Sequence\_ID &  \\ \cline{1-6}
-		1 	      && 280  	&& 1 		   	&  \\
-		2 		  && 250	&& 1 		   	&  \\
-		3 	      && 890	&& 2 		    &  \\
-		4 		  && 850	&& 2 		    &  \\
-		5 	      && 650	&& 2   		    &  \\
-		6 	      && 745	&& 2 		    &  \\
-		7 		  && 795	&& 2 		    &  \\
-		8 		  && 150	&& 3 		    &  \\
-		\vdots	  && \vdots && \vdots 	    &  \\
-		n-4 	  && 940  	&& k-1	 	    &  \\
-		n-3 	  && 540  	&& k			&  \\
-		n-2 	  && 520	&& k 		    &  \\
-		n-1       && 630	&& k 		    &  \\
-		n 		  && 610	&& k 		    &  \\ \cline{1-6}
+	\setlength{\arrayrulewidth}{0.75pt}% 
+	\begin{tabular}{|c|ccc|c|}
+		\hline \rowcolor[HTML]{FFFFC7}
+		Event\_ID && Feature-A && Sequence\_ID   \\ \hline
+		1 	      && 280  	&& 1 		   	  \\
+		2 		  && 250	&& 1 		   	  \\
+		3 	      && 890	&& 2 		      \\
+		4 		  && 850	&& 2 		      \\
+		5 	      && 650	&& 2   		      \\
+		6 	      && 745	&& 2 		      \\
+		7 		  && 795	&& 2 		      \\
+		8 		  && 150	&& 3 		      \\
+		\vdots	  && \vdots && \vdots 	      \\
+		n-4 	  && 940  	&& k-1	 	      \\
+		n-3 	  && 540  	&& k			  \\
+		n-2 	  && 520	&& k 		      \\
+		n-1       && 630	&& k 		      \\
+		n 		  && 610	&& k 		      \\ \hline
 	\end{tabular}
 	\caption{Arbitrary Manufacturing Data Set $D$.}
 	\label{Tab:D-dataset}
@@ -36,6 +37,6 @@ We extract the association rule from the set of production sequences to distingu
 	\label{lift}
 \end{equation}
 \myequations{Lift Formula}
-In the case of $Lift(A\leftrightarrow B)> 1$, B occurs likely if A occurs while $Lift(A\leftrightarrow B)< 1$, B unlikely occurs if A occurs. Indication of random and non-random co-occurrences as $0$ and $1$ in an adjacency matrix will provide the data structure to form a network, as shown in Fig.~\ref{figure-adjacency_graph}.
+In the case of $Lift(A\leftrightarrow B)> 1$, B occurs likely if A occurs while $Lift(A\leftrightarrow B)< 1$, B unlikely occurs if A occurs. Indication of random and non-random co-occurrences as $0$ and $1$ in an adjacency matrix will provide the data structure to form an association network, as shown in Fig.~\ref{figure-adjacency_graph}.
 
 \input{../figures/figure-adjacency_graph}

@@ -3,12 +3,8 @@
 \begin{document}
 	
 	\pagenumbering{roman}
-	\newpage
-	\thispagestyle{plain} % empty
-	\mbox{}
-	\newpage
-	\thispagestyle{plain} % empty
-	\mbox{}
+	
+	\input{first-two-pages}
 	
 	\input{abstract}
 	\addcontentsline{toc}{chapter}{Abstract}
@@ -21,9 +17,6 @@
 	%\addcontentsline{toc}{chapter}{Table of Contents}
 	\clearpage
 	
-	%\printglossary[type=\acronymtype]
-	%\addcontentsline{toc}{chapter}{Table of Acronyms}
-			
 	\pagenumbering{arabic}
 	\input{introduction}
 	
@@ -49,6 +42,8 @@
 	\listofmyequations
 	\addcontentsline{toc}{chapter}{List of Equations}
 	\clearpage
+	%\printglossary[type=\acronymtype]
+	%\addcontentsline{toc}{chapter}{Table of Acronyms}
 	
 	\input{supplements}
 		

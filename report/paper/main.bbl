@@ -1,11 +1,26 @@
 \begin{thebibliography}{10}
 
+\bibitem{waldner1992}
+J.~Waldner and W.~Duffin, {\em CIM : Principles of Computer-integrated
+  Manufacturing}.
+\newblock Wiley, 1992.
+
+\bibitem{Saadaoui2019}
+S.~Saadaoui, M.~Tabaa, F.~Monteiro, M.~Chehaitly, and A.~Dandache, ``Discrete
+  wavelet packet transform-based industrial digital wireless communication
+  systems,'' {\em Information}, vol.~10, p.~104, 03 2019.
+
 \bibitem{sinha-spinks_2015}
 T.~Sinha-Spinks, ``An infographic of the iron and steel manufacturing
   process.''
   \urlstyle{same}\url{https://www.thermofisher.com/content/dam/tfs/ATG/CAD/CAD%20Documents/Product%20Manuals%20&%20Specifications/Elemental%20Analysis/Thermo-Scientific-Iron-Steel-process-A3.pdf},
   2015.
 \newblock Accessed on 29-06-2021.
+
+\bibitem{BRS}
+{SMS group}, ``Learning steel plant at {Big River Steel}.''
+  \urlstyle{same}\url{https://www.sms-group.com/press-media/media/downloads/download-detail/download/15940}.
+\newblock Accessed on 05-07-2021.
 
 \bibitem{cowling2001design}
 P.~Cowling, ``Design and implementation of an effective decision support
