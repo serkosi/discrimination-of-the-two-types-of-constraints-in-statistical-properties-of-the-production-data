@@ -2,36 +2,30 @@
 
 \begin{document}
 	
+	%\frontmatter
 	\pagenumbering{roman}
-	
 	\input{first-two-pages}
-	
 	\input{abstract}
-	\addcontentsline{toc}{chapter}{Abstract}
-	
 	\input{acknowledgements}
-	\addcontentsline{toc}{chapter}{Acknowledgements}
-	\clearpage
 	
 	\tableofcontents
 	%\addcontentsline{toc}{chapter}{Table of Contents}
 	\clearpage
 	
+	%\mainmatter
 	\pagenumbering{arabic}
 	\input{introduction}
-	
 	\input{methodology}
-	
 	\input{implementation-and-results}
-	
 	\input{conclusion-and-outlook}
 	
 	\phantomsection
-	%\addcontentsline{toc}{chapter}{Bibliography}
 	\bibliographystyle{ieeetr}
 	\bibliography{../bibliography/bib}
+	%\addcontentsline{toc}{chapter}{Bibliography}
 	\clearpage
 	
+	%\backmatter
 	\phantomsection
 	\listoffigures
 	\listoftables

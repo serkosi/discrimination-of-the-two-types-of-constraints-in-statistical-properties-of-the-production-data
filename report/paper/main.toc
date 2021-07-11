@@ -9,18 +9,18 @@
 \contentsline {subsection}{Association Networks}{6}{section*.11}%
 \contentsline {subsection}{Binning Methods}{8}{section*.15}%
 \contentsline {subsection}{Network Metrics Analysis}{10}{section*.19}%
-\contentsline {section}{\numberline {2.2}Simulation Model}{13}{section.27}%
+\contentsline {section}{\numberline {2.2}Simulation Model}{14}{section.27}%
 \contentsline {subsection}{Resource Utilization}{18}{section*.39}%
 \contentsline {subsection}{Production Portfolio Diversification}{19}{section*.42}%
 \contentsline {section}{\numberline {2.3}Integration of Concepts}{19}{section.43}%
-\contentsline {chapter}{\numberline {3}Implementation, Analysis and Results}{21}{chapter.45}%
-\contentsline {section}{\numberline {3.1}Real-life Events}{21}{section.46}%
-\contentsline {subsection}{Data Collection and Cleaning}{21}{section*.47}%
-\contentsline {subsection}{Analysis Steps and Results}{22}{section*.48}%
-\contentsline {section}{\numberline {3.2}Simulation Events}{26}{section.50}%
-\contentsline {subsection}{Analysis Steps and Results}{26}{section*.51}%
-\contentsline {chapter}{\numberline {4}Conclusion and Outlook}{29}{chapter.53}%
-\contentsline {chapter}{\numberline {5}Bibliography}{30}{chapter.55}%
-\contentsline {chapter}{Lists of Figures and Tables}{33}{section*.56}%
-\contentsline {chapter}{List of Equations}{34}{section*.57}%
-\contentsline {chapter}{\nameref {Supp_first}}{35\ -- \pageref {LastPage}}{chapter*.58}
+\contentsline {chapter}{\numberline {3}Implementation, Analysis and Results}{22}{chapter.45}%
+\contentsline {section}{\numberline {3.1}Real-life Events}{22}{section.46}%
+\contentsline {subsection}{Data Collection and Cleaning}{22}{section*.47}%
+\contentsline {subsection}{Analysis Steps and Results}{23}{section*.48}%
+\contentsline {section}{\numberline {3.2}Simulation Events}{27}{section.50}%
+\contentsline {subsection}{Design \& Analysis Steps and Results}{27}{section*.51}%
+\contentsline {chapter}{\numberline {4}Conclusion and Outlook}{30}{chapter.53}%
+\contentsline {chapter}{\numberline {5}Bibliography}{31}{chapter.55}%
+\contentsline {chapter}{Lists of Figures and Tables}{34}{section*.56}%
+\contentsline {chapter}{List of Equations}{35}{section*.57}%
+\contentsline {chapter}{\nameref {Supp_first}}{36\ -- \pageref {LastPage}}{chapter*.58}

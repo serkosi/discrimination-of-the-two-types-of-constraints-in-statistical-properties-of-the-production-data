@@ -1,5 +1,5 @@
 \section{Simulation Model}
-The genome-scale integrated networks are necessary tools used by metabolic engineers on model design, theoretical and computational analysis for microbial organisms. In addition, integrated network theory tools expand the feasible space for analysis techniques in further work steps. As an initial step, one can construct a network showing interactions between metabolites, intermediate or end products and metabolic reactions for an organism. 
+The genome-scale integrated networks are necessary tools used by metabolic engineers on model design, theoretical and computational analysis to understand how the biological system of microbial organisms works~\cite{HAO}. In addition, integrated network theory tools expand the feasible space for analysis techniques in further work steps. As an initial step, one can construct a network showing interactions between metabolites, intermediate or end products and metabolic reactions for an organism. 
 
 The set of rules for the organism can be represented in a compact form by an m-by-r matrix formulation as
 \begin{equation} %\tag{1}
@@ -49,7 +49,7 @@ thus, by the product of $S$ and $S^{T}$, we obtain two different matrices as
 	\end{equation}
 \end{minipage}
 
-where $S.S^{T}$ is a metabolite-centric matrix and $S^{T}.S$ is a reaction-centric matrix. Considering a normalizing step for those matrices as 
+where $S.S^{T}$ is a metabolite-centric matrix and $S^{T}.S$ is a reaction-centric matrix. Considering a normalising step for those matrices as 
 \begin{equation}
 	f(x) =
 	\begin{cases}
@@ -58,7 +58,7 @@ where $S.S^{T}$ is a metabolite-centric matrix and $S^{T}.S$ is a reaction-centr
 	\end{cases},
 	\notag
 \end{equation}
-one can construct adjacency matrices, $A^{m}_{ij}=f(s^{'}_{ij})$ and $A^{r}_{ij}=f(s^{''}_{ij})$, to form networks like the one introduced in Fig.~\ref{figure-adjacency_graph}. 
+one can construct adjacency matrices, $A^{m}_{ij}=f(s^{'}_{ij})$ and $A^{r}_{ij}=f(s^{''}_{ij})$, to form graphs like that introduced in Fig.~\ref{figure-adjacency_graph} in the Association Networks subsection. 
 
 The graphs in Fig.~\ref{figure-metabolic-networks} were generated from $A^{m}$ and $A^{r}$ using a stoichiometric matrix belonging to homo sapiens metabolism retrieved from BiGG Models Database~\cite{biggmodels}. In Fig.~\ref{figure-metabolic-centric}, the graph nodes stand for the metabolites, and graph edges are the reactions. In contrast, in Fig.~\ref{figure-reaction-centric}, the roles are reversed so that the graph edges represent the metabolites, and the graph nodes represent the reactions.
 \input{../figures/figure-reaction_centric-metabolic_centric-networks}
@@ -111,39 +111,39 @@ One can express objective function coefficients in a one-dimensional array as
 	\label{objectivecoefficients}
 \end{equation}
 \myequations{Objective Function Coefficients Array}
-As given in Eq.\eqref{biomassmaximisation}, the biomass formulation delivers the output with its non-zero coefficients, which are the decisive ones for the flux elements of $V$ to be considered.
+As given in Eq.~\eqref{biomassmaximisation}, the biomass formulation delivers the output with its non-zero coefficients, which are the decisive ones for the flux elements of $V$ to be considered.
 \begin{equation} %\tag{5}
 	O.V = (o_{1}v_{1} + o_{2}v_{2} + \dots + o_{r}v_{r})\in \mathbb{R}_{\ge0}.
 	\label{biomassmaximisation}
 \end{equation}
 \myequations{Maximized Biomass}
-Stoichiometric (or mass-balance) constraints were introduced so far in Eq.\eqref{stoichio} and Eq.\eqref{massbalanceconstraint}. In addition, upper and lower bounds are presented for particular fluxes in $V$ during the optimization process. The bounds are used in the reactions for uptake and secretion of any organic metabolite. In the uptake reactions, nutrients are transported to the inside of the metabolic network. In the secretion reactions, products are exported to the outside of the network. The rest of the fluxes in $V$ are used in the exchange reactions, namely the intermediate reactions in the network. The constraints influence the reactions for uptake and secretion, whereas no limitation is considered in the exchange reactions. Quantifying imported nutrients and exported outputs (resources and products) by constraining them with upper and lower bounds to fulfil a single objective function goal might significantly influence the optimization process.
+Stoichiometric (or mass-balance) constraints were introduced so far in Eq.~\eqref{stoichio} and Eq.~\eqref{massbalanceconstraint}. In addition, upper and lower bounds are presented for particular fluxes in $V$ during the optimization process. The bounds are used in the reactions for uptake and secretion of any organic metabolite. In the uptake reactions, nutrients are transported to the inside of the metabolic network. In the secretion reactions, products are exported to the outside of the network. The rest of the fluxes in $V$ are used in the exchange reactions, namely the intermediate reactions in the network. The constraints influence the reactions for uptake and secretion, whereas no limitation is considered in the exchange reactions. Quantifying imported nutrients and exported outputs (resources and products) by constraining them with upper and lower bounds to fulfil a single objective function goal might significantly influence the optimization process.
 
 \input{../figures/figure-uptake-secretion-cartoon}
 
-As a summary of the above-explained series of constraints, mass-balance (Eq.\eqref{massbalanceconstraint}), upper \& lower bounds for fluxes (Fig.~\ref{figure-uptake-secretion-cartoon}), and the objective function (Eq.\eqref{objectivecoefficients}) are the three fundamental constraints that set off a linear programming problem because it is possible to formulate them linearly~\cite{PRICE2004}. The optimization result: flux vector $V$ (Eq.\eqref{solutionvector}) maximizes the objective function in the form of a flux distribution~\cite{KAUFFMAN2003491,PRICE2004}. Since each term in Eq.\eqref{biomassmaximisation} is a produced biomass expression for the fluxes, the summation of those terms will give the overall growth of the system for a single network state.
+As a summary of the above-explained series of constraints, mass-balance equality (Eq.~\eqref{massbalanceconstraint}), upper \& lower bounds for fluxes (Fig.~\ref{figure-uptake-secretion-cartoon}), and the objective function (Eq.~\eqref{objectivecoefficients}) are the three fundamental constraints that set off a linear programming problem because it is possible to formulate them linearly~\cite{PRICE2004}. The optimization result: flux vector $V$ (Eq.~\eqref{solutionvector}) maximizes the objective function in the form of a flux distribution~\cite{KAUFFMAN2003491,PRICE2004}. Since each term in Eq.~\eqref{biomassmaximisation} is a produced biomass expression for the fluxes, the summation of those terms will give the overall growth of the system for a single network state.
 
-Different solution vectors of $V$ can be obtained from the linear optimization process by varying network conditions. As a compact set of rules, the stoichiometric constraints significantly influence the mass-balance equation; consequently, the solution vector $V$~\cite{Edwards2001}. A stoichiometric matrix from scratch can be formulated, ensuring the mass-balance constraints are incorporated in the reaction cycles of the investigated system. However, the homo sapiens metabolic model was taken as the set of rules in this thesis work. Varying upper \& lower flux bounds and the objective function are the two alternative approaches introduced in the following subsections to understand the model behaviour while the optimization is carried on.
+Different solution vectors of $V$ can be obtained from the linear optimization process by varying the constraints introduced above. As a compact set of rules, the stoichiometric constraints significantly influence the mass-balance equation; consequently, the solution vector $V$~\cite{Edwards2001}. A stoichiometric matrix from scratch can be formulated, ensuring the mass-balance constraints are incorporated in the reaction cycles of the investigated system. However, the homo sapiens metabolic model was taken as the set of rules in this thesis work. Varying upper \& lower flux bounds and the objective function are the two alternative approaches introduced in the following subsections to understand the model behaviour while the optimization is carried on.
 \subsection*{Resource Utilization}
 \addcontentsline{toc}{subsection}{Resource Utilization}%
 Environmental conditions such as resource availability affect the pattern of outputs in a metabolic network. In case of fewer resources (nutrients) availability, the active production network gets more interconnected through more flux exchanges to produce the necessary input for the ongoing metabolic reactions.~\cite{PRICE2004,MAHADEVAN2003,Reed01092004,BURGARD2001}
 \begin{equation} %\tag{6}
-	V^{b}={v^{b}_{1}, v^{b}_{2},\dots, v^{b}_{x}}= (-a\le v^{b}_{i}\le a)\in V
+	V^{b}=\{v^{b}_{1}, v^{b}_{2},\dots, v^{b}_{x}\}= (-a\le v^{b}_{i}\le a)\in V
 	\label{constrainedfluxlist}
 \end{equation}
 \myequations{Constrained Fluxes List}
-Let $V^{b}$ is a list of fluxes with $x$ elements randomly picked from $V$ (Eq.\eqref{solutionvector}) to be limited with the bounds: $(-a, a)$. The same tolerance in both negative and positive direction for the bounds allows the network to treat the respective flux flow as uptake or secretion based on the system need. The fluxes that are not included in $V^{b}$ are matched with extreme high boundary values so that they are not constrained while the linear optimization.
+Let $V^{b}$ is a list of fluxes with $x$ elements randomly picked from $V$ (Eq.~\eqref{solutionvector}) to be limited with the bounds: $(-a, a)$. The same tolerance in both negative and positive direction for the bounds allows the network to treat the respective flux flow as uptake or secretion based on the system need. The fluxes that are not included in $V^{b}$ are matched with extreme high boundary values so that they are not constrained while the linear optimization.
 \begin{equation} %\tag{7}
-	V^{e}={v^{e}_{1}, v^{e}_{2},\dots, v^{e}_{y}}= (0\le v^{e}_{i}\le 0)\in V
+	V^{e}=\{v^{e}_{1}, v^{e}_{2},\dots, v^{e}_{y}\}= (0\le v^{e}_{i}\le 0)\in V
 	\label{deletedreactions}
 \end{equation}
 \myequations{Deleted Fluxes List}
-Assigning zero to the upper \& lower bounds suppresses the respective flux exchange in the active production network. Deleted fluxes can not be used for the uptake, secretion, nor intermediate reactions. $V^{e}$ (Eq.\eqref{deletedreactions}) is the list of fluxes with $y$ elements randomly selected from $V$ (Eq.\eqref{solutionvector}) to be discarded from the network.
+Assigning zero to the upper \& lower bounds suppresses the respective flux exchange in the active production network. Those fluxes can not be used for the uptake, secretion, nor intermediate reactions. $V^{e}$ (Eq.~\eqref{deletedreactions}) is the list of fluxes with $y$ elements randomly selected from $V$ (Eq.~\eqref{solutionvector}) to be deleted from the network by assigning zero to the bounds.
 
-Limitations on resources serve as capacity constraints defining the active reactions and reversibility of flux exchanges~\cite{Edwards2001}. Varying $x$, $y$, and $a$ to fulfil a fixed objective function, we obtain various biomass values by the linear programming algorithm.
+Such limitations on resources serve as capacity constraints defining the active reactions and reversibility of flux exchanges~\cite{Edwards2001}. Varying $x$ and $a$ in Eq.~\eqref{deletedreactions}, and $y$ in Eq.~\eqref{deletedreactions}, we obtain various biomass values by the linear programming algorithm to fulfil a fixed objective function.
 
 \subsection*{Production Portfolio Diversification}
 \addcontentsline{toc}{subsection}{Production Portfolio Diversification}%
-The objective function can be assumed as a production plan that rules the diversity of products that metabolism takes into account to maximize cellular growth~\cite{Edwards2001}. As previously mentioned, this is because the pattern of output biomass (Eq.\eqref{biomassmaximisation}) is governed by the objective function (Eq.\eqref{objectivecoefficients}). Its non-zero coefficients force the network for an optimal solution with their value range and positive and negative signs.    
+The objective function can be assumed as a production plan that rules the diversity of products that metabolism takes into account to maximize cellular growth~\cite{Edwards2001}. As previously mentioned, this is because the pattern of output biomass (Eq.~\eqref{biomassmaximisation}) is governed by the objective function (Eq.~\eqref{objectivecoefficients}). Its non-zero coefficients force the network for an optimal solution with their value range and positive and negative signs.    
 
-Defining a variety of sets of objective functions, each has negative or positive signs, will allow us to create a diverse group of products that the network is capable of producing. In the same direction, deleting the objective function terms up to a certain level is the second step of that diversification approach.
+Defining various arrays of objective function coefficients, consisting of elements with negative or positive signs, will allow us to create a diverse group of products that the network is capable of producing. In the same direction, adjusting the number of objective function terms is the second step of that diversification approach.

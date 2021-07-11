@@ -36,13 +36,6 @@
 %\usepackage{caption}
 \usepackage{pdfpages}
 
-\usepackage[bookmarks=true,%       %%% generate bookmarks ...
-bookmarksnumbered=true,%           %%% ... with numbers
-hypertexnames=false,%              %%% needed for correct links to figures !!!
-breaklinks=true,%                  %%% breaks lines, but links are very small,
-linkbordercolor={0 0 1},%          %%% blue frames around links, pdfborder={0 0 112.0}
-hidelinks 						%%% hide the linkbox borders
-]{hyperref}%  %%% border-width of frames                                     will be multiplied with 0.009 by ps2pdf
 %\pdfadjustspacing=1                %%% force LaTeX-like character spacing
 \newcommand\abstractname{Abstract}
 %\newcommand{\R}{\mathbb{R}}
@@ -52,7 +45,7 @@ hidelinks 						%%% hide the linkbox borders
 \clearscrheadings
 \clearscrplain
 \rehead[]{\headmark}
-\lehead[\today]{Version: {\em \today} }
+%\lehead[\today]{Version: {\em \today} }
 \lohead[]{\sectionmark}
 \rohead[]{{\small MMT003 – MasterThesis}}
 \rofoot[\pagemark]{\pagemark}
@@ -94,6 +87,15 @@ hidelinks 						%%% hide the linkbox borders
 %\newacronym{fba}{FBA}{Flux Balance Analysis}
 % \acrfull{fba}, \acrlong{fba}, \acrshort{fba} ---- using those in the text
 
+\usepackage[bookmarks=true,%       %%% generate bookmarks ...
+bookmarksnumbered=true,%           %%% ... with numbers
+hypertexnames=false,%              %%% needed for correct links to figures !!!
+breaklinks=true,%                  %%% breaks lines, but links are very small,
+linkbordercolor={0 0 1},%          %%% blue frames around links, pdfborder={0 0 112.0}
+hidelinks 						%%% hide the linkbox borders
+]{hyperref}%  %%% border-width of frames                                     will be multiplied with 0.009 by ps2pdf
+
+\usepackage[numbered]{bookmark}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EXTRA CODE %%
 %\usepackage[automark,headsepline,plainheadsepline,footsepline,plainfootsepline]{scrpage2}
