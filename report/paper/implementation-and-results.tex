@@ -1,15 +1,9 @@
-\chapter{Implementation, Analysis and Results}
-{\color{red} 
-	Investigating constraints impact in time windows was performed by analysing two different association networks; FSS-n and FBS-n.
-	
-	Those two different types of networks were applied in all ten time-window, and average modularity metric plots were generated. 
-}
+\chapter{Implementation, Analysis and Results}\label{implementation_analysis}
+\section{Steel Production Events}
+\subsection{Data Collection and Cleaning}
+%\addcontentsline{toc}{subsection}{Data Collection and Cleaning}%
 
-\section{Real-life Events}
-\subsection*{Data Collection and Cleaning}
-\addcontentsline{toc}{subsection}{Data Collection and Cleaning}%
-
-The queries in Structured Query Language (SQL) were generated to find and pull the production orders data from the database across $2$--$3$ years of production work completed in the production lines, {\color{red}introduced in Table~\ref{Tab: production_lines}}. The SQL queries are given in the Supplementary Materials: \ref{figure-supplements-CCM_CSP-SQL}, \ref{figure-supplements-PLTCM-SQL}, and \ref{figure-supplements-CGL-SQL}.
+The queries in \ac{sql} were generated to find and pull the production orders data from the database across $2$--$3$ years of production work completed in the production lines, introduced in Table~\ref{Tab: production_lines}. The SQL queries are given in the Supplementary Materials: \ref{figure-supplements-CCM_CSP-SQL}, \ref{figure-supplements-PLTCM-SQL}, and \ref{figure-supplements-CGL-SQL}.
 
 At the beginning of the data cleaning process, the raw data was handled considering the string-type data values conversion into floating-point numbers, modifying inconsistent punctuation marks between digits into one typical style, and converting null values into the integer value $0$. 
 
@@ -20,17 +14,17 @@ After going over minor revision steps, we introduce some preconditions below to 
 	\item Machines input capacity limit ranges were identified for the production features; width, thickness, and weight as $800$--$2000$ mm, $40$--$90$ mm, and $2669$--$26690$ kg.
 \end{itemize}
 
-Considering the preconditions mentioned above and $density = mass/volume$ equality, $0$ values were replaced with the calculated values in every production order with a maximum of one unknown value from the features; width, thickness, weight, and length. {\color{red}Production orders (the so-called events)} with two missing values were compared with consecutive events, and missing terms were filled based on the consistency among the same sequence events. Sequences with less than $50$ events were removed from the data sets considering those short sequences might be generated for some test processes. At the final stage, obtained data set lengths are given below.
+Considering the preconditions mentioned above and $density = mass/volume$ equality, $0$ values were replaced with the calculated values in every production event with a maximum of one unknown value from the features; width, thickness, weight, and length. Production events with two missing values were compared with consecutive events, and missing terms were filled based on the consistency among the same sequence events. Sequences with less than $50$ events were removed from the data sets considering those short sequences might be generated for some test processes. At the final stage, obtained data set lengths are given below.
 \begin{itemize}
-	\item CCM data set: $347,418$ events.
-	\item CSP data set: $205,496$ events.
-	\item PLTCM data set: $64,026$ events.
-	\item CGL data set: $31,230$ events.
+	\item \acs{ccm} data set: $347,418$ events.
+	\item \acs{csp} data set: $205,496$ events.
+	\item \acs{pltcm} data set: $64,026$ events.
+	\item \acs{cgl} data set: $31,230$ events.
 \end{itemize}
-The decreasing number of events through the data sets shows that the output of a production line is not always an input for the next in line and might be excluded from the continuous production line, as mentioned in {\color{red}the first section of the Introduction}.
+The decreasing number of events through the data sets shows that the output of a production line is not always an input for the next in line and might be excluded from the continuous production line, as previously mentioned in Section~\ref{background_information}.
 
-\subsection*{Analysis Steps and Results}
-\addcontentsline{toc}{subsection}{Analysis Steps and Results}%
+\subsection{Analysis Steps and Results}
+%\addcontentsline{toc}{subsection}{Analysis Steps and Results}%
 
 The complete analysis of real-life events comprises a check for meaningful modularity structures in various dimensions for the association networks generated from the data collection. We introduce those dimensions as;
 \begin{itemize}
@@ -41,19 +35,21 @@ The complete analysis of real-life events comprises a check for meaningful modul
 	\item[5.] time resolution, and
 	\item[6.] network resolution.
 \end{itemize} 
-For the first dimension, distinguished data sets belonging to CCM, CSP, PLTCM, and CGL were considered in the given order considering {\color{red}the production portfolio evolves from producing products in a diverse range to producing specialised products from CCM to CGL}. The following dimensions were examined independently in each production line.
+For the first dimension, distinguished data sets belonging to \acs{ccm}, \acs{csp}, \acs{pltcm}, and \acs{cgl} were considered in the given order considering the product portfolio evolves from producing products in a diverse range to producing specialised products from \acs{ccm} to \acs{cgl}. The following dimensions were examined independently in each production line.
 
 Since width and thickness are the products' physical quantities that are deliberately reformed during the whole manufacturing process, those data feature columns are taken into account for each production line to be analysed as the second dimension. 
 
-{\color{red}Two fundamentally different constraints: technology-driven constraints and load-driven constraints are acting on the manufacturing process. Alternative binning methods and different network approaches were identified for those constraints. FSS and FBS networks were generated in the third dimension for each production feature in every production line.}
+As we argued previously, two fundamentally different constraints: technology-driven constraints and load-driven constraints, act on the manufacturing process. Alternative binning methods and different network approaches were identified for those constraints. \acs{fss} and \acs{fbs} networks were generated in the third dimension for each production feature in every production line.
 
-NM-d and NM-m, as previously introduced, were considered to check the randomness of the association networks. As the fourth dimension, those alternative null models were constructed for each FSS and FBS network generated. Resulted z-scores are more straightforward than the resulted modularity values since they take out any effect from different link densities. For this reason, we shared only z-scores as bar charts in this subsection and attached the bar charts and curve plots for the modularity values as supplementary materials.
+\acs{nmd} and \acs{nmm}, as previously introduced, were considered to check the randomness of the association networks. As the fourth dimension, those alternative null models were constructed for each \acs{fss} and \acs{fbs} network generated. Resulted z-scores are more straightforward than the resulted modularity values since they take out any effect from different link densities. For this reason, we shared only z-scores as bar charts in this subsection and attached the bar charts and curve plots for the modularity values as supplementary materials.
 
 Time resolution is the fifth dimension, and it consists of different observation-window categories as discrete-time windows, sliding-time windows and complete data with two halves. Each resolution is a means of partitioning the data of historically ordered production events into equal sizes differently. For each window in three categories, the first four dimensions were performed. The analysis with time-resolved fashion allows checking if any significant constraint impact reveals systematically through the time windows created with varying sizes. Since the most significant results were obtained from the last category, the complete data with two halves, we shared and discussed that category in this subsection. The analysis results for discrete-time windows and sliding-time windows are supplementary materials: \ref{figure-supplements-CCM_CSP-curveplots_discrete}, \ref{figure-supplements-PLTCM_CGL-curveplots_discrete} and \ref{figure-supplements-CCM-curveplots_sliding}, \ref{figure-supplements-CSP-curveplots_sliding}, \ref{figure-supplements-PLTCM-curveplots_sliding}, \ref{figure-supplements-CGL-curveplots_sliding}.
 
-As the last dimension, association networks obtained from the first four dimensions in the observation-window categories: the sliding-time windows and the complete data with two halves, were diversified in two different network resolutions by changing the node amount. We achieved this by choosing the appropriate step and bucket sizes while generating graphs. We aimed to obtain the maximum number of nodes to quantify the modularity and keep the node numbers the same in different network approaches in the respective time window. Other than the CSP Thickness and CCM Thickness networks, including fewer nodes than $15$ in some cases, all networks have varying node numbers between $25$--$90$. The resulted plots for four production lines in alternative network resolutions are presented in supplementary materials: \ref{figure-supplements-CCM-curveplots_sliding}, \ref{figure-supplements-CSP-curveplots_sliding}, \ref{figure-supplements-PLTCM-curveplots_sliding}, \ref{figure-supplements-CGL-curveplots_sliding} and \ref{figure-supplements-CCM}, \ref{figure-supplements-CSP}, \ref{figure-supplements-PLTCM}, \ref{figure-supplements-CGL}.
+As the last dimension, association networks obtained from the first four dimensions in the observation-window categories: the sliding-time windows and the complete data with two halves, were diversified in two different network resolutions by changing the node amount. We achieved this by choosing the appropriate step and bucket sizes while generating graphs. We aimed to obtain the maximum number of nodes to quantify the modularity and keep the node numbers the same in different network approaches in the respective time window. Other than the \acs{csp} Thickness and \acs{ccm} Thickness networks, including fewer nodes than $15$ in some cases, all networks have varying node numbers between $25$--$90$. The resulted plots for four production lines in alternative network resolutions are presented in supplementary materials: \ref{figure-supplements-CCM-curveplots_sliding}, \ref{figure-supplements-CSP-curveplots_sliding}, \ref{figure-supplements-PLTCM-curveplots_sliding}, \ref{figure-supplements-CGL-curveplots_sliding} and \ref{figure-supplements-CCM}, \ref{figure-supplements-CSP}, \ref{figure-supplements-PLTCM}, \ref{figure-supplements-CGL}.
 
-Condensed analysis results as bar charts are given in Fig.~\ref{figure-real-life-events-analysis-results}, showing z-scores concerning alternative null models in different network approaches for width and thickness features of four production lines. In the bar charts, z-scores are indicated with a colourless line finish. For each of the z-scores, error bars were included in colour as the mean value of the respective z-score by removing and putting back 10\% of the data ten times to check the robustness of the statistical signals. The T-shaped symbol represents the standard deviation of the error bars. Green lines are indicated on the values: $+1$ and $-1$ as the significance thresholds for signals as one standard deviation range.
+We pretend that the real network structure is more homogeneous than it is and pretend that it is statistically reliable and not distorted or skewed. However, those presumes are slightly wrong, and those can lead to cases sometimes looking statistically significant even though they are not. An error bar was included in each z-score bar to distinguish the reliably distributed network from the skewed or distorted ones. Error bar is the mean value of the respective z-score by removing and putting back 10\% of the data ten times to check the robustness of the statistical signals. The T-shaped symbol represents the standard deviation of the error bars.
+
+Condensed analysis results as bar charts are given in Fig.~\ref{figure-real-life-events-analysis-results}, showing z-scores concerning alternative null models in different network approaches for width and thickness features of four production lines. In the bar charts, z-scores are indicated with a colourless line finish, and error bars were included in colour. Green lines are indicated on the values: $+1$ and $-1$ as the significance thresholds for signals as one standard deviation range.
 \renewcommand{\aa}{Analysis Bar Chart Results:}
 \input{../figures/figure-real_life-events-analysis-results}
 
@@ -62,37 +58,44 @@ Condensed analysis results as bar charts are given in Fig.~\ref{figure-real-life
 \newcommand{\dd}{Modularity Values and Z-scores in Sliding-time Windows \& Different Network Resolutions}
 \newcommand{\ee}{Modularity Values and Z-scores in Discrete-time Windows}
 
-FSS networks for the width feature in CCM and CSP are always modular and hierarchically organised mainly. On the other hand, FBS networks of the same feature have complicated and distorted/skewed-modular structures after checking the robustness. Until perturbing the data, the networks are modular and hierarchical, showing the unstable case of the FBS networks for the width feature in CCM and CSP.
+At first glance on the bar charts, time does not matter on modularity change except a few minor differences between the first halves and second halves of the data sets; in fact, the complete data column provides the overview of both halves. Moreover, \acs{ccm}--\acs{csp} and \acs{pltcm}--\acs{cgl} pairs have significantly similar results in terms of z-scores for different null models. That case is not unexpected for the first pair since \acs{ccm} is an inner \acs{csp} module; hence, the same production sequence schedule is performed on both production lines.
 
-For PLTCM and CGL, FSS and FBS networks for the thickness feature are modular and do not comprise any complex textures; therefore, that case is more reliable. FSS and FBS networks are getting complicated and distorted for the width feature, considering NM-m z-scores less than $-2$ and error bars with long T-shaped symbols.
+\acs{fss} networks for the width feature in \acs{ccm} and \acs{csp} are always modular and hierarchically organised mainly. On the other hand, \acs{fbs} networks of the same feature have nonrandom hierarchical organisation after checking the robustness. Until perturbing the data, the networks are modular and hierarchical, showing the unstable case of the \acs{fbs} networks for the width feature in \acs{ccm} and \acs{csp}.
 
-As a summary of the bar charts in Fig.~\ref{figure-real-life-events-analysis-results}, the modular structure of the networks shifts from width to thickness when moving the observation angle from CCM and CSP to PLTCM and CGL. {\color{red}Two different binning schemes: technological constraints and load constraints, show different results through production lines going from a more general production portfolio to a more specific product portfolio}. Moreover, thickness is a more specialised feature than the width feature since the FSS and FBS networks have more significant z-scores for the thickness feature as the specialisation increases. {\color{red}Load constraint networks} do not show a significant change in width feature as going further in the production specialisation; however, {\color{red}technological constraint networks} get closer to randomness and start to get distorted in that direction.
+For \acs{pltcm} and \acs{cgl}, \acs{fss} and \acs{fbs} networks for the thickness feature are modular and do not comprise any complex textures; therefore, that case is more reliable. \acs{fss} and \acs{fbs} networks are getting non-modular with a hierarchical organisation for the width feature, and they are not robust due to the error bars with long T-shaped symbols.
+
+As a summary of our findings from Fig.~\ref{figure-real-life-events-analysis-results}, the modular structure of the networks shifts from width to thickness while moving the observation angle from \acs{ccm} and \acs{csp} to \acs{pltcm} and \acs{cgl}. Alternative binning schemes created for technological constraints and load constraints show different results through production lines going from a more general product portfolio to a more specific product portfolio. Moreover, thickness networks are more meaningful in specialised production lines than width networks since the FSS and FBS networks have more significant z-scores for the thickness feature as the specialisation increases. FBS networks do not show a significant change in width feature as going further in the production specialisation; however, FSS networks get closer to randomness and get non-modular in that direction.
 \clearpage
 
 \section{Simulation Events}
-\subsection*{Design \& Analysis Steps and Results}
-\addcontentsline{toc}{subsection}{Design \& Analysis Steps and Results}%
+\subsection{Design Steps for the Simulation Model}
+%\addcontentsline{toc}{subsection}{Design Steps for the Simulation Model}%
 
-{\color{red} 
-	
-	Briefly explain \emph{in silico analyses} attempts /numerical experiments from the generated data.
-	
-	Plots in Part-1 of the file belong to association networks of four different synthetically created sequence data sets, and each represented in various colours: green, blue, orange, and red. Part-1 data sets were derived with fixed reaction bounds but with varying coefficients of objective functions. Part-2 also presents plots for four different synthetically created sequence data sets with fixed objective function coefficients but with variable reaction bounds.
-	
-	Each data set has a length of 10,000 events shared equally in 200 sequences. Randomly picked subsets of fluxes were kept the same within the sequences but having varying coefficients of objective functions.
-	
-		
-	Limitations on resources were performed in two different ways; first, restriction on upper \& lower bounds and second, deletion of fluxes.
-	
-	The fluxes used in the intermediate reactions were given the range of bounds as $(-500, 500)$ since it is impossible to define infinity values in the optimisation algorithm. Randomly chosen $105$ fluxes out of $1008$ were matched with $(-5, 5)$ as the first step. Furthermore, $105$ was doubled ($212$) and then quadrupled ($425$). An important detail is that all three sets of choices were done randomly, and they are not added on top of already selected $105$. The same three sets of fluxes were used in the computations as restricted bounds in every further step.
-	
-	Deletion goes in the line: $0, 50, 100, 150, 200, 250, 300, 350, 400, 450$. As explained previously, deletion was done by assigning $(0, 0)$ bounds to the fluxes. On the last step, almost half of the total fluxes ($1008$) were erased.
-	
-	In an ideal scenario, we would find that association networks derived from the generated data, in the one case; produce high modularity for FBS and in the other case produce high modularity for FSS. Because then we have linked these two data processing schemes to different forms/to different categories of constraints.
-	
-	We see here that when I vary one constraint about the richness curve plots, I go from a factory that produces anything at random to a more specific factory in their production plans. The modularity at FBS increases, modularity at FSS does not increase. From left to right, I increase the constraint that the production plan (or portfolio of the factory) impose on the whole production process. The production portfolio is grouped into speciality products on the right end. An increase in modularity is only valid for the green and orange curves, which means that this effect of the changing of the portfolio only takes place. In addition, I impose certain constraints on the material flow (FBS). I enforce the production plans. In some sense, with the coefficients of objective function being symmetric around zero, I allow them also to near zero. I allow for the case this product doesn't take place. The red and the blue curves are less interesting, and they are rather serving as an orientation. We wouldn't expect them to be severely affected by changes in the richness of the objective function because the terms are cancelled out. So the interesting curves are the green and orange one that we can argue for it. We don't expect a strong impact of the richness of the objective functions for these cases (red and blue), and that's indeed what I numerically observed. So it makes sense to have these curves, but the interesting curves are the green and the orange ones.
-	Blue curve z-score is very hard to compute, and we should not trust it that much; also, its z-score curve is lower than the red z-score curve. 
-}
+As summarised in Fig.~\ref{figure-complete_framework_cartoon}, the simulation model performs a single run optimisation with a defined set of rules and system constraints in the first step. As a second step, it generates the data set based on the introduced production sequence concept. Finally, the outcome data set is labelled in alternative binning schemes to construct networks as ready for the network metrics analysis. In this subsection, we quantify the characteristics of the model and vary the identified system constraints used in the second step.
+
+Homo sapiens metabolic model with $738$ metabolites and $1008$ reactions was used as the set of rules (Eq.~\ref{stoichio}) and kept fixed in our simulation model. The linear optimisation algorithm was run $10000$ times to create a data set with $200$ sequences, each with $50$ events.
+
+A constrained flux list, $V^{b}$ (Eq.~\ref{constrainedfluxlist}), was created to be considered in each optimisation run. The fluxes used in the intermediate reactions were given the range of bounds as $(-500, 500)$ since it is impossible to define infinity values in the optimisation algorithm. The bound variable, $a$, was assigned to $5$ for randomly chosen $105$ fluxes out of $1008$ as the fluxes used in uptake and secretion reactions.
+
+Regarding the previously introduced production sequence concept, biomass (Eq.~\ref{biomassmaximisation}) was designed slightly sparse, consists of randomly selected fluxes matched with non-zero coefficients dedicated for each sequence instead of all $1008$ fluxes. The counts of biomass series for $200$ sequences is attached as supplementary material:~\ref{figure-supplements-flux_vector_series_counts}.
+
+We recall the \acf{ppd} and \acf{ru} introduced in Section~\ref{section: simulation_model} to vary the system constraints and derive design steps as the basis of simulation events analysis;
+\begin{itemize}
+	\item[i.] \acs{ppd}-1 picks random floating-point numbers from four different intervals; $(-1, 1)$, $(-4, 4)$, $(-4, -2)$, and $(2, 4)$ as the objective function coefficients (Eq.~\ref{objectivecoefficients}) which results as four distinctive data sets after the optimisation runs completed,
+	\item[ii.] \acs{ru}-1 generates distinguished deletion lists ($V^{e}$, Eq.~\ref{deletedreactions}), each consists of randomly picked fluxes with the numbers range from $50$ to $450$ in step $50$ and considers those in the four distinctive data sets mentioned above to generate nine different variations of each,
+	\item[iii.] \acs{ru}-2 updates $105$ to $420$, which was previously defined as the number of randomly chosen fluxes in $V^{b}$ to be limited with bound value: $a$, results with one more variation of the above steps, and
+	\item[iv.] \acs{ppd}-2 creates three revised versions of the designed biomass series by randomly choosing the reduced number of terms by 25\%, 50\%, and 75\%, respectively, resulting in three more variations of the above design steps.
+\end{itemize}
+
+In short, \acs{ru}-1 and \acs{ru}-2 manipulate the simulation model's resource usage by knocking some reactions out and limiting fluxes used for uptake \& secretion reactions. \acs{ppd}-1 enforces the production plans based on their directionality by imposing symmetric and nonsymmetric number intervals. \acs{ppd}-2 provides varieties between a vast production range capacity and a more specific one by adjusting the richness of objective functions. %By deleting a high percentage of the terms in objective functions, we increase the constraint that the production plan imposes on the whole production process. 
+
+\subsection{Analysis Results}
+%\addcontentsline{toc}{subsection}{Analysis Results}%
+Derived data sets from the design steps introduced in the above subsection were considered to construct networks concerning alternative binning methods, calculate modularity value of the networks and calculate z-scores concerning two alternative null models as performed in real-life events analysis.
+
+The resulted curve plots are presented as supplementary materials: \ref{figure-supplements-obj_func-terms-initial}, \ref{figure-supplements-obj_func-terms-reduced25}, \ref{figure-supplements-obj_func-terms-reduced50}, and \ref{figure-supplements-obj_func-terms-reduced75}. As the deleted reaction number increases, modularity shifts down together with a significant decrease in \acs{nmd} z-scores. In contrast, the \acs{nmm} z-scores are always around the zero levels. A condensed version of those resulted curve plots was re-arranged by taking the mean of both modularity values and z-scores in each data set variation derived from RU-2 and PPD-2 steps. The results are given in Fig.~\ref{figure-FBA-results}.
+
+None of the curves in \acs{fss} networks has a change in modularity. In contrast, \acs{fbs} networks modularity increases for only green and orange coloured curves. From left to right, we increase the constraint that the production plan (or product portfolio) impose on the whole production process. The product portfolio is grouped into speciality products on the right end. The effect of the portfolio changing occurs for the production plans enforced in one direction and does not occur for the symmetrically organised production plans. The red and blue curves are less attractive and instead serve as an orientation since their objective function coefficients are symmetric around zero and damp each other, resulting in a not occurring product. Therefore, we do not expect them to be severely affected by changes in the richness of the objective function, and that is indeed what we numerically observed.
 
 \input{../figures/figure-FBA-results}
 

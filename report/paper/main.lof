@@ -1,15 +1,19 @@
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Steel Manufacturing Steps\nobreakspace {}\cite {sinha-spinks_2015}.\relax }}{1}{figure.caption.5}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces An Arbitrary Representation for Adjacency Matrix and Its Graph.\relax }}{8}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Graph Results For Two Different Network Approaches.\relax }}{9}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Formation of Different Null Models.\relax }}{11}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Chart Comparing the Various Grading Methods in A Normal Distribution\nobreakspace {}\cite {normaldistribution}.\relax }}{12}{figure.caption.24}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Network Representations for Homo Sapiens Metabolic Model\relax }}{16}{figure.caption.33}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces A Simplified Reaction-centric Network Sketch Shows The Reactions for Exchange, Uptake and Secretion.\relax }}{18}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Simulation Model Illustration\relax }}{20}{figure.caption.44}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces CCM, CSP, PLTCM, CGL Analysis Bar Chart Results:{} Z-scores.\relax }}{26}{figure.caption.49}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Simulation Analysis Curve Plot Results: Modularity Values and Z-scores.\relax }}{29}{figure.caption.52}%
+\acswitchoff 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Steel Manufacturing Steps\nobreakspace {}\cite {sinha-spinks_2015}.\relax }}{2}{figure.caption.14}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Different Categories of Production Events Handling. The hot rolling mill presses the metal slabs with red rollers positioned in production line 1. The unit in production line 2, pickling tank full of acid coloured in grey, treats the metal surface of the slabs. \relax }}{3}{figure.caption.16}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces An Arbitrary Representation for Adjacency Matrix and its Graph.\relax }}{7}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Graph Results For Two Different Network Approaches.\relax }}{8}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Formation of Different Null Models.\relax }}{10}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Chart Comparing the Various Grading Methods in A Normal Distribution\nobreakspace {}\cite {normaldistribution}.\relax }}{11}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Network Representations for Homo Sapiens Metabolic Model\relax }}{14}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces A Simplified Reaction-centric Network Sketch Shows The Reactions for Exchange, Uptake and Secretion.\relax }}{16}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Simulation Model Illustration\relax }}{19}{figure.caption.53}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces CCM, CSP, PLTCM, CGL Analysis Bar Chart Results:{} Z-scores.\relax }}{24}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Condensed Curve Plots for Simulation Analysis: The Relationship Between Modularity and Richness of Objective Functions.\relax }}{27}{figure.caption.62}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

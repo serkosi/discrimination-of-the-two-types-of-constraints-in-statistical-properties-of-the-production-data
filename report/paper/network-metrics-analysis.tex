@@ -1,19 +1,18 @@
-\subsection*{Network Metrics Analysis}
-\addcontentsline{toc}{subsection}{Network Metrics Analysis}%
-As explained in the previous subsection, one can label a data set differently and generate identical graphs with FSS Network and FBS Network approaches. We argue that resultant graphs have various motifs which are non-trivial and emerge from the statistical patterns in data. In further steps in this subsection, we review a well-known network measure: modularity and statistical techniques of randomness control to be integrated into our analysis pipeline.
+\subsection{Network Metrics Analysis}
+%\addcontentsline{toc}{subsection}{Network Metrics Analysis}%
+As explained in the previous subsection, one can label a data set differently and generate identical graphs with \acs{fss} Network and \acs{fbs} Network approaches. We argue that resultant graphs have various motifs which are non-trivial and emerge from the statistical patterns in data. In further steps in this subsection, we review a well-known network measure: modularity and statistical techniques of randomness control to be integrated into our analysis pipeline.
 \subsubsection*{Modularity Measure}
 The variety of textures arises from how the nodes are clustered within their neighbourhood or having different degree values. The degree is a network metric that quantifies one node's links (or edges) to the other nodes~\cite{Barabasi2016}. The degree distribution of the network gives an idea about the connectivity patterns within the network. It allows us to distinguish the nodes with a high degree from the nodes with a low degree.
 
-Identification of tightly connected node groups is a way of quantifying community structure in networks~\cite{Girvan7821}. Communities (the so-called modules) are groups of nodes that probably play similar roles within the graph~\cite{FORTUNATO201075}. Modularity is a network measure for community detection and quantifies the strength of community structure in that specific network. It is a way to express the network characteristics. 
+Identification of tightly connected node groups is a way of quantifying community structure in networks~\cite{Girvan7821}. Communities (the so-called modules) are groups of nodes that probably play similar roles within the graph~\cite{FORTUNATO201075}. Modularity is a network measure for community detection and quantifies the strength of community structure in that specific network. It is a way to express the network characteristics.
 
 Newman (2006) formulated modularity in his article as
 \begin{equation} %\tag{2}
-	Q = \frac {1} {2 m}\sum_ {ij} (A_{ij} - \frac {k_{i} k_{j}}{2 m}) \
-	\frac {s_{i} s_{j} + 1} {2}\ ,
+	Q = \frac {1} {4 m}\sum_ {ij} (A_{ij} - \frac {k_{i} k_{j}}{2 m}) s_{i} s_{j} ,
 	\label{modularity}
 \end{equation}
 \myequations{Modularity Formula} 
-where the network graph has an $m$ number of edges, and $A_{ij}$ is the number of edges between vertices $i$ and $j$. $A_{ij}$ is the element of the adjacency matrix introduced in Fig.~\ref{figure-adjacency_graph}. It can be $0$ or $1$. $k_{i}$ and $k_{j}$ are the vertex degrees, and ${k_{i} k_{j}}/{2 m}$ is the expected number of edges between $i$ and $j$ if edges are randomly placed. $s_{i}$ and $s_{j}$ are the divided network groups. They are equal to $1$ if $i$ and $j$ belong to the same group and $0$ otherwise. Eq.\eqref{modularity} is used to separate the network into two communities only; however, many networks may contain more than two communities. Therefore, a repeated division into two is adapted: dividing the network into two graphs, then the two sub-graphs further divided into two only if that would maximize $Q$. After first partitioning, the edges falling between the further divided sub-graphs are neglected, leading to a wrong maximization quantity. For this reason, the author introduced the additional contribution $\Delta Q$.~\cite{Newman8577}
+where the network graph has an $m$ number of edges, and $A_{ij}$ is the number of edges between vertices $i$ and $j$. $A_{ij}$ is the element of the adjacency matrix introduced in Fig.~\ref{figure-adjacency_graph}. It can be $0$ or $1$. $k_{i}$ and $k_{j}$ are the vertex degrees, and ${k_{i} k_{j}}/{2 m}$ is the expected number of edges between $i$ and $j$ if edges are randomly placed. $s_{i}$ and $s_{j}$ are the divided network groups. They are equal to $1$ if $i$ and $j$ belong to the same group and $0$ otherwise. Eq.\eqref{modularity} is used to separate the network into two communities only; however, many networks may contain more than two communities. Therefore, a repeated division into two is adapted: dividing the network into two graphs, then the two sub-graphs further divided into two only if that would maximise $Q$. After first partitioning, the edges falling between the further divided sub-graphs are neglected, leading to a wrong maximisation quantity. For this reason, the author introduced the additional contribution $\Delta Q$.~\cite{Newman8577}
 % $B_{ij} = A_{ij} - \frac {k_ {i} k_ {j}} {2 m}$\\
 % $Q = \frac {1} {4 m} s^{T} Bs = \frac {1} {4 m}\sum_ {i = 
 %	1}^{n} (u_ {i}^{T} . s)^{2}\beta_ {i}$\\
@@ -23,43 +22,40 @@ where the network graph has an $m$ number of edges, and $A_{ij}$ is the number o
 The formulation given in Eq.\eqref{modularity} was used in this thesis work to calculate the modularity of the association networks. Since the results obtained with the combination of $Q$ and $\Delta Q$ do not significantly differ from the results obtained only using $Q$, the modularity calculations in this work were performed with the latter one to lower the computation timing.
 
 \subsubsection*{Randomness Control Concerning Different Null Models}
-As Eq.~\eqref{modularity} gives a clue, one can measure a real network modularity quality by comparing it with the community structure in a random graph~\cite{GirvanNewman2004}. The distribution of degrees in random graphs is highly homogeneous, and they do not reveal a significant level of order or organization~\cite{FORTUNATO201075}. Various sophisticated random graphs (the so-called null models) can be generated from the original network graph by keeping some of its structural properties the same~\cite{MERTEN2020, FORTUNATO201075, Enders2018}.
+As Eq.~\eqref{modularity} gives a clue, one can measure a real network modularity quality by comparing it with the community structure in a random graph~\cite{GirvanNewman2004}. The distribution of degrees in random graphs is highly homogeneous, and they do not reveal a significant level of order or organisation~\cite{FORTUNATO201075}. Various sophisticated random graphs (the so-called null models) can be generated from the original network graph by keeping some of its structural properties the same~\cite{Maslov910, MERTEN2020, FORTUNATO201075, Enders2018}.
 \input{../figures/figure-null_models}
 
-Our analysis pipeline considers two types of randomized graphs for our association networks: Null Model conserving degrees sequence (NM-d) and Null Model conserving degrees sequence \& graph modules (NM-m), as shown in Fig.~\ref{figure-null_models}. In NM-d, all edges belong to the real network are shuffled in a pairwise fashion by keeping the original degrees sequence which allows conserving any possible skewed degree distribution in the real network~\cite{FORTUNATO201075, Fretter2012}. In NM-m, intra-edges and inter-edges among modules are shuffled separately by preserving the original degrees sequence~\cite{Fretter2012}. We should emphasize an essential detail in our design decision that might affect the results; NM-m keeps inter-edges from different module pairs together while the shuffling process, even if there are more than two modules in the real network. However, some module pairs might be strongly interconnected in most realistic situations, while the others are almost not linked to each other.
+Our analysis pipeline considers two types of randomised graphs for our association networks: \ac{nmd} and \ac{nmm}, as shown in Fig.~\ref{figure-null_models}. In \acs{nmd}, all edges that belong to the real network are shuffled in a pairwise fashion by keeping the original degrees sequence which allows conserving any possible skewed degree distribution in the real network~\cite{Maslov910, Fretter2012, FORTUNATO201075}. In \acs{nmm}, intra-edges and inter-edges among modules are shuffled separately by preserving the original degrees sequence~\cite{Fretter2012}. We should emphasise an essential detail in our design decision that might affect the results; \acs{nmm} keeps inter-edges from different module pairs together while the shuffling process, even if there are more than two modules in the real network. However, some module pairs might be strongly interconnected in most realistic situations, while the others are almost not linked to each other.
 \input{../figures/figure-normal_distribution}
 
-One thousand random graphs concerning the respective null model constraints are created, and their modularity values are computed to compare with the real network. The histogram of resulted modularity values converges to a normal distribution like the one shown in Fig.~\ref{figure-normal_distribution}. One can quantify the real network randomness in the context of the respective null model by computing the standard score (the so-called z-score), $z$, as
+One thousand random graphs concerning the respective null model constraints are created, and their modularity values are computed to compare with the real network. The histogram of resulted modularity values converges to a normal distribution like the one shown in Fig.~\ref{figure-normal_distribution}. One can quantify the real network randomness in the context of the respective null model by computing the \acl{zscore} (the so-called \acs{zscore}), $z$, as
 \begin{equation} %\tag{2}
-	z = \frac{x-\mu}{\sigma}.
+	z = \frac{Q-\mu}{\sigma}.
 	\label{zscore}
 \end{equation} 
 \myequations{Standard Score Formula} 
-$x$ is the modularity value for the real network; $\mu$ is the expectation value (mean) of $x$ in the set of $1000$ randomized graphs. $\sigma$ is the standard deviation of $x$ in the randomized graphs. 
 
-$z$ is the number of standard deviations by which the real network modularity value is below or above the expected value, $\mu$. The z-score values lower than $1$ or higher than $-1$ indicate that the real network is incidental; the z-score values between $1$ and $2$ or between $-2$ and $-1$ suggest that the real network is close to random characteristics. In contrast, the z-score values greater than $2$ or less than $-2$ indicate a significant deviation from randomness.
+$Q$ is the modularity value for the real network; $\mu$ is the expectation value (mean) of $Q$ in the set of $1000$ randomised graphs. $\sigma$ is the standard deviation of $Q$ in the randomised graphs.
 
-NM-d is the null model that gives information about the modularity since it destroys the modules in the real network while randomizing it. NM-m is essentially the control null model to detect strange effects and whether it is meaningful to discuss modularity. Comparing a real modular network with NM-m random graphs will lead the z-score to zero, no matter the actual modularity value. If the z-score using NM-m is drastically away from zero, then the type of modularity in the real network graphs are somewhat different and very complicated. 
+$z$ is the number of standard deviations by which the real network modularity value is below or above the expected value, $\mu$. The \acs{zscore} lower than $1$ or higher than $-1$ indicate that the real network is incidental; the \acs{zscore} between $1$ and $2$ or between $-2$ and $-1$ suggest that the real network is close to random characteristics. In contrast, the \acs{zscore} greater than $2$ or less than $-2$ indicate a significant deviation from randomness.
 
-In some networks, small groups of nodes organized by following a hierarchical rule~\cite{BARABASI2001559} form large groups displaying a high degree of clustering while the degree distribution follows a power law~\cite{Barabasi2003}. That hierarchical organization of nodes creates a nested modularity structure in the networks, having modules within modules. That type of organization is observed in several real networks like the World wide web, the Internet at the domain level, actor-network~\cite{Barabasi2003}, macaque \& cat cortical systems~\cite{Young2000} and the Escherichia coli metabolic network~\cite{Ravasz1551}. Suppose the z-score is greater than or equal to $2$ using NM-m. In that case, we assume that the real network has a complicated structure or hierarchical organization since the randomizing scheme would destroy the internal modularity of graph modules. 
+\acs{nmd} is the null model that gives information about the modularity since it destroys the modules in the real network while randomising it. \acs{nmm} is essentially the control null model to detect strange effects and whether it is meaningful to discuss modularity. Comparing a real modular network with \acs{nmm} random graphs will lead the \acs{zscore} to zero, no matter the actual modularity value. If the \acs{zscore} using \acs{nmm} is drastically away from zero, then the type of modularity in the real network graphs are somewhat different and very complicated.
 
-We pretend that the real network structure is more homogeneous than it is and pretend that it is statistically reliable and not distorted or skewed. However, those presumes are slightly wrong, and those can lead to cases sometimes looking statistically significant even though they are not. To distinguish the reliably distributed network from the skewed or distorted ones, we assume the z-scores less than or equal to $-2$ concerning NM-m as an indicator of asymmetry in the real network, in other words, having significant differences in the number of inter-module links. In this case, some modules are tightly connected while the other modules are sparsely connected.
+In some networks, small groups of nodes organised by following a hierarchical rule~\cite{BARABASI2001559} form large groups displaying a high degree of clustering while the degree distribution follows a power law~\cite{Barabasi2003}. That hierarchical organisation of nodes creates a nested modularity structure in the networks, having modules within modules. That type of organisation is observed in several real networks like the World wide web, the Internet at the domain level, actor-network~\cite{Barabasi2003}, macaque \& cat cortical systems~\cite{Young2000} and the Escherichia coli metabolic network~\cite{Ravasz1551}. We assume that the real network has a complicated structure or hierarchical organisation since the randomising scheme would destroy the internal modularity of graph modules if the \acs{zscore} concerning \acs{nmm} is lower than $-2$ or higher than $2$. 
 
-Table~\ref{Tab: z-score_range_def} summarises possible network structures, including our assumptions for the respective z-score intervals under the effect of null model choice.
+Table~\ref{Tab: z-score_range_def} summarises possible network structures, including our assumptions for the respective \acs{zscore} intervals under the effect of null model choice.
+
 \begin{table}[ht!]
 	\centering
-	\setlength{\arrayrulewidth}{0.75pt}% 
-	\begin{tabular}{|c|c|c|}
+	\setlength{\arrayrulewidth}{0.79pt}%
+	\caption{Expected Network Structures with Respect to Null Models.}
+	\begin{tabular}{|
+			>{\columncolor[HTML]{FFFFC7}}c |c|c|}
 		\hline
-		\rowcolor[HTML]{FFFFC7}
-		\makecell{Real Network\\Z-score} & Null Model & Network Structure\\ \hline
-		$z\leq-2$ & \multirow{3}{*}[-1.25em]{\makecell{degrees sequence\\is conserved\\(NM-d)}} & \makecell{nonrandom,\\complicated}\\ \cline{1-1} \cline{3-3} 
-		$-2<z<2$ &  & \makecell{random,\\not modular} \\ \cline{1-1} \cline{3-3} 
-		$z\geq2$ &  & \makecell{nonrandom,\\modular} \\ \hline
-		$z\leq-2$ & \multirow{3}{*}[-0.75em]{\makecell{degrees sequence\\and modules\\ are conserved\\(NM-m)}} & \makecell{complicated,\\ distorted/skewed-modular} \\ \cline{1-1} \cline{3-3} 
-		$-2<z<2$ &  & \makecell{not complicated\\structure}\\ \cline{1-1} \cline{3-3} 
-		$z\geq2$ &  & \makecell{complicated,\\hierarchical organization} \\ \hline
+		\begin{tabular}[c]{@{}c@{}}Real \\ Network   \\ Z-score\end{tabular} & \cellcolor[HTML]{FFFFC7}\begin{tabular}[c]{@{}c@{}}Conserving \\ Degrees Sequence \\ (NM-d)\end{tabular} & \cellcolor[HTML]{FFFFC7}\begin{tabular}[c]{@{}c@{}}Conserving \\ Degrees Sequence \\ and Modules (NM-m)\end{tabular} \\ \hline
+		$z\leq-2$ & \begin{tabular}[c]{@{}c@{}}nonrandom,\\ non-modular,\\ hierarchical\end{tabular} & \begin{tabular}[c]{@{}c@{}}nonrandom,\\ non-modular,\\ hierarchical\end{tabular} \\ \hline
+		$-2<z<2$ & \begin{tabular}[c]{@{}c@{}}random,\\ non-modular\end{tabular} & \begin{tabular}[c]{@{}c@{}}simple,\\ non-hierarchical\end{tabular} \\ \hline
+		$z\geq2$ & \begin{tabular}[c]{@{}c@{}}nonrandom,\\ modular,\\ simple\end{tabular} & \begin{tabular}[c]{@{}c@{}}nonrandom, \\modular,\\ hierarchical\end{tabular} \\ \hline
 	\end{tabular}
-	\caption{Expected Network Structures With Respect to Null Models.}
 	\label{Tab: z-score_range_def}
 \end{table}
