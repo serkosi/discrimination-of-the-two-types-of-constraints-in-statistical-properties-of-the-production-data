@@ -1,29 +1,22 @@
 \begin{thebibliography}{10}
 
+\bibitem{bhadeshia2017steels}
+H.~Bhadeshia and R.~Honeycombe, {\em Steels: microstructure and properties}.
+\newblock Butterworth-Heinemann, 2017.
+
+\bibitem{Tasan2015}
+C.~Tasan, M.~Diehl, D.~Yan, M.~Bechtold, F.~Roters, L.~Schemmann, C.~Zheng,
+  N.~Peranio, D.~Ponge, M.~Koyama, K.~Tsuzaki, and D.~Raabe, ``An overview of
+  dual-phase steels: Advances in microstructure-oriented processing and
+  micromechanically guided design,'' {\em Annual Review of Materials Research},
+  vol.~45, no.~1, pp.~391--431, 2015.
+
 \bibitem{sinha-spinks_2015}
 T.~Sinha-Spinks, ``An infographic of the iron and steel manufacturing
   process.''
   \urlstyle{same}\url{https://www.thermofisher.com/content/dam/tfs/ATG/CAD/CAD%20Documents/Product%20Manuals%20&%20Specifications/Elemental%20Analysis/Thermo-Scientific-Iron-Steel-process-A3.pdf},
   2015.
 \newblock Accessed on 29-06-2021.
-
-\bibitem{normaldistribution}
-{Wikimedia Commons}, ``The re-drawn chart comparing the various grading methods
-  in a normal distribution, includes standard deviations, cumulative
-  percentages, percentile equivalents, z-scores and t-scores.''
-  \urlstyle{same}\url{https://commons.wikimedia.org/wiki/File:The_Normal_Distribution.svg#/media/File:The_Normal_Distribution.svg},
-  2007.
-\newblock Accessed on 27-06-2021.
-
-\bibitem{waldner1992}
-J.~Waldner and W.~Duffin, {\em CIM : Principles of Computer-integrated
-  Manufacturing}.
-\newblock Wiley, 1992.
-
-\bibitem{Saadaoui2019}
-S.~Saadaoui, M.~Tabaa, F.~Monteiro, M.~Chehaitly, and A.~Dandache, ``Discrete
-  wavelet packet transform-based industrial digital wireless communication
-  systems,'' {\em Information}, vol.~10, p.~104, 03 2019.
 
 \bibitem{cowling2001design}
 P.~Cowling, ``Design and implementation of an effective decision support
@@ -36,9 +29,19 @@ A.~Özgür, Y.~Uygun, and M.-T. Hütt, ``A review of planning and scheduling
   Industrial Engineering}, vol.~151, p.~106606, 2021.
 
 \bibitem{BRS}
-{SMS group}, ``Learning steel plant at {Big River Steel}.''
+{SMS group}, ``All plants from one source.''
   \urlstyle{same}\url{https://www.sms-group.com/press-media/media/downloads/download-detail/download/15940}.
 \newblock Accessed on 05-07-2021.
+
+\bibitem{waldner1992}
+J.~Waldner and W.~Duffin, {\em CIM : Principles of Computer-integrated
+  Manufacturing}.
+\newblock Wiley, 1992.
+
+\bibitem{Saadaoui2019}
+S.~Saadaoui, M.~Tabaa, F.~Monteiro, M.~Chehaitly, and A.~Dandache, ``Discrete
+  wavelet packet transform-based industrial digital wireless communication
+  systems,'' {\em Information}, vol.~10, p.~104, 03 2019.
 
 \bibitem{MERTEN2020}
 D.~Merten, M.-T. Hütt, and Y.~Uygun, ``A network analysis of decision
@@ -79,6 +82,14 @@ M.~Enders, M.-T. Hütt, and J.~M. Jeschke, ``Drawing a map of invasion biology
 \bibitem{Fretter2012}
 C.~Fretter, M.~M\"uller-Hannemann, and M.-T. H\"utt, ``Subgraph fluctuations in
   random graphs,'' {\em Phys. Rev. E}, vol.~85, p.~056119, May 2012.
+
+\bibitem{normaldistribution}
+{Wikimedia Commons}, ``The re-drawn chart comparing the various grading methods
+  in a normal distribution, includes standard deviations, cumulative
+  percentages, percentile equivalents, z-scores and t-scores.''
+  \urlstyle{same}\url{https://commons.wikimedia.org/wiki/File:The_Normal_Distribution.svg#/media/File:The_Normal_Distribution.svg},
+  2007.
+\newblock Accessed on 27-06-2021.
 
 \bibitem{BARABASI2001559}
 A.-L. Barabási, E.~Ravasz, and T.~Vicsek, ``Deterministic scale-free

@@ -2,12 +2,12 @@
 %\addcontentsline{toc}{subsection}{Association Networks}%
 Beyond a simple network graph representation of a historical production data, the formation of association rules networks is an insightful graph-based framework combining the tools: association rules and complex networks, as Merten et al. (2020) performed in their article~\cite{MERTEN2020}. Their pipeline considers sequentially revealed events of a data set. It outputs a graph demonstrating the non-random occurrence of specific events together among the complete set that took place consecutively in the production period.
 
-Assume we have an arbitrarily created manufacturing data set with chronological order, $D$, consists of $k$ sequences and $n$ events with Feature-A values and sequence id's included as given in Table~\ref{Tab:D-dataset}.
+Assume we have an arbitrarily created production data set with chronological order, $D$, consists of $k$ sequences and $n$ events with Feature-A values and sequence id's included as given in Table~\ref{Tab:D-dataset}.
 \renewcommand{\arraystretch}{1.1}
 \begin{table}[ht!]
 	\centering
 	\setlength{\arrayrulewidth}{0.79pt}%
-	\caption{Arbitrary Manufacturing Data Set $D$.}
+	\caption{Arbitrary Production Data Set $D$.}
 	\begin{tabular}{|c|ccc|c|}
 		\hline \rowcolor[HTML]{FFFFC7}
 		Event ID && Feature-A && Sequence ID   \\ \hline
@@ -29,7 +29,7 @@ Assume we have an arbitrarily created manufacturing data set with chronological 
 	\label{Tab:D-dataset}
 \end{table}
 
-By looking at such a data set, one can say the events with Feature-A values: $890$, $850$, $650$, $745$, $795$ or $540$, $520$, $630$, $610$ are positioned in common sequences and close to each other; thus, they are produced together and likely occur in the identical sequences. As a further argument, the conclusion mentioned above is probably a deliberate planning choice based on the related constraints acting on the manufacturing process performance. However, extracting such implicit knowledge is not a simple task for large and complicated real-life manufacturing data. For example, such a data set may consist of more than $300,000$ events and is likely to have various events aggregated randomly in its large sequence groups.
+By looking at such a data set, one can say the events with Feature-A values: $890$, $850$, $650$, $745$, $795$ or $540$, $520$, $630$, $610$ are positioned in common sequences and close to each other; thus, they are produced together and likely occur in the identical sequences. As a further argument, the conclusion mentioned above is probably a deliberate planning choice based on the related constraints acting on the manufacturing process performance. However, extracting such implicit knowledge is not a simple task for large and complicated steel production data. For example, such a data set may consist of more than $300,000$ events and is likely to have various events aggregated randomly in its large sequence groups.
 
 We extract the association rule from the set of production sequences to distinguish statistically unexpected occurrences from the non-random ones in production sequences and assess the complexity of production patterns. The association rule measure, known as Lift, was picked with a similar approach as Merten et al. (2020) applied in their article~\cite{MERTEN2020}. It was calculated for every possible pairwise subset of Feature-A values belonging to the events in identical production sequences. The Lift can be computed as the ratio of pair items joint probability divided by the multiplication of each item's marginal probability as
 \begin{equation} %\tag{1}

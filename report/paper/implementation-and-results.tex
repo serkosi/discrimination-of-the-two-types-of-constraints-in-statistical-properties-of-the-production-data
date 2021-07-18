@@ -1,9 +1,7 @@
 \chapter{Implementation, Analysis and Results}\label{implementation_analysis}
 \section{Steel Production Events}
-\subsection{Data Collection and Cleaning}
+\subsection{Data Collection and Cleaning}\label{data_collection_cleaning}
 %\addcontentsline{toc}{subsection}{Data Collection and Cleaning}%
-
-The queries in \ac{sql} were generated to find and pull the production orders data from the database across $2$--$3$ years of production work completed in the production lines, introduced in Table~\ref{Tab: production_lines}. The SQL queries are given in the Supplementary Materials: \ref{figure-supplements-CCM_CSP-SQL}, \ref{figure-supplements-PLTCM-SQL}, and \ref{figure-supplements-CGL-SQL}.
 
 At the beginning of the data cleaning process, the raw data was handled considering the string-type data values conversion into floating-point numbers, modifying inconsistent punctuation marks between digits into one typical style, and converting null values into the integer value $0$. 
 
@@ -11,7 +9,7 @@ After going over minor revision steps, we introduce some preconditions below to 
 \begin{itemize}
 	\item The steel material density was considered between $6.5 x 10^{-6}$ $kg/mm^{3}$ and $8.5 x 10^{-6}$ $kg/mm^{3}$. The production orders with density values out of that range were discarded from consideration.
 	\item The production feature, length values were taken into account with millimetre (mm) units in the metric system.
-	\item Machines input capacity limit ranges were identified for the production features; width, thickness, and weight as $800$--$2000$ mm, $40$--$90$ mm, and $2669$--$26690$ kg.
+	\item {\color{red}Machines input capacity limit ranges were identified for the production features; width, thickness, and weight as $800$--$2000$ mm, $40$--$90$ mm, and $2669$--$26690$ kg.}
 \end{itemize}
 
 Considering the preconditions mentioned above and $density = mass/volume$ equality, $0$ values were replaced with the calculated values in every production event with a maximum of one unknown value from the features; width, thickness, weight, and length. Production events with two missing values were compared with consecutive events, and missing terms were filled based on the consistency among the same sequence events. Sequences with less than $50$ events were removed from the data sets considering those short sequences might be generated for some test processes. At the final stage, obtained data set lengths are given below.
@@ -21,12 +19,11 @@ Considering the preconditions mentioned above and $density = mass/volume$ equali
 	\item \acs{pltcm} data set: $64,026$ events.
 	\item \acs{cgl} data set: $31,230$ events.
 \end{itemize}
-The decreasing number of events through the data sets shows that the output of a production line is not always an input for the next in line and might be excluded from the continuous production line, as previously mentioned in Section~\ref{background_information}.
 
 \subsection{Analysis Steps and Results}
 %\addcontentsline{toc}{subsection}{Analysis Steps and Results}%
 
-The complete analysis of real-life events comprises a check for meaningful modularity structures in various dimensions for the association networks generated from the data collection. We introduce those dimensions as;
+The complete analysis of steel production events comprises a check for meaningful modularity structures in various dimensions for the association networks generated from the data collection. We introduce those dimensions as;
 \begin{itemize}
 	\item[1.] production line,
 	\item[2.] production feature,
@@ -60,11 +57,11 @@ Condensed analysis results as bar charts are given in Fig.~\ref{figure-real-life
 
 At first glance on the bar charts, time does not matter on modularity change except a few minor differences between the first halves and second halves of the data sets; in fact, the complete data column provides the overview of both halves. Moreover, \acs{ccm}--\acs{csp} and \acs{pltcm}--\acs{cgl} pairs have significantly similar results in terms of z-scores for different null models. That case is not unexpected for the first pair since \acs{ccm} is an inner \acs{csp} module; hence, the same production sequence schedule is performed on both production lines.
 
-\acs{fss} networks for the width feature in \acs{ccm} and \acs{csp} are always modular and hierarchically organised mainly. On the other hand, \acs{fbs} networks of the same feature have nonrandom hierarchical organisation after checking the robustness. Until perturbing the data, the networks are modular and hierarchical, showing the unstable case of the \acs{fbs} networks for the width feature in \acs{ccm} and \acs{csp}.
+\acs{fss} networks for the width feature in \acs{ccm} and \acs{csp} are always modular and hierarchically organised mainly. On the other hand, \acs{fbs} networks of the same feature in the same production lines have nonrandom and non-modular hierarchical organisation after checking the robustness. Until perturbing the data, the networks are modular and hierarchical, showing the unstable case of the \acs{fbs} networks for the width feature in \acs{ccm} and \acs{csp}. FSS networks are modular and organised simple, while FBS networks are non-modular and hierarchically organised regarding the thickness feature in the same production lines. 
 
-For \acs{pltcm} and \acs{cgl}, \acs{fss} and \acs{fbs} networks for the thickness feature are modular and do not comprise any complex textures; therefore, that case is more reliable. \acs{fss} and \acs{fbs} networks are getting non-modular with a hierarchical organisation for the width feature, and they are not robust due to the error bars with long T-shaped symbols.
+For \acs{pltcm} and \acs{cgl}, \acs{fss} and \acs{fbs} networks for the thickness feature are modular, they do not comprise any complex textures, and they are robust. \acs{fbs} networks are non-modular with a hierarchical organisation. They are not robust due to the error bars with long T-shaped symbols for the width feature. In contrast, \acs{fss} networks for the same feature show both modular \& simple and non-modular \& hierarchical characteristics with a robust z-score on NM-d and non-robust z-score on NM-m.
 
-As a summary of our findings from Fig.~\ref{figure-real-life-events-analysis-results}, the modular structure of the networks shifts from width to thickness while moving the observation angle from \acs{ccm} and \acs{csp} to \acs{pltcm} and \acs{cgl}. Alternative binning schemes created for technological constraints and load constraints show different results through production lines going from a more general product portfolio to a more specific product portfolio. Moreover, thickness networks are more meaningful in specialised production lines than width networks since the FSS and FBS networks have more significant z-scores for the thickness feature as the specialisation increases. FBS networks do not show a significant change in width feature as going further in the production specialisation; however, FSS networks get closer to randomness and get non-modular in that direction.
+Fig.~\ref{figure-real-life-events-analysis-results} shows us that alternative network approaches: FSS and FBS, concerning technology-driven constraints and load-driven constraints, give different results. For the width feature, FSS networks are very modular \& hierarchical in CCM--CSP; however, in PLTCM--CGL, they lose their hierarchical organisation and modularity concerning NM-d and show non-modular \& hierarchical characteristics concerning NM-m. In contrast, FBS networks on the same feature are non-modular \& hierarchical in all production lines. FSS networks are modular \& simple, and FBS networks are non-modular \& hierarchical in CCM--CSP regarding the thickness feature. In contrast, both network approaches drastically increase their modularity with a simple structure in PLTCM--CGL concerning the same feature.
 \clearpage
 
 \section{Simulation Events}
@@ -91,7 +88,7 @@ In short, \acs{ru}-1 and \acs{ru}-2 manipulate the simulation model's resource u
 
 \subsection{Analysis Results}
 %\addcontentsline{toc}{subsection}{Analysis Results}%
-Derived data sets from the design steps introduced in the above subsection were considered to construct networks concerning alternative binning methods, calculate modularity value of the networks and calculate z-scores concerning two alternative null models as performed in real-life events analysis.
+Derived data sets from the design steps introduced in the above subsection were considered to construct networks concerning alternative binning methods, calculate modularity value of the networks and calculate z-scores concerning two alternative null models as performed in steel production events analysis.
 
 The resulted curve plots are presented as supplementary materials: \ref{figure-supplements-obj_func-terms-initial}, \ref{figure-supplements-obj_func-terms-reduced25}, \ref{figure-supplements-obj_func-terms-reduced50}, and \ref{figure-supplements-obj_func-terms-reduced75}. As the deleted reaction number increases, modularity shifts down together with a significant decrease in \acs{nmd} z-scores. In contrast, the \acs{nmm} z-scores are always around the zero levels. A condensed version of those resulted curve plots was re-arranged by taking the mean of both modularity values and z-scores in each data set variation derived from RU-2 and PPD-2 steps. The results are given in Fig.~\ref{figure-FBA-results}.
 

@@ -98,7 +98,7 @@ binsrearranged=ReplacePart[bins,Flatten[Table[MapThread[#1->#2&,
 aimbinned=Values@Sort[Flatten[Table[aimpartitioned[[i]]/.
 Dispatch@Table[Values@aimpartitioned[[i]][[j]]->binsrearranged[[i]],
 {j,Length@aimpartitioned[[i]]}],{i,Length@aimpartitioned}],1],#1[[1]]<#2[[1]]&];
-{aimbinned,campaign,seri}]
+{aimbinned,campaign,seri,bucketsize}]
 
 
 Clear[snetworkdatabinnedintimewindows]
