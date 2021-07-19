@@ -33,15 +33,14 @@ A.~Özgür, Y.~Uygun, and M.-T. Hütt, ``A review of planning and scheduling
   \urlstyle{same}\url{https://www.sms-group.com/press-media/media/downloads/download-detail/download/15940}.
 \newblock Accessed on 05-07-2021.
 
-\bibitem{waldner1992}
-J.~Waldner and W.~Duffin, {\em CIM : Principles of Computer-integrated
-  Manufacturing}.
-\newblock Wiley, 1992.
-
 \bibitem{Saadaoui2019}
 S.~Saadaoui, M.~Tabaa, F.~Monteiro, M.~Chehaitly, and A.~Dandache, ``Discrete
   wavelet packet transform-based industrial digital wireless communication
   systems,'' {\em Information}, vol.~10, p.~104, 03 2019.
+
+\bibitem{takase2011strength}
+Y.~Takase and W.~Li, ``Strength analysis for shrink fitting system used for
+  ceramics rolls in the continuous pickling line,'' 2011.
 
 \bibitem{MERTEN2020}
 D.~Merten, M.-T. Hütt, and Y.~Uygun, ``A network analysis of decision

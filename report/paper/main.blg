@@ -5,30 +5,31 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: ../bibliography/bib.bib
+Warning--empty journal in takase2011strength
 You've used 33 entries,
             1876 wiz_defined-function locations,
-            709 strings with 10032 characters,
-and the built_in function-call counts, 9522 in all, are:
-= -- 967
+            708 strings with 10080 characters,
+and the built_in function-call counts, 9506 in all, are:
+= -- 963
 > -- 368
 < -- 0
 + -- 136
 - -- 103
-* -- 652
+* -- 654
 := -- 1316
-add.period$ -- 40
+add.period$ -- 39
 call.type$ -- 33
-change.case$ -- 29
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 33
+cite$ -- 34
 duplicate$ -- 496
-empty$ -- 849
+empty$ -- 846
 format.name$ -- 103
-if$ -- 2383
+if$ -- 2375
 int.to.chr$ -- 0
 int.to.str$ -- 33
-missing$ -- 34
-newline$ -- 109
+missing$ -- 33
+newline$ -- 108
 num.names$ -- 33
 pop$ -- 84
 preamble$ -- 1
@@ -37,12 +38,13 @@ quote$ -- 0
 skip$ -- 400
 stack$ -- 0
 substring$ -- 615
-swap$ -- 250
+swap$ -- 249
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
+warning$ -- 1
 while$ -- 81
 width$ -- 35
-write$ -- 339
+write$ -- 337
+(There was 1 warning)
