@@ -2,26 +2,12 @@
 %\section{Thesis Contribution}
 %\section{Outlook}
 
-Different results obtained in the steel production events analysis by alternatively created binning schemes showed us that how the association networks' topological features could hint about the constraints that work in a steel production system.
+We linked these two data processing schemes: Fixed Step Sized binning and Fixed Bucket Sized binning, to different constraint categories and obtained different results in the steel production events analysis. Those results showed us how the association networks' topological features could hint at the constraints of a steel production system. However, the study of links between intrinsic constraints in a production system and some patterns we can observe in the production data is much larger than what started as an investigation in this thesis work.
 
-Moreover, the abstract theoretical framework developed with \acf{fba} integration allowed us to conduct simulation experiment
+The optimisation scheme integrated theoretical framework let us conduct simulation experiments. With Flux Balance Analysis, we constrained the system at different levels and allowed for fluctuations in the input and controlled the products via objective functions. 
 
+Our abstract theoretical framework is a convenient starting point to conduct perturbation experiments for the existing production networks. On a further step, it should be structured with a random graph considering some additional consistency constraints instead of the one we picked from homo sapiens metabolism in this thesis work. In that random graph, one needs to make sure that the cycles in the graph are suitable to create reactions out of nothing, and some mass balance constraints need to be incorporated. 
 
+The main challenge would be to construct arbitrary networks within the Operations Research framework. Therefore, different categories of constraints such as technical constraints, logistic constraints, physical and chemical constraints, economical constraints, and performance-indicator based constraints need to be quantified carefully in this framework.
 
-However, the study of links between intrinsic constraints in a production system and some patterns we can observe in the production data is much larger than what started as an investigation in this thesis work.
-
-Possible hypotheses can be listed out and then asking what tools would help us to figure those out.
-
-Does the load of the system regulate the importance of the other type of constraint? It is plausible either the tech constraints do not go away, the other type of constraints is present with varying strength/importance in the system.
-There might be different categories of constraints as technical constraints, performance-indicator based constraints on being quantified in the context of the FBA in the further steps of this work.
-Are logistic constraints, physical and chemical constraints coupled to topological features of the association network?
-We link these two data processing schemes: \acs{fss} and \acs{fbs}, to different forms/to different categories of constraints.
-
-FBA is a good control model and can be used with a random graph considering some additional consistency constraints. We need to make sure that the cycles in the graph are suitable to create stuff out of nothing. Some mass balance constraints need to be incorporated. We need to find a way of constructing arbitrary networks within an OR framework. We need to represent the different types of constraints in this framework carefully. Fluctuations of inputs, path statistics in the network and diversity of objective functions will allow us to have the suitable ground to investigate those relationships.
-Network perturbation might be another further investigation subject by upgrading the OR-model with advanced tools.
-
-\acs{fbs} networks modularity increases for only green and orange coloured curves. From left to right, we increase the constraint that the production plan (or product portfolio) impose on the whole production process. The product portfolio is grouped into speciality products on the right end.
-
-FBA or any OR-based method allows me to control the system at different levels. We can control and allow for fluctuations in the input and control the products via objective functions or think about the actual production network in perturbation experiments. 
-
-We need to start from the production system. We are interested in constraints in the system. Those are the technological constraints (about the network) and the economical constraints.  Alternative paths in the network are a kind of reduction of constraints. Since the technological constraints can only be influences by the network architecture, having a vulnerable network is a technological constraint. Sensitivity to input fluctuations is similarly a technological constraint. There is also an economical constraint of the product portfolio. What difference in terms of output/production patterns (association networks derived from the production data) comes from one type of constraint and another type of constraint.
+%Possible hypotheses can be listed out, and then ask what tools would help us figure those out. We need to start from the production system. We are interested in constraints in the system. Those are the technological constraints (about the network) and the economical constraints.  Alternative paths in the network are a kind of reduction of constraints. Since the technological constraints can only be influences by the network architecture, having a vulnerable network is a technological constraint. Sensitivity to input fluctuations is similarly a technological constraint. There is also an economical constraint of the product portfolio. What difference in terms of output/production patterns (association networks derived from the production data) comes from one type of constraint and another type of constraint.

@@ -20,11 +20,11 @@
 \contentsline {chapter}{\numberline {3}Implementation, Analysis and Results}{21}{chapter.55}%
 \contentsline {section}{\numberline {3.1}Steel Production Events}{21}{section.56}%
 \contentsline {subsection}{\numberline {3.1.1}Data Collection and Cleaning}{21}{subsection.57}%
-\contentsline {subsection}{\numberline {3.1.2}Analysis Steps and Results}{22}{subsection.58}%
-\contentsline {section}{\numberline {3.2}Simulation Events}{26}{section.60}%
-\contentsline {subsection}{\numberline {3.2.1}Design Steps for the Simulation Model}{26}{subsection.61}%
-\contentsline {subsection}{\numberline {3.2.2}Analysis Results}{27}{subsection.62}%
-\contentsline {chapter}{\numberline {4}Conclusion and Outlook}{29}{chapter.64}%
-\contentsline {chapter}{\numberline {5}Bibliography}{31}{chapter.66}%
-\contentsline {chapter}{\nameref {Supp_first}}{34\ -- \pageref {LastPage}}{chapter*.67}
+\contentsline {subsection}{\numberline {3.1.2}Analysis Steps and Results}{23}{subsection.60}%
+\contentsline {section}{\numberline {3.2}Simulation Events}{27}{section.62}%
+\contentsline {subsection}{\numberline {3.2.1}Design Steps for the Simulation Model}{27}{subsection.63}%
+\contentsline {subsection}{\numberline {3.2.2}Analysis Results}{28}{subsection.64}%
+\contentsline {chapter}{\numberline {4}Conclusion and Outlook}{30}{chapter.66}%
+\contentsline {chapter}{\numberline {5}Bibliography}{31}{chapter.68}%
+\contentsline {chapter}{\nameref {Supp_first}}{34\ -- \pageref {LastPage}}{chapter*.69}
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
