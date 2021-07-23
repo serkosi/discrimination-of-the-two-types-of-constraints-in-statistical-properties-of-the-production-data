@@ -63,7 +63,7 @@ one can construct adjacency matrices, $A^{m}_{ij}=f(s^{'}_{ij})$ and $A^{r}_{ij}
 The graphs in Fig.~\ref{figure-metabolic-networks} were generated from $A^{m}$ and $A^{r}$ using a stoichiometric matrix belonging to homo sapiens metabolism retrieved from BiGG Models Database~\cite{biggmodels}. In Fig.~\ref{figure-metabolic-centric}, the graph nodes stand for the metabolites, and graph edges are the reactions. In contrast, in Fig.~\ref{figure-reaction-centric}, the roles are reversed so that the graph edges represent the metabolites, and the graph nodes represent the reactions.
 \input{../figures/figure-reaction_centric-metabolic_centric-networks}
 
-Studying biological metabolic systems and designed models to achieve cellular objectives like cell growth or \acf{atp} necessitates various tools to be integrated with reconstructed \acs{gcn}'s~\cite{KIM, HAO}. One of the commonly used tools is \acf{fba} as an optimisation scheme. It is a constraint-based modelling approach to simulate microbial metabolisms and can be applied to biochemical-reaction networks containing the chemical transformations and flux exchanges~\cite{KAUFFMAN2003491, PRICE2004}.
+Studying biological metabolic systems and designed models to achieve cellular objectives like cell growth or \acf{atp} necessitates various tools to be integrated with reconstructed \acs{gcn}'s~\cite{KIM, HAO}. One of the commonly used tools is \acf{fba} as an optimisation scheme. It is a constraint-based modelling approach to simulate microbial metabolisms and can be applied to the networks of biochemical-reaction containing the chemical transformations and flux exchanges~\cite{KAUFFMAN2003491, PRICE2004}.
 
 While one can express the metabolic fluxes in a one-dimensional array (the so-called flux vector $V$) as
 \begin{equation} %\tag{2}
@@ -116,7 +116,7 @@ As given in Eq.~\eqref{biomassmaximisation}, the biomass formulation delivers th
 	O.V = (o_{1}v_{1} + o_{2}v_{2} + \dots + o_{r}v_{r})\in \mathbb{R}_{\ge0}.
 	\label{biomassmaximisation}
 \end{equation}
-\myequations{Maximised Biomass}
+\myequations{Maximised biomass}
 Stoichiometric (or mass-balance) constraints were introduced so far in Eq.~\eqref{stoichio} and Eq.~\eqref{massbalanceconstraint}. In addition, upper and lower bounds are presented for particular fluxes in $V$ during the optimisation process. The bounds are used in the reactions for uptake and secretion of any organic metabolite. In the uptake reactions, nutrients are transported to the inside of the metabolic network. In the secretion reactions, products are exported to the outside of the network. The rest of the fluxes in $V$ are used in the exchange reactions, namely the intermediate reactions in the network. The constraints influence the reactions for uptake and secretion, whereas no limitation is considered in the exchange reactions. Quantifying imported nutrients and exported outputs (resources and products) by constraining them with upper and lower bounds to fulfil a single objective function goal might significantly influence the optimisation process.
 
 \input{../figures/figure-uptake-secretion-cartoon}
@@ -146,6 +146,6 @@ Such limitations on resources serve as capacity constraints defining the active 
 %\addcontentsline{toc}{subsection}{Product Portfolio Diversification}%
 The objective function can be assumed as a production plan that rules the diversity of products that metabolism takes into account to maximise cellular growth~\cite{Edwards2001}. As previously mentioned, this is because the pattern of output biomass (Eq.~\eqref{biomassmaximisation}) is governed by the objective function (Eq.~\eqref{objectivecoefficients}). Its non-zero coefficients force the network for an optimal solution with their value range and positive and negative signs.    
 
-Defining various arrays of objective function coefficients, consisting of elements with negative or positive signs, will allow us to create a diverse group of products that the network is capable of producing. In the same direction, adjusting the number of objective function terms is the second step of that diversification.
+Defining various arrays of objective function coefficients, consisting of elements with negative or positive signs, will allow us to create a diverse group of products that the network can produce. In the same direction, adjusting the number of objective function terms is the second step of that diversification.
 
 Both \acf{ru} and \acf{ppd} approaches will be discussed in more detail in Chapter~\ref{implementation_analysis}.
