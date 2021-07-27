@@ -1,12 +1,16 @@
-\documentclass[]{beamer}
+\documentclass[aspectratio=169]{beamer}
 % Class options include: notes, notesonly, handout, trans,
 %                        hidesubsections, shadesubsections,
 %                        inrow, blue, red, grey, brown
+
+% Other possible aspect ratio values are: 1610, 149, 54, 43 and 32. By default, it is to 128mm by 96mm(4:3).
+\usefonttheme{professionalfonts}
 
 % Theme for beamer presentation.
 \usepackage{beamerthemesplit} 
 % Other themes include: beamerthemebars, beamerthemelined, 
 %                       beamerthemetree, beamerthemetreebars  
+%\usepackage{amsmath}
 
 \title{A Network-based Analysis of Technology-driven and Load-driven Constraints in Production Data}
 \author{Serhat Kosif}
@@ -21,36 +25,45 @@
 	\note{Talk for 30 minutes} % Add notes to yourself that will be displayed when
 	% typeset with the notes or notesonly class options
 	
-	\section[Outline]{}
+\section[Outline]{}
 	
 	% Creates table of contents slide incorporating
 	% all \section and \subsection commands
 	\begin{frame}
 		\tableofcontents
 	\end{frame}
+
+\input{introduction}
+\input{methods}
+\input{methods-2}
 	
-	
-	\section{Feature Projection on Different Networks}
-	
+\section[Implementation, Analysis and Results]{Implementation, Analysis and Results}
+	\subsection[Steel Production Events Analysis]{Steel Production Events Analysis}
 	\begin{frame}
-		\frametitle{Features to be Projected}   
-		\begin{columns}[c]
-			\column{2in}  % slides are 3in high by 5in wide
-			Steel Grade Network with Single Data Points
-			\framebox{\includegraphics[height=1.8in]{../images/steel-production-steps.png}}
-			\column{2in}
-			Width Network with Constant Data Intervals
-			\framebox{\includegraphics[height=1.8in]{../tables/production_lines.png}}
-		\end{columns}
+		\centering
+		\includegraphics[width=\textwidth]{../tables/results-real_life_events_analysis-results.png}
 	\end{frame}
-	%\note[enumerate]       % Add notes to yourself that will be displayed when
-	%{                      % typeset with the notes or notesonly class options
-	%\item Steel Grade Projections   
-	%\item Width Projections   
-	%}
+	\subsection[Simulation Events Analysis]{Simulation Events Analysis}
+	\begin{frame}
+		\centering
+		\includegraphics[width=\textwidth]{../tables/results-simulation-results.png}
+	\end{frame}
 	
-	
-	
+
+\section[Conclusion and Outlook]{Conclusion and Outlook}
+	\begin{frame}
+		\begin{itemize}
+			\item We linked these two data processing schemes: Fixed Step Sized binning and	Fixed Bucket Sized binning, to different constraint categories and obtained different results in the steel production events analysis.
+			\item With Flux Balance Analysis, we constrained the system	at different levels and allowed for fluctuations in the input and controlled the products via objective functions.
+			\item Further perturbation experiments can be performed with a randomly structured graph (set of production rules) instead of a ready model (as we used the homo sapiens metabolic model).
+			\item The main challenge would be to construct arbitrary networks within the Operations Research framework. Therefore, different categories of constraints such as technical constraints, logistic constraints, physical and chemical constraints, economical constraints, and performance-indicator based constraints need to be quantified carefully in this framework.
+		\end{itemize}
+	\end{frame}
+
+\begin{frame}{}
+	\centering \Large
+	\emph{Thank you for your attention.}
+\end{frame}
 	\note{The end}       % Add notes to yourself that will be displayed when
 	% typeset with the notes or notesonly class options
 	

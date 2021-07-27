@@ -7,11 +7,78 @@
 \headcommand {\beamer@framepages {2}{2}}
 \headcommand {\beamer@sectionpages {2}{2}}
 \headcommand {\beamer@subsectionpages {2}{2}}
-\headcommand {\sectionentry {2}{Feature Projection on Different Networks}{3}{Feature Projection on Different Networks}{0}}
-\headcommand {\slideentry {2}{0}{1}{3/3}{}{0}}
+\headcommand {\sectionentry {2}{Introduction}{3}{Introduction}{0}}
+\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{3}{Production Lines and Handling Types}}
+\headcommand {\slideentry {2}{1}{1}{3/3}{Production Lines and Handling Types}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\beamer@partpages {1}{3}}
-\headcommand {\beamer@subsectionpages {3}{3}}
-\headcommand {\beamer@sectionpages {3}{3}}
-\headcommand {\beamer@documentpages {3}}
-\headcommand {\gdef \inserttotalframenumber {3}}
+\headcommand {\slideentry {2}{1}{2}{4/4}{Production Lines and Handling Types}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {2}{1}{3}{5/5}{Production Lines and Handling Types}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {2}{1}{4}{6/6}{Production Lines and Handling Types}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {2}{1}{5}{7/7}{Production Lines and Handling Types}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@sectionpages {3}{7}}
+\headcommand {\beamer@subsectionpages {3}{7}}
+\headcommand {\sectionentry {3}{Operations Research Model}{8}{Operations Research Model}{0}}
+\headcommand {\beamer@subsectionpages {8}{7}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{8}{Steel Production Data Analysis}}
+\headcommand {\slideentry {3}{1}{1}{8/8}{Steel Production Data Analysis}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {3}{1}{2}{9/9}{Steel Production Data Analysis}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {3}{1}{3}{10/10}{Steel Production Data Analysis}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {3}{1}{4}{11/11}{Steel Production Data Analysis}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {3}{1}{5}{12/12}{Steel Production Data Analysis}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {3}{1}{6}{13/13}{Steel Production Data Analysis}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {3}{1}{7}{14/14}{Steel Production Data Analysis}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@subsectionpages {8}{14}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{15}{Abstract Theoretical Framework}}
+\headcommand {\slideentry {3}{2}{1}{15/15}{Abstract Theoretical Framework}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {3}{2}{2}{16/16}{Abstract Theoretical Framework}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {3}{2}{3}{17/17}{Abstract Theoretical Framework}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {3}{2}{4}{18/18}{Abstract Theoretical Framework}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {3}{2}{5}{19/19}{Abstract Theoretical Framework}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {3}{2}{6}{20/20}{Abstract Theoretical Framework}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {3}{2}{7}{21/21}{Abstract Theoretical Framework}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionpages {15}{21}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{22}{Concepts Integration}}
+\headcommand {\slideentry {3}{3}{1}{22/22}{Concepts Integration}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@sectionpages {8}{22}}
+\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\sectionentry {4}{Implementation, Analysis and Results}{23}{Implementation, Analysis and Results}{0}}
+\headcommand {\beamer@subsectionpages {23}{22}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{23}{Steel Production Events Analysis}}
+\headcommand {\slideentry {4}{1}{1}{23/23}{Steel Production Events Analysis}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{24}{Simulation Events Analysis}}
+\headcommand {\slideentry {4}{2}{1}{24/24}{Simulation Events Analysis}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@sectionpages {23}{24}}
+\headcommand {\beamer@subsectionpages {24}{24}}
+\headcommand {\sectionentry {5}{Conclusion and Outlook}{25}{Conclusion and Outlook}{0}}
+\headcommand {\slideentry {5}{0}{1}{25/25}{}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {5}{0}{2}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@partpages {1}{26}}
+\headcommand {\beamer@subsectionpages {25}{26}}
+\headcommand {\beamer@sectionpages {25}{26}}
+\headcommand {\beamer@documentpages {26}}
+\headcommand {\gdef \inserttotalframenumber {26}}
