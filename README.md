@@ -18,5 +18,9 @@ The project advances understanding of how constraints drive statistical regulari
 ## Getting Started
 Explore the code folders for step-by-step analyses, reusable algorithms, and example datasets. For a high-level summary, see the abstract below.
 
+
+## Report
+All results, figures, and detailed methodology are documented in the `report` folder. The complete thesis report is available as a PDF file: [`report/paper/main.pdf`](report/paper/main.pdf). This document provides a comprehensive overview of the project, including background, methods, results, and conclusions.
+
 ## Abstract
 Constraints lead to statistical patterns in data. This work quantifies the characteristics of two hypothetical types of constraints in industrial production: technology-driven and load-driven constraints. By analyzing the statistical properties of association networks over time in large datasets from steel manufacturing, and developing an abstract theoretical framework, the project clarifies the connection between each type of constraint and its statistical patterns.
