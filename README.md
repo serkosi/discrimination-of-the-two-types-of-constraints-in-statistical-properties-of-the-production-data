@@ -54,3 +54,19 @@ All results, figures, and detailed methodology are documented in the `report` fo
 
 ## Abstract
 Constraints lead to statistical patterns in data. This work quantifies the characteristics of two hypothetical types of constraints in industrial production: technology-driven and load-driven constraints. By analyzing the statistical properties of association networks over time in large datasets from steel manufacturing, and developing an abstract theoretical framework, the project clarifies the connection between each type of constraint and its statistical patterns.
+
+### Analysis Dimensions
+**1. Production Line** \
+CCM, CSP, PLTCM, and CGL \
+**2. Production Feature** \
+Width and Thickness \
+**3. Production Constraint** \
+Technology-driven and Load-driven Constraints \
+**4. Null Model** \
+Null Model conserving degrees sequence (NM-d) and Null Model
+conserving degrees sequence & graph modules (NM-m) \
+**5. Time Resolution** \
+Discrete-time Windows, Sliding-time Windows, and Complete Data with Two Halves \
+**6. Network Resolution** \
+Association networks were obtained from the first four
+dimensions in the observation-window categories. The sliding-time windows and the complete data with two halves were diversified in two different network resolutions by changing the node number.
