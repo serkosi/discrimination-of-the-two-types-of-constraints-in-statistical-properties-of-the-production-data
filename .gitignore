@@ -1,6 +1,6 @@
 data
 .venv
 .vscode
-211_Association_Networks.ipynb
 __pycache__
 functions.py
+.gitignore
