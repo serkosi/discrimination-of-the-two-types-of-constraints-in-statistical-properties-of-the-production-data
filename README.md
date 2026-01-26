@@ -1,72 +1,152 @@
-## Contribution to Planning and Autonomy
+# Discriminating Technology-driven and Load-driven Constraints in Production Data
 
-This project provides a data-driven framework for understanding and quantifying constraints in industrial production systems. By linking network topology and statistical patterns in production data to underlying constraints, the solution enables several advances in planning and autonomy:
+## The Challenge
 
-- **Constraint Identification:** The approach allows planners to distinguish between technology-driven and load-driven constraints, revealing which aspects of the production process are most limiting and how they manifest in operational data.
-- **Scenario Simulation:** The integration of theoretical models and simulation (e.g., Flux Balance Analysis) enables virtual perturbation experiments, helping planners anticipate the effects of changes in constraints or process parameters before implementation.
-- **Network Vulnerability and Robustness:** By analyzing the association networks, the solution highlights vulnerabilities in the production system’s architecture, supporting more resilient planning and risk mitigation.
-- **Adaptive Planning:** The methods support dynamic adjustment of production plans in response to input fluctuations, technical limitations, or changing product portfolios, fostering greater autonomy in manufacturing operations.
-- **Decision Support:** Quantitative metrics and visualizations provide actionable insights for optimizing resource allocation, sequencing, and technology selection, enhancing both manual and automated decision-making.
+Steel manufacturing is a complex, multi-stage process where events flow sequentially through integrated production lines. Each event (a semi-finished steel product) carries attributes—width, thickness, weight, length—that change as it progresses through different machines. The critical question: **Why do certain product attributes cluster together in production sequences?**
 
-Overall, this solution bridges the gap between raw production data and high-level planning, offering tools and methodologies that can be integrated into autonomous manufacturing systems for improved efficiency, adaptability, and strategic foresight.
+The answer lies in **constraints**—invisible rules that govern which products can be processed together and in what order. But constraints are not monolithic. We identified two fundamentally different types operating in parallel:
 
-## Further Discussion
+- **Technology-driven constraints** arise from how machines process materials. For example, a hot rolling mill handles one slab at a time and must arrange events in specific order (by width) to avoid equipment wear and maintain quality.
 
-The results show that constraints in the production process have a systematic effect on the decisions made during the production process. The systematic shaping of the decisions shows up as non-random features of the association networks. Below are brief discussions on several key aspects:
+- **Load-driven constraints** come from capacity limits. A pickling tank treats multiple slabs simultaneously but is capped at maximum batch volume. The order matters less than staying within capacity.
 
-1. **Matching of Simulation and Real Production Results:**
-	The analysis results obtained from simulation events (using Flux Balance Analysis) and from steel production events show similar patterns in the association networks. Both approaches reveal how constraints systematically shape decision-making, with modularity and connectivity features reflecting the underlying constraint types. This match validates the simulation model and demonstrates its relevance to real-world production planning.
+These constraints leave statistical fingerprints in production data. The challenge: can we formally discriminate between these two constraint types using only the patterns we observe in historical production sequences?
 
-2. **Association Networks as Quantitative Measures:**
-	Association networks provide a quantitative way to measure the impact of constraints on the decision patterns of human experts. Modularity is selected in the analysis pipeline because it captures the degree of community structure and clustering, which often reflects constraint-driven grouping in decisions. Alternatives to modularity include metrics like assortativity, clustering coefficient, or network entropy, which can also reveal structural effects of constraints.
+## Our Solution: A Three-Step Framework
 
-3. **Simpler Models for Comparison:**
-		Random graphs have already been used in this project as null models by shuffling edges in the association networks while preserving degree sequences. This allowed for comparison of real network modularity against randomized baselines and quantification of the significance of observed patterns. For further comparison, decision trees can serve as interpretable models that highlight how different constraints influence decision patterns, making it easier to trace the impact of specific features or rules on production outcomes.
+### Step 1: Extract Hidden Patterns via Association Networks
 
-4. **Temporal Trends in Steel Production Data:**
-	The data analysis from steel production events did not reveal a significant trend over time in the properties of association networks. Possible reasons include stable production processes, consistent application of constraints, or the aggregation of data over long periods masking short-term variations. It may also indicate that constraint effects are persistent and not strongly time-dependent in this context.
+Raw production data contains thousands of events arranged in sequences. Visually identifying which products cluster together is impossible at scale. We solve this through **association rule mining**:
 
-5. **Product Diversity and Constraints:**
-			Resource Utilisation (RU) and Product Portfolio Diversification (PPD) were already introduced and implemented in the simulation model. RU manipulates resource usage by deleting reactions or limiting fluxes, while PPD varies the objective function coefficients and richness, directly affecting the diversity and directionality of production plans. These interventions allow for controlled simulation experiments to probe causal relationships. Alternatives for interventions could include varying process parameters, introducing artificial bottlenecks, or simulating changes in scheduling policies. Such interventions help distinguish correlation from causation and provide practical guidance for optimizing both resource use and product portfolio in real production environments.
+1. **Calculate co-occurrence strength** for every pair of product attributes within the same sequences using the Lift metric:
+   - Lift > 1 means two products occur together more frequently than independent probability would predict
+   - Lift < 1 means their co-occurrence is less likely from a probability perspective
+   
+2. **Convert these patterns into networks** where nodes represent product types (binned by attributes) and edges represent strong co-occurrences
 
-# Discrimination of the Two Types of Constraints in Statistical Properties of Production Data
+3. **Analyze network topology** to uncover whether constraints have created clusters, hierarchies, or random structures
 
-## Overview
-This project provides a comprehensive framework for analyzing how different types of constraints—technology-driven and load-driven—shape the statistical properties of industrial production data. Using large-scale datasets from steel manufacturing, the project combines empirical data analysis, network science, and theoretical modeling to uncover the mechanisms behind observed production patterns.
+The key insight: **Different constraints generate different network patterns.** We needed to expose these differences.
 
-## Key Features
-- **Network Analysis:** Construction and analysis of association networks to reveal how constraints affect connectivity, modularity, and diversity in production systems.
-- **Time Window Studies:** Systematic investigation of constraint impacts across various time windows, including sliding and fixed intervals, to capture dynamic changes in production behavior.
-- **Operations Research Modeling:** Integration of OR methods to simulate and compare the effects of different constraint types on production outcomes.
-- **Diversity Metrics:** Quantitative assessment of product diversity and richness, with visualizations and statistical summaries.
-- **Algorithmic Tools:** Modular code packages for data cleaning, network construction, and statistical analysis, enabling reproducible and extensible research.
-- **Reporting and Visualization:** Automated generation of figures, tables, and summary reports to support scientific communication and decision-making.
+### Step 2: Operationalize Constraints via Dual Binning Schemes
 
-## Impact
-The project advances understanding of how constraints drive statistical regularities in industrial data, providing actionable insights for process optimization, technology selection, and production planning. The methods and tools developed here are applicable to a wide range of manufacturing domains beyond steel production.
+We developed two complementary ways to group events:
 
-## Getting Started
-Explore the code folders for step-by-step analyses, reusable algorithms, and example datasets. For a high-level summary, see the abstract below.
+**Fixed Step Size (FSS) Binning**: Divide the attribute range into equal intervals. For width, create bins of 99mm width (e.g., 800–899mm, 900–999mm). This mirrors technology-driven constraints, which operate uniformly across the product range.
 
+**Fixed Bucket Size (FBS) Binning**: Create bins with equal event counts. The first 20% of events go in bin 1, next 20% in bin 2, etc. This mirrors load-driven constraints, which care about batch volume regardless of product specifications.
 
-## Report
-All results, figures, and detailed methodology are documented in the `report` folder. The complete thesis report is available as a PDF file: [report/paper/main.pdf](https://github.com/serkosi/discrimination-of-the-two-types-of-constraints-in-statistical-properties-of-the-production-data/blob/main/report/main.pdf). This document provides a comprehensive overview of the project, including background, methods, results, and conclusions.
+By constructing networks using both schemes and comparing results, we can see whether FSS or FBS better explains the observed clustering—revealing which constraint type dominates.
 
-## Abstract
-Constraints lead to statistical patterns in data. This work quantifies the characteristics of two hypothetical types of constraints in industrial production: technology-driven and load-driven constraints. By analyzing the statistical properties of association networks over time in large datasets from steel manufacturing, and developing an abstract theoretical framework, the project clarifies the connection between each type of constraint and its statistical patterns.
+### Step 3: Quantify Constraint Effects via Statistical Validation
 
-### Analysis Dimensions
-**1. Production Line** \
-CCM, CSP, PLTCM, and CGL \
-**2. Production Feature** \
-Width and Thickness \
-**3. Production Constraint** \
-Technology-driven and Load-driven Constraints \
-**4. Null Model** \
-Null Model conserving degrees sequence (NM-d) and Null Model
-conserving degrees sequence & graph modules (NM-m) \
-**5. Time Resolution** \
-Discrete-time Windows, Sliding-time Windows, and Complete Data with Two Halves \
-**6. Network Resolution** \
-Association networks were obtained from the first four
-dimensions in the observation-window categories. The sliding-time windows and the complete data with two halves were diversified in two different network resolutions by changing the node number.
+Network patterns alone aren't sufficient; we need statistical rigor. We employ:
+
+**Modularity Measurement**: Quantify how tightly events cluster within groups. Higher modularity indicates strong constraints forcing specific combinations.
+
+**Randomness Testing via Null Models**: Compare real networks against random networks that preserve degree structure. If the real network shows significantly higher modularity than random versions, we have evidence of true constraints—not accidental clustering.
+
+**Z-Score Standardization**: Express deviation from randomness in standard units:
+- |z| < 1: Network resembles randomness
+- 1 ≤ |z| < 2: Borderline structure  
+- |z| ≥ 2: Significant, non-random constraint-driven patterns
+
+**Robustness Testing**: Perturb the data (remove and restore 10% ten times) to ensure findings survive variation. Stable results with low error bars confirm genuine constraints; large error bars signal artifacts.
+
+## Implementation and Results
+
+### Data Foundation
+
+Analyzed **23 years of production data** across four integrated steel production lines:
+- **CCM** (Continuous Casting Machine): 347,418 events
+- **CSP** (Compact Strip Production): 205,496 events
+- **PLTCM** (Pickling Line Tandem Cold Mill): 59,604 events
+- **CGL** (Continuous Galvanizing Line): 27,147 events
+
+### Data Preparation Pipeline
+
+Before analysis, we cleaned raw data through:
+
+1. **Standardization**: Converted string data to floats, normalized punctuation, filled nulls consistently
+
+2. **Physical validation**: Calculated density for every event (valid range: 6.5–8.5 × 10⁻⁶ kg/mm³); discarded outliers
+
+3. **Capacity ranges**: Applied machine input capacity limits:
+   - Width: 800–2000 mm
+   - Weight: 2669–26,690 kg
+
+4. **Gap filling**: Imputed missing values using density-mass-volume equations and cross-event consistency checks
+
+5. **Sequence filtering**: Removed sequences with < 50 events (likely test processes)
+
+6. **Cross-line data integration**: Joined PLTCM and CGL datasets using Material ID and Piece ID as foreign keys to establish referential integrity across production stages; propagated PLTCM input-labeled attributes (input width, input thickness) to corresponding CGL events for downstream analysis
+
+### Key Findings
+
+**CCM and CSP (Technology-driven lines) — Width dimension:**
+- FSS networks: consistently modular and hierarchically organized
+- FBS networks: non-random, non-modular hierarchical structure (but unstable—FBS modularity breaks down after 10% data perturbation)
+- **Interpretation**: Fixed-interval binning reveals genuine constraint structure; equal-population binning creates artificial patterns that don't persist
+
+**CCM and CSP (Technology-driven lines) — Thickness dimension:**
+- FSS networks: modular and simple (robust)
+- FBS networks: non-modular and hierarchical (robust)
+- **Interpretation**: Technology-driven machines show clear separation between features
+
+**PLTCM and CGL (Load-driven lines) — Thickness dimension:**
+- FSS networks: highly modular
+- FBS networks: highly modular
+- CGL networks: both approach robust (no complex hierarchical structure)
+- PLTCM networks: both modular but hierarchical (less robust than CGL)
+- **Interpretation**: Load constraints strongly organize thickness across both binning schemes; CGL shows more stable structure than PLTCM
+
+**PLTCM and CGL (Load-driven lines) — Width dimension:**
+- PLTCM: both FSS and FBS modular but hierarchical with non-robust structure
+- CGL: FSS non-modular hierarchical; FBS modular hierarchical (non-robust)
+- **Interpretation**: Width dimension shows sensitivity to binning method in load-driven lines; suggests multiple constraint mechanisms operate simultaneously
+
+**Temporal stability**: Constraint patterns remain consistent across time windows, confirming they reflect persistent operational rules rather than transient variation
+
+## Theoretical Validation via Simulation
+
+To validate findings beyond empirical observation, we developed a **constraint-based simulation** inspired by metabolic network modeling:
+
+1. **Build artificial production networks** with embedded constraints using Flux Balance Analysis (Homo sapiens metabolic model: 738 metabolites, 1008 reactions)
+
+2. **Systematically vary constraints through two experimental designs:**
+   - **Resource Utilisation (RU)**: RU-1 progressively deletes reactions (50–450 in 50-unit steps); RU-2 limits flux bounds (105–420 reactions)
+   - **Product Portfolio Diversification (PPD)**: PPD-1 varies objective function coefficients using directional intervals (±[1,4], ±[4,2], ±[2,4]); PPD-2 reduces objective function richness (25%, 50%, 75%)
+
+3. **Compare simulated patterns** to real production data using identical analysis methods
+
+**Key simulation results:**
+
+**Resource utilisation effects (RU-1)**: As deleted reactions increase, modularity decreases and NM-d z-scores show significant decline. NM-m z-scores remain near zero, indicating no hierarchical structure breakdown.
+
+**Portfolio diversification effects (PPD-1 & PPD-2)**: 
+- FSS networks: no modularity change across constraint variations
+- FBS networks: modularity increases only for directional (asymmetric) objective functions
+- Symmetric production plans (coefficients balanced around zero) show dampening effects regardless of richness reductions
+- **Interpretation**: Production plan directionality matters for load-driven network topology; generic product capability does not significantly constrain network structure
+
+## What This Means
+
+This framework enables:
+
+- **Constraint identification**: Use network patterns to detect which constraint types are active in the production system of interest
+- **Process diagnostics**: Understand how constraints shape observed production behavior and identify which attributes are most strongly affected
+- **Theoretical grounding**: Validate constraint discrimination through constraint-based simulation with controlled perturbations
+
+## Tools and Data
+
+- **SQL extraction** queries for pulling events from enterprise databases (supporting incremental updates across 23-year periods)
+- **Binning algorithms** implementing FSS and FBS discretization at configurable resolutions
+- **Network construction** via association rules and adjacency matrices
+- **Statistical analysis** suite including modularity computation, null model randomization, z-score calculation, and error estimation
+- **Simulation framework** integrating constraint-based optimization with production-compatible data generation
+
+All methods support large-scale datasets (300,000+ events) with modular, reproducible implementation.
+
+---
+
+**Status**: Active development | **Focus**: Production data analysis, constraint discrimination, network topology characterization
