@@ -149,4 +149,11 @@ All methods support large-scale datasets (300,000+ events) with modular, reprodu
 
 ---
 
-**Status**: Active development | **Focus**: Production data analysis, constraint discrimination, network topology characterization
+**Status**\
+The project is currently in active development including the conversion of its programming language from Wolfram Mathematica to Python.
+
+Project's ground is based on my master thesis report which is available as a PDF file: [report/paper/main.pdf](https://github.com/serkosi/discrimination-of-the-two-types-of-constraints-in-statistical-properties-of-the-production-data/blob/main/report/main.pdf).\
+This document provides a comprehensive overview of the project, including background, methods, results, and conclusions.
+
+**Focus** \
+Statistical data analysis, constraint discrimination, network topology characterization
